@@ -337,7 +337,11 @@ const MobileNavItem = ({ title, submenu, link }: any) => {
             className="font-light"
           >
             {submenu?.map((item: any) => {
-              return <div className="text-center">{item.name}</div>;
+              return (
+                <div key={item.name} className="text-center">
+                  {item.name}
+                </div>
+              );
             })}
           </motion.div>
         </motion.div>
