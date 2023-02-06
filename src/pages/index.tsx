@@ -138,15 +138,13 @@ const ListItem = React.forwardRef(
   ({ className, children, title, ...props }: any, forwardedRef) => (
     <li>
       <NavigationMenu.Link asChild>
-        <a
-          className={classNames("ListItemLink", className)}
-          {...props}
-          ref={forwardedRef}
-        >
+        <div>
           <div className="ListItemHeading">{title}</div>
           <p className="ListItemText">{children}</p>
-        </a>
+        </div>
       </NavigationMenu.Link>
     </li>
   )
 );
+
+ListItem.displayName = "MyComponentTest";

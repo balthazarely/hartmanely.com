@@ -182,7 +182,7 @@ const ListItem = forwardRef(
     </li>
   )
 );
-// ListItem.displayName = "MyComponentTest";
+ListItem.displayName = "MyComponentTest";
 
 const mobileMenu = [
   {
