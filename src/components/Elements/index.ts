@@ -1,0 +1,1 @@
+export { HeroLarge } from "./HeroLarge";

@@ -1,4 +1,4 @@
-import { forwardRef, Fragment, useRef, useState } from "react";
+import { forwardRef, Fragment, useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import { Popover, Transition } from "@headlessui/react";
 import { Container } from "@/components/LayoutComponents";
@@ -14,6 +14,8 @@ import {
   mobileLinkAccordianOpen,
   mobileNavWrapperAnimation,
 } from "@/lib/animations";
+import { useLockBodyScroll, useToggle } from "react-use";
+import { useRouter } from "next/router";
 
 export function Header() {
   const scrollPosition = useScrollPosition();
@@ -27,7 +29,7 @@ export function Header() {
         <Container>
           <nav className="relative z-50 flex w-full justify-between  ">
             <div className="flex items-center md:gap-x-12">
-              <Link href="#" aria-label="Home">
+              <Link href="/" aria-label="Home">
                 <img className="w-48" src="/hei-logo.svg" alt="hei-logo" />
               </Link>
             </div>
@@ -79,7 +81,7 @@ const DesktopNavigation = () => {
               <NavigationMenu.Item key={idx}>
                 <NavigationMenu.Link
                   className="NavigationMenuLink text-sm"
-                  href="https://github.com/radix-ui"
+                  href={item.link}
                 >
                   {item.title}
                 </NavigationMenu.Link>
@@ -119,22 +121,30 @@ const ListItem = forwardRef(
 ListItem.displayName = "MyComponentTest";
 
 function MobileNavigation() {
+  const router = useRouter();
   const buttonRef = useRef<HTMLButtonElement | any>(null);
+
+  const [locked, toggleLocked] = useToggle(false);
+  useLockBodyScroll(locked);
 
   function closeMobileNav() {
     buttonRef.current?.click();
   }
 
+  useEffect(() => {
+    toggleLocked(false);
+  }, [router.asPath]);
+
   return (
     <Popover className="block md:hidden">
       <Popover.Button
-        className="relative z-40 flex h-8 w-8 items-center justify-center outline-0  [&:not(:focus-visible)]:focus:outline-none"
+        className="relative z-50 flex h-8 w-8 items-center justify-center outline-0  [&:not(:focus-visible)]:focus:outline-none"
         aria-label="Toggle Navigation"
         ref={buttonRef}
       >
         {({ open }) => (
           <div>
-            <Hamburger toggled={open} />
+            <Hamburger toggled={open} onToggle={() => toggleLocked()} />
           </div>
         )}
       </Popover.Button>
