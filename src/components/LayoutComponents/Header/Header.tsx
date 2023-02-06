@@ -67,7 +67,7 @@ const NavigationMenuDemo = () => {
           </NavigationMenu.Trigger>
           <NavigationMenu.Content className="NavigationMenuContent">
             <ul className="List one">
-              <ListItem href="https://stitches.dev/" title="Pancratia Hall">
+              {/* <ListItem href="https://stitches.dev/" title="Pancratia Hall">
                 Denver, CO
               </ListItem>
               <ListItem href="/colors" title="Fruitdale">
@@ -81,7 +81,7 @@ const NavigationMenuDemo = () => {
               </ListItem>
               <ListItem href="https://icons.radix-ui.com/" title="Steam Plant">
                 Stapleton, CO
-              </ListItem>
+              </ListItem> */}
             </ul>
           </NavigationMenu.Content>
         </NavigationMenu.Item>
@@ -92,7 +92,7 @@ const NavigationMenuDemo = () => {
           </NavigationMenu.Trigger>
           <NavigationMenu.Content className="NavigationMenuContent">
             <ul className="List one">
-              <ListItem href="https://stitches.dev/" title="Western Hotel">
+              {/* <ListItem href="https://stitches.dev/" title="Western Hotel">
                 Ouray CO
               </ListItem>
               <ListItem href="/colors" title="Innovage Headquarters">
@@ -106,7 +106,7 @@ const NavigationMenuDemo = () => {
               </ListItem>
               <ListItem href="/colors" title="The Bank Lofts">
                 Denver, CO
-              </ListItem>
+              </ListItem> */}
             </ul>
           </NavigationMenu.Content>
         </NavigationMenu.Item>
@@ -118,7 +118,7 @@ const NavigationMenuDemo = () => {
           </NavigationMenu.Trigger>
           <NavigationMenu.Content className="NavigationMenuContent">
             <ul className="List one">
-              <ListItem
+              {/* <ListItem
                 href="https://stitches.dev/"
                 title="Boulder Wastewater Treatment Facility"
               >
@@ -126,7 +126,7 @@ const NavigationMenuDemo = () => {
               </ListItem>
               <ListItem href="/colors" title="Community Solar">
                 Denver, CO
-              </ListItem>
+              </ListItem> */}
             </ul>
             <div className="w-full bg-gray-100 py-2 text-center text-sm">
               See all Renwable Energy
@@ -163,22 +163,22 @@ const NavigationMenuDemo = () => {
   );
 };
 
-const ListItem = forwardRef(
-  ({ className, children, title, ...props }: any, forwardedRef) => (
-    <li>
-      <NavigationMenu.Link asChild>
-        <a
-          className={classNames("ListItemLink", className)}
-          {...props}
-          ref={forwardedRef}
-        >
-          <div className="ListItemHeading font-sm ">{title}</div>
-          <p className="ListItemText text-sm">{children}</p>
-        </a>
-      </NavigationMenu.Link>
-    </li>
-  )
-);
+// const ListItem = forwardRef(
+//   ({ className, children, title, ...props }: any, forwardedRef) => (
+//     <li>
+//       <NavigationMenu.Link asChild>
+//         <a
+//           className={classNames("ListItemLink", className)}
+//           {...props}
+//           ref={forwardedRef}
+//         >
+//           <div className="ListItemHeading font-sm ">{title}</div>
+//           <p className="ListItemText text-sm">{children}</p>
+//         </a>
+//       </NavigationMenu.Link>
+//     </li>
+//   )
+// );
 
 const mobileMenu = [
   {
