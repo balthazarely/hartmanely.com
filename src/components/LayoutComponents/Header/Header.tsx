@@ -30,7 +30,7 @@ export function Header() {
 
   return (
     <>
-      {/* <header
+      <header
         className={`fixed flex h-24 w-full items-center bg-gray-100 transition-height duration-200 md:h-28 ${
           scrollPosition < 200 ? "h-20 md:h-28" : "h-20 md:h-20"
         }`}
@@ -42,18 +42,19 @@ export function Header() {
                 <img className="w-48" src="/hei-logo.svg" alt="hei-logo" />
               </Link>
             </div>
-            <div className="flex items-center gap-x-5 md:gap-x-8">
+            <NavigationMenuDemo />
+
+            {/* <div className="flex items-center gap-x-5 md:gap-x-8">
               <div className="hidden md:block">
                 <NavigationMenuDemo />
               </div>
               <div className="block md:hidden">
                 <MobileNavigation />
               </div>
-            </div>
+            </div> */}
           </nav>
         </Container>
-      </header> */}
-      <NavigationMenuDemo />
+      </header>
     </>
   );
 }
