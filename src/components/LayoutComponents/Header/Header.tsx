@@ -48,9 +48,7 @@ export function Header() {
               {/* <div className="hidden md:block"> */}
               <NavigationMenuDemo />
               {/* </div> */}
-              <div className="block md:hidden">
-                <MobileNavigation />
-              </div>
+              <MobileNavigation />
             </div>
           </nav>
         </Container>
@@ -61,107 +59,115 @@ export function Header() {
 
 const NavigationMenuDemo = () => {
   return (
-    <NavigationMenu.Root className="NavigationMenuRoot hidden md:block">
-      <NavigationMenu.List className="NavigationMenuList">
-        <NavigationMenu.Item>
-          <NavigationMenu.Trigger className="NavigationMenuTrigger text-sm">
-            Redevelopment <CaretDownIcon className="CaretDown" aria-hidden />
-          </NavigationMenu.Trigger>
-          <NavigationMenu.Content className="NavigationMenuContent">
-            <ul className="List one">
-              <ListItem href="https://stitches.dev/" title="Pancratia Hall">
-                Denver, CO
-              </ListItem>
-              <ListItem href="/colors" title="Fruitdale">
-                Denver, CO
-              </ListItem>
-              <ListItem href="https://icons.radix-ui.com/" title="Iber Village">
-                Golden, CO
-              </ListItem>
-              <ListItem href="https://icons.radix-ui.com/" title="Hanger 2">
-                Stapleton, CO
-              </ListItem>
-              <ListItem href="https://icons.radix-ui.com/" title="Steam Plant">
-                Stapleton, CO
-              </ListItem>
-            </ul>
-          </NavigationMenu.Content>
-        </NavigationMenu.Item>
+    <div className="hidden md:block">
+      <NavigationMenu.Root className="NavigationMenuRoot">
+        <NavigationMenu.List className="NavigationMenuList">
+          <NavigationMenu.Item>
+            <NavigationMenu.Trigger className="NavigationMenuTrigger text-sm">
+              Redevelopment <CaretDownIcon className="CaretDown" aria-hidden />
+            </NavigationMenu.Trigger>
+            <NavigationMenu.Content className="NavigationMenuContent">
+              <ul className="List one">
+                <ListItem href="https://stitches.dev/" title="Pancratia Hall">
+                  Denver, CO
+                </ListItem>
+                <ListItem href="/colors" title="Fruitdale">
+                  Denver, CO
+                </ListItem>
+                <ListItem
+                  href="https://icons.radix-ui.com/"
+                  title="Iber Village"
+                >
+                  Golden, CO
+                </ListItem>
+                <ListItem href="https://icons.radix-ui.com/" title="Hanger 2">
+                  Stapleton, CO
+                </ListItem>
+                <ListItem
+                  href="https://icons.radix-ui.com/"
+                  title="Steam Plant"
+                >
+                  Stapleton, CO
+                </ListItem>
+              </ul>
+            </NavigationMenu.Content>
+          </NavigationMenu.Item>
 
-        <NavigationMenu.Item>
-          <NavigationMenu.Trigger className="NavigationMenuTrigger text-sm">
-            Consulting <CaretDownIcon className="CaretDown" aria-hidden />
-          </NavigationMenu.Trigger>
-          <NavigationMenu.Content className="NavigationMenuContent">
-            <ul className="List one">
-              <ListItem href="https://stitches.dev/" title="Western Hotel">
-                Ouray CO
-              </ListItem>
-              <ListItem href="/colors" title="Innovage Headquarters">
-                Lowry, CO
-              </ListItem>
-              <ListItem href="/colors" title="Courtyard by Marriott Hotel">
-                Denver, CO
-              </ListItem>
-              <ListItem href="/colors" title="Boston Lofts">
-                Denver, CO
-              </ListItem>
-              <ListItem href="/colors" title="The Bank Lofts">
-                Denver, CO
-              </ListItem>
-            </ul>
-          </NavigationMenu.Content>
-        </NavigationMenu.Item>
+          <NavigationMenu.Item>
+            <NavigationMenu.Trigger className="NavigationMenuTrigger text-sm">
+              Consulting <CaretDownIcon className="CaretDown" aria-hidden />
+            </NavigationMenu.Trigger>
+            <NavigationMenu.Content className="NavigationMenuContent">
+              <ul className="List one">
+                <ListItem href="https://stitches.dev/" title="Western Hotel">
+                  Ouray CO
+                </ListItem>
+                <ListItem href="/colors" title="Innovage Headquarters">
+                  Lowry, CO
+                </ListItem>
+                <ListItem href="/colors" title="Courtyard by Marriott Hotel">
+                  Denver, CO
+                </ListItem>
+                <ListItem href="/colors" title="Boston Lofts">
+                  Denver, CO
+                </ListItem>
+                <ListItem href="/colors" title="The Bank Lofts">
+                  Denver, CO
+                </ListItem>
+              </ul>
+            </NavigationMenu.Content>
+          </NavigationMenu.Item>
 
-        <NavigationMenu.Item>
-          <NavigationMenu.Trigger className="NavigationMenuTrigger text-sm">
-            Renewables
-            <CaretDownIcon className="CaretDown" aria-hidden />
-          </NavigationMenu.Trigger>
-          <NavigationMenu.Content className="NavigationMenuContent">
-            <ul className="List one">
-              <ListItem
-                href="https://stitches.dev/"
-                title="Boulder Wastewater Treatment Facility"
-              >
-                Denver, CO
-              </ListItem>
-              <ListItem href="/colors" title="Community Solar">
-                Denver, CO
-              </ListItem>
-            </ul>
-            <div className="w-full bg-gray-100 py-2 text-center text-sm">
-              See all Renwable Energy
-            </div>
-          </NavigationMenu.Content>
-        </NavigationMenu.Item>
+          <NavigationMenu.Item>
+            <NavigationMenu.Trigger className="NavigationMenuTrigger text-sm">
+              Renewables
+              <CaretDownIcon className="CaretDown" aria-hidden />
+            </NavigationMenu.Trigger>
+            <NavigationMenu.Content className="NavigationMenuContent">
+              <ul className="List one">
+                <ListItem
+                  href="https://stitches.dev/"
+                  title="Boulder Wastewater Treatment Facility"
+                >
+                  Denver, CO
+                </ListItem>
+                <ListItem href="/colors" title="Community Solar">
+                  Denver, CO
+                </ListItem>
+              </ul>
+              <div className="w-full bg-gray-100 py-2 text-center text-sm">
+                See all Renwable Energy
+              </div>
+            </NavigationMenu.Content>
+          </NavigationMenu.Item>
 
-        <NavigationMenu.Item>
-          <NavigationMenu.Link
-            className="NavigationMenuLink text-sm"
-            href="https://github.com/radix-ui"
-          >
-            About
-          </NavigationMenu.Link>
-        </NavigationMenu.Item>
-        <NavigationMenu.Item>
-          <NavigationMenu.Link
-            className="NavigationMenuLink text-sm"
-            href="https://github.com/radix-ui"
-          >
-            Contact
-          </NavigationMenu.Link>
-        </NavigationMenu.Item>
+          <NavigationMenu.Item>
+            <NavigationMenu.Link
+              className="NavigationMenuLink text-sm"
+              href="https://github.com/radix-ui"
+            >
+              About
+            </NavigationMenu.Link>
+          </NavigationMenu.Item>
+          <NavigationMenu.Item>
+            <NavigationMenu.Link
+              className="NavigationMenuLink text-sm"
+              href="https://github.com/radix-ui"
+            >
+              Contact
+            </NavigationMenu.Link>
+          </NavigationMenu.Item>
 
-        <NavigationMenu.Indicator className="NavigationMenuIndicator">
-          <div className="Arrow" />
-        </NavigationMenu.Indicator>
-      </NavigationMenu.List>
+          <NavigationMenu.Indicator className="NavigationMenuIndicator">
+            <div className="Arrow" />
+          </NavigationMenu.Indicator>
+        </NavigationMenu.List>
 
-      <div className="ViewportPosition">
-        <NavigationMenu.Viewport className="NavigationMenuViewport" />
-      </div>
-    </NavigationMenu.Root>
+        <div className="ViewportPosition">
+          <NavigationMenu.Viewport className="NavigationMenuViewport" />
+        </div>
+      </NavigationMenu.Root>
+    </div>
   );
 };
 
@@ -226,7 +232,7 @@ const mobileMenu = [
 
 function MobileNavigation() {
   return (
-    <Popover>
+    <Popover className="block md:hidden">
       <Popover.Button
         className="relative z-40 flex h-8 w-8 items-center justify-center outline-0  [&:not(:focus-visible)]:focus:outline-none"
         aria-label="Toggle Navigation"
