@@ -168,7 +168,10 @@ const ListItem = forwardRef(
     <li>
       <NavigationMenu.Link asChild>
         <a
-          className={classNames("ListItemLink", className)}
+          className={classNames(
+            "ListItemLink border-2 border-red-500",
+            className
+          )}
           {...props}
           ref={forwardedRef}
         >
@@ -179,7 +182,7 @@ const ListItem = forwardRef(
     </li>
   )
 );
-ListItem.displayName = "MyComponentTest";
+// ListItem.displayName = "MyComponentTest";
 
 const mobileMenu = [
   {
