@@ -7,7 +7,7 @@ interface ILayoutProps {
 export function Layout({ children }: ILayoutProps): JSX.Element {
   return (
     <div className="flex h-screen flex-col">
-      {/* <Header /> */}
+      <Header />
 
       <div className="mt-20 flex-grow transition-all duration-200 md:mt-28">
         {children}

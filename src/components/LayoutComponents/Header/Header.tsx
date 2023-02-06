@@ -30,7 +30,7 @@ export function Header() {
 
   return (
     <>
-      <header
+      {/* <header
         className={`fixed flex h-24 w-full items-center bg-gray-100 transition-height duration-200 md:h-28 ${
           scrollPosition < 200 ? "h-20 md:h-28" : "h-20 md:h-20"
         }`}
@@ -52,7 +52,8 @@ export function Header() {
             </div>
           </nav>
         </Container>
-      </header>
+      </header> */}
+      <NavigationMenuDemo />
     </>
   );
 }
