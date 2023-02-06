@@ -45,8 +45,9 @@ export function Header() {
             {/* <NavigationMenuDemo /> */}
 
             <div className="flex items-center gap-x-5 md:gap-x-8">
+              {/* <div className="hidden md:block"> */}
               <NavigationMenuDemo />
-              <div className="hidden md:block"></div>
+              {/* </div> */}
               <div className="block md:hidden">
                 <MobileNavigation />
               </div>
@@ -60,7 +61,7 @@ export function Header() {
 
 const NavigationMenuDemo = () => {
   return (
-    <NavigationMenu.Root className="NavigationMenuRoot">
+    <NavigationMenu.Root className="NavigationMenuRoot hidden md:block">
       <NavigationMenu.List className="NavigationMenuList">
         <NavigationMenu.Item>
           <NavigationMenu.Trigger className="NavigationMenuTrigger text-sm">
