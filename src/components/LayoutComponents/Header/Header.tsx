@@ -1,33 +1,22 @@
-import { forwardRef, Fragment, useState } from "react";
+import { forwardRef, Fragment, useRef, useState } from "react";
 import Link from "next/link";
 import { Popover, Transition } from "@headlessui/react";
 import { Container } from "@/components/LayoutComponents";
 import Hamburger from "hamburger-react";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
 import * as NavigationMenu from "@radix-ui/react-navigation-menu";
 import classNames from "classnames";
 import { CaretDownIcon } from "@radix-ui/react-icons";
 import useScrollPosition from "../../../hooks/useScrollPosition";
-
-const boxVariants = {
-  initial: { y: "15px", opacity: 0 },
-  animate: {
-    y: 0,
-    opacity: 1,
-    transition: {
-      staggerChildren: 0.05,
-      ease: "easeInOut",
-      type: "spring",
-      stiffness: 100,
-    },
-  },
-};
+import { navigationLinks } from "@/lib/navigationLinks";
+import {
+  mobileLinkAccordianClosed,
+  mobileLinkAccordianOpen,
+  mobileNavWrapperAnimation,
+} from "@/lib/animations";
 
 export function Header() {
-  const [isOpen, setOpen] = useState<boolean>(false);
   const scrollPosition = useScrollPosition();
-  console.log(scrollPosition);
-
   return (
     <>
       <header
@@ -42,12 +31,8 @@ export function Header() {
                 <img className="w-48" src="/hei-logo.svg" alt="hei-logo" />
               </Link>
             </div>
-            {/* <NavigationMenuDemo /> */}
-
             <div className="flex items-center gap-x-5 md:gap-x-8">
-              {/* <div className="hidden md:block"> */}
-              <NavigationMenuDemo />
-              {/* </div> */}
+              <DesktopNavigation />
               <MobileNavigation />
             </div>
           </nav>
@@ -57,106 +42,50 @@ export function Header() {
   );
 }
 
-const NavigationMenuDemo = () => {
+const DesktopNavigation = () => {
   return (
     <div className="hidden md:block">
       <NavigationMenu.Root className="NavigationMenuRoot">
         <NavigationMenu.List className="NavigationMenuList">
-          <NavigationMenu.Item>
-            <NavigationMenu.Trigger className="NavigationMenuTrigger text-sm">
-              Redevelopment <CaretDownIcon className="CaretDown" aria-hidden />
-            </NavigationMenu.Trigger>
-            <NavigationMenu.Content className="NavigationMenuContent">
-              <ul className="List one">
-                <ListItem href="https://stitches.dev/" title="Pancratia Hall">
-                  Denver, CO
-                </ListItem>
-                <ListItem href="/colors" title="Fruitdale">
-                  Denver, CO
-                </ListItem>
-                <ListItem
-                  href="https://icons.radix-ui.com/"
-                  title="Iber Village"
+          {navigationLinks.map((item: any, idx: number) => {
+            return item.submenu ? (
+              <NavigationMenu.Item key={idx}>
+                <NavigationMenu.Trigger className="NavigationMenuTrigger text-sm">
+                  {item.title}
+                  <CaretDownIcon className="CaretDown" aria-hidden />
+                </NavigationMenu.Trigger>
+                <NavigationMenu.Content className="NavigationMenuContent">
+                  <ul className="List one">
+                    {item?.submenu?.map((submenu: any, idx: number) => {
+                      return (
+                        <ListItem
+                          key={idx}
+                          href={submenu.link}
+                          title={submenu.name}
+                        >
+                          {submenu.location}
+                        </ListItem>
+                      );
+                    })}
+                  </ul>
+                  <Link href={`/categories/${item.title.toLowerCase()}`}>
+                    <div className="font-md p-3 text-xs font-bold hover:bg-gray-100 ">
+                      See All {item.title} projects
+                    </div>
+                  </Link>
+                </NavigationMenu.Content>
+              </NavigationMenu.Item>
+            ) : (
+              <NavigationMenu.Item key={idx}>
+                <NavigationMenu.Link
+                  className="NavigationMenuLink text-sm"
+                  href="https://github.com/radix-ui"
                 >
-                  Golden, CO
-                </ListItem>
-                <ListItem href="https://icons.radix-ui.com/" title="Hanger 2">
-                  Stapleton, CO
-                </ListItem>
-                <ListItem
-                  href="https://icons.radix-ui.com/"
-                  title="Steam Plant"
-                >
-                  Stapleton, CO
-                </ListItem>
-              </ul>
-            </NavigationMenu.Content>
-          </NavigationMenu.Item>
-
-          <NavigationMenu.Item>
-            <NavigationMenu.Trigger className="NavigationMenuTrigger text-sm">
-              Consulting <CaretDownIcon className="CaretDown" aria-hidden />
-            </NavigationMenu.Trigger>
-            <NavigationMenu.Content className="NavigationMenuContent">
-              <ul className="List one">
-                <ListItem href="https://stitches.dev/" title="Western Hotel">
-                  Ouray CO
-                </ListItem>
-                <ListItem href="/colors" title="Innovage Headquarters">
-                  Lowry, CO
-                </ListItem>
-                <ListItem href="/colors" title="Courtyard by Marriott Hotel">
-                  Denver, CO
-                </ListItem>
-                <ListItem href="/colors" title="Boston Lofts">
-                  Denver, CO
-                </ListItem>
-                <ListItem href="/colors" title="The Bank Lofts">
-                  Denver, CO
-                </ListItem>
-              </ul>
-            </NavigationMenu.Content>
-          </NavigationMenu.Item>
-
-          <NavigationMenu.Item>
-            <NavigationMenu.Trigger className="NavigationMenuTrigger text-sm">
-              Renewables
-              <CaretDownIcon className="CaretDown" aria-hidden />
-            </NavigationMenu.Trigger>
-            <NavigationMenu.Content className="NavigationMenuContent">
-              <ul className="List one">
-                <ListItem
-                  href="https://stitches.dev/"
-                  title="Boulder Wastewater Treatment Facility"
-                >
-                  Denver, CO
-                </ListItem>
-                <ListItem href="/colors" title="Community Solar">
-                  Denver, CO
-                </ListItem>
-              </ul>
-              <div className="w-full bg-gray-100 py-2 text-center text-sm">
-                See all Renwable Energy
-              </div>
-            </NavigationMenu.Content>
-          </NavigationMenu.Item>
-
-          <NavigationMenu.Item>
-            <NavigationMenu.Link
-              className="NavigationMenuLink text-sm"
-              href="https://github.com/radix-ui"
-            >
-              About
-            </NavigationMenu.Link>
-          </NavigationMenu.Item>
-          <NavigationMenu.Item>
-            <NavigationMenu.Link
-              className="NavigationMenuLink text-sm"
-              href="https://github.com/radix-ui"
-            >
-              Contact
-            </NavigationMenu.Link>
-          </NavigationMenu.Item>
+                  {item.title}
+                </NavigationMenu.Link>
+              </NavigationMenu.Item>
+            );
+          })}
 
           <NavigationMenu.Indicator className="NavigationMenuIndicator">
             <div className="Arrow" />
@@ -176,15 +105,12 @@ const ListItem = forwardRef(
     <li>
       <NavigationMenu.Link asChild>
         <a
-          className={classNames(
-            "ListItemLink border-2 border-red-500",
-            className
-          )}
+          className={classNames("ListItemLink hover:bg-gray-100", className)}
           {...props}
           ref={forwardedRef}
         >
-          <div className="ListItemHeading font-sm ">{title}</div>
-          <p className="ListItemText text-sm">{children}</p>
+          <div className="ListItemHeading ">{title}</div>
+          <p className="ListItemText text-xs">{children}</p>
         </a>
       </NavigationMenu.Link>
     </li>
@@ -192,50 +118,19 @@ const ListItem = forwardRef(
 );
 ListItem.displayName = "MyComponentTest";
 
-const mobileMenu = [
-  {
-    title: "Redevelopment",
-    submenu: [
-      { name: "Pancratia Hall Lofts", link: "/pan" },
-      { name: "Fruitdale School Lofts", link: "/pan" },
-      { name: "Eiber Village", link: "/pan" },
-      { name: "Hanger 2", link: "/pan" },
-      { name: "Steam Plant Lofts", link: "/pan" },
-    ],
-  },
-  {
-    title: "Renewable Energy",
-    submenu: [
-      { name: "Boulder Wastewater Treatment Facility", link: "/pan" },
-      { name: "Community Solar", link: "/pan" },
-    ],
-  },
-  {
-    title: "Consulting",
-    submenu: [
-      { name: "Wester Hotel", link: "/pan" },
-      { name: "Innovage Headquarters", link: "/pan" },
-      { name: "Courtyard by Marriott", link: "/pan" },
-      { name: "Boston Lofts", link: "/pan" },
-      { name: "The Bank Lofts", link: "/pan" },
-    ],
-  },
-  {
-    title: "About",
-    link: "/about",
-  },
-  {
-    title: "Contact",
-    link: "/contact",
-  },
-];
-
 function MobileNavigation() {
+  const buttonRef = useRef<HTMLButtonElement | any>(null);
+
+  function closeMobileNav() {
+    buttonRef.current?.click();
+  }
+
   return (
     <Popover className="block md:hidden">
       <Popover.Button
         className="relative z-40 flex h-8 w-8 items-center justify-center outline-0  [&:not(:focus-visible)]:focus:outline-none"
         aria-label="Toggle Navigation"
+        ref={buttonRef}
       >
         {({ open }) => (
           <div>
@@ -258,18 +153,19 @@ function MobileNavigation() {
             className="fixed top-0 left-0 z-20 flex h-full w-full origin-top flex-col  items-center justify-start  bg-white p-4 pt-24 text-lg tracking-tight text-slate-900  shadow-xl ring-1 ring-slate-900/5"
           >
             <motion.div
-              variants={boxVariants}
+              variants={mobileNavWrapperAnimation}
               initial="initial"
               animate="animate"
               className="w-full"
             >
-              {mobileMenu.map((item: any) => {
+              {navigationLinks.map((item: any, idx: number) => {
                 return (
                   <MobileNavItem
-                    key={1}
+                    key={idx}
                     title={item.title}
                     submenu={item.submenu}
                     link={item.link}
+                    closeMobileNav={closeMobileNav}
                   />
                 );
               })}
@@ -281,28 +177,31 @@ function MobileNavigation() {
   );
 }
 
-const MobileNavItem = ({ title, submenu, link }: any) => {
+const MobileNavItem = ({ title, submenu, link, closeMobileNav }: any) => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
     <>
       {link ? (
         <motion.div
-          variants={boxVariants}
+          variants={mobileNavWrapperAnimation}
           className="flex w-full cursor-pointer flex-col  p-3"
         >
-          <button
-            aria-controls={title}
-            aria-expanded={isOpen}
-            className="flex w-full items-center justify-center space-x-4 text-left"
-          >
-            <div className="text-xl font-semibold ">{title}</div>
-          </button>
+          <Link href={link}>
+            <button
+              onClick={() => closeMobileNav()}
+              aria-controls={title}
+              aria-expanded={isOpen}
+              className="flex w-full items-center justify-center space-x-4 text-left"
+            >
+              <div className="text-xl font-semibold">{title}</div>
+            </button>
+          </Link>
         </motion.div>
       ) : (
         <motion.div
-          variants={boxVariants}
-          className="flex w-full cursor-pointer flex-col  p-3"
+          variants={mobileNavWrapperAnimation}
+          className="flex w-full cursor-pointer flex-col p-3"
           onClick={() => setIsOpen((prev) => !prev)}
         >
           <button
@@ -316,43 +215,21 @@ const MobileNavItem = ({ title, submenu, link }: any) => {
             id={title}
             initial={false}
             animate={
-              isOpen
-                ? {
-                    height: "auto",
-                    opacity: 1,
-                    display: "block",
-                    transition: {
-                      height: {
-                        duration: 0.2,
-                      },
-                      opacity: {
-                        duration: 0.2,
-                      },
-                    },
-                  }
-                : {
-                    height: 0,
-                    opacity: 0,
-                    transition: {
-                      height: {
-                        duration: 0.2,
-                      },
-                      opacity: {
-                        duration: 0.2,
-                      },
-                    },
-                    transitionEnd: {
-                      display: "none",
-                    },
-                  }
+              isOpen ? mobileLinkAccordianOpen : mobileLinkAccordianClosed
             }
             className="font-light"
           >
-            {submenu?.map((item: any) => {
+            {submenu?.map((item: any, idx: number) => {
               return (
-                <div key={item.name} className="text-center">
-                  {item.name}
-                </div>
+                <Link
+                  href={item.link}
+                  key={idx}
+                  onClick={() => closeMobileNav()}
+                >
+                  <div key={item.name} className="text-center">
+                    {item.name}
+                  </div>
+                </Link>
               );
             })}
           </motion.div>
