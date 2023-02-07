@@ -1,2 +1,3 @@
 export { ProjectHero } from "./ProjectHero";
-export { ProjectTitle } from "./ProjectTitle";
+export { ProjectImageGallery } from "./ProjectImageGallery";
+export { ProjectDetails } from "./ProjectDetails";

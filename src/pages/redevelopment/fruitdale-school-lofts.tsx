@@ -1,11 +1,16 @@
-import { ProjectHero, ProjectTitle } from "@/components/PageElementrs";
+import {
+  ProjectHero,
+  ProjectDetails,
+  ProjectImageGallery,
+} from "@/components/PageElementrs";
 import React from "react";
 
 export default function Fruitdale() {
   return (
     <div>
       <ProjectHero />
-      <ProjectTitle />
+      <ProjectDetails />
+      <ProjectImageGallery />
     </div>
   );
 }

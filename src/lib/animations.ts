@@ -18,10 +18,10 @@ export const mobileLinkAccordianOpen = {
   display: "block",
   transition: {
     height: {
-      duration: 0.2,
+      duration: 0,
     },
     opacity: {
-      duration: 0.2,
+      duration: 0,
     },
   },
 };
@@ -31,10 +31,10 @@ export const mobileLinkAccordianClosed = {
   opacity: 0,
   transition: {
     height: {
-      duration: 0.2,
+      duration: 0,
     },
     opacity: {
-      duration: 0.2,
+      duration: 0,
     },
   },
   transitionEnd: {

@@ -17,7 +17,12 @@ import {
 import { useLockBodyScroll, useToggle } from "react-use";
 import { useRouter } from "next/router";
 import { HiOutlineBuildingLibrary, HiOutlineSun } from "react-icons/hi2";
-import { FaHandsHelping } from "react-icons/fa";
+import {
+  FaArrowCircleUp,
+  FaArrowUp,
+  FaChevronDown,
+  FaHandsHelping,
+} from "react-icons/fa";
 
 export function Header() {
   const scrollPosition = useScrollPosition();
@@ -149,7 +154,7 @@ function MobileNavigation() {
   }, [router.asPath]);
 
   return (
-    <Popover className="block md:hidden">
+    <Popover className="block  md:hidden">
       <Popover.Button
         className="relative z-50 flex h-8 w-8 items-center justify-center outline-0  [&:not(:focus-visible)]:focus:outline-none"
         aria-label="Toggle Navigation"
@@ -179,7 +184,7 @@ function MobileNavigation() {
               variants={mobileNavWrapperAnimation}
               initial="initial"
               animate="animate"
-              className="w-full"
+              className="flex w-full flex-col gap-4 overflow-y-scroll "
             >
               {navigationLinks.map((item: any, idx: number) => {
                 return (
@@ -208,7 +213,7 @@ const MobileNavItem = ({ title, submenu, link, closeMobileNav }: any) => {
       {link ? (
         <motion.div
           variants={mobileNavWrapperAnimation}
-          className="flex w-full cursor-pointer flex-col  p-3"
+          className="flex w-full cursor-pointer flex-col  p-1"
         >
           <Link href={link}>
             <button
@@ -217,22 +222,29 @@ const MobileNavItem = ({ title, submenu, link, closeMobileNav }: any) => {
               aria-expanded={isOpen}
               className="flex w-full items-center justify-center space-x-4 text-left"
             >
-              <div className="text-xl font-semibold">{title}</div>
+              <div className="text-2xl font-semibold">{title}</div>
             </button>
           </Link>
         </motion.div>
       ) : (
         <motion.div
           variants={mobileNavWrapperAnimation}
-          className="flex w-full cursor-pointer flex-col p-3"
+          className="flex w-full cursor-pointer flex-col  p-1"
           onClick={() => setIsOpen((prev) => !prev)}
         >
           <button
             aria-controls={title}
             aria-expanded={isOpen}
-            className="flex w-full items-center justify-center space-x-4 text-left"
+            className="flex w-full items-center justify-center  "
           >
-            <div className="text-xl font-semibold">{title}</div>
+            <div className="text-2xl font-semibold">{title}</div>
+            <div className="text-2xl font-semibold">
+              <FaChevronDown
+                className={`ml-1 text-base text-cyan-600 ${
+                  isOpen ? "rotate-180" : "rotate-0"
+                }`}
+              />
+            </div>
           </button>
           <motion.div
             id={title}
@@ -249,7 +261,7 @@ const MobileNavItem = ({ title, submenu, link, closeMobileNav }: any) => {
                   key={idx}
                   onClick={() => closeMobileNav()}
                 >
-                  <div key={item.name} className="text-center">
+                  <div key={item.name} className="mb-2 text-center">
                     {item.name}
                   </div>
                 </Link>
