@@ -1,6 +1,9 @@
+import { HiOutlineBuildingLibrary } from "react-icons/hi2";
+
 export const navigationLinks = [
   {
     title: "Redevelopment",
+    icon: HiOutlineBuildingLibrary,
     submenu: [
       {
         name: "Pancratia Hall Lofts",
@@ -42,6 +45,7 @@ export const navigationLinks = [
   },
   {
     title: "Renewables",
+    icon: HiOutlineBuildingLibrary,
     submenu: [
       {
         name: "Boulder Wastewater Treatment Facility",
@@ -57,6 +61,7 @@ export const navigationLinks = [
   },
   {
     title: "Consulting",
+    icon: HiOutlineBuildingLibrary,
     submenu: [
       {
         name: "Wester Hotel",

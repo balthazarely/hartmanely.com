@@ -16,6 +16,8 @@ import {
 } from "@/lib/animations";
 import { useLockBodyScroll, useToggle } from "react-use";
 import { useRouter } from "next/router";
+import { HiOutlineBuildingLibrary, HiOutlineSun } from "react-icons/hi2";
+import { FaHandsHelping } from "react-icons/fa";
 
 export function Header() {
   const scrollPosition = useScrollPosition();
@@ -52,7 +54,7 @@ const DesktopNavigation = () => {
           {navigationLinks.map((item: any, idx: number) => {
             return item.submenu ? (
               <NavigationMenu.Item key={idx}>
-                <NavigationMenu.Trigger className="NavigationMenuTrigger text-sm">
+                <NavigationMenu.Trigger className="NavigationMenuTrigger text-sm font-semibold">
                   {item.title}
                   <CaretDownIcon className="CaretDown" aria-hidden />
                 </NavigationMenu.Trigger>
@@ -71,7 +73,16 @@ const DesktopNavigation = () => {
                     })}
                   </ul>
                   <Link href={`/categories/${item.title.toLowerCase()}`}>
-                    <div className="font-md p-3 text-xs font-bold hover:bg-gray-100 ">
+                    <div className="font-md flex items-center justify-start p-3 text-xs font-bold hover:bg-gray-100 ">
+                      {item.title === "Redevelopment" && (
+                        <HiOutlineBuildingLibrary className=" mr-1 text-xl text-cyan-600" />
+                      )}
+                      {item.title === "Renewables" && (
+                        <HiOutlineSun className=" mr-1 text-xl text-cyan-600" />
+                      )}
+                      {item.title === "Consulting" && (
+                        <FaHandsHelping className=" mr-1 text-xl text-cyan-600" />
+                      )}
                       See All {item.title} projects
                     </div>
                   </Link>
@@ -80,7 +91,7 @@ const DesktopNavigation = () => {
             ) : (
               <NavigationMenu.Item key={idx}>
                 <NavigationMenu.Link
-                  className="NavigationMenuLink text-sm"
+                  className="NavigationMenuTrigger text-sm font-semibold"
                   href={item.link}
                 >
                   {item.title}
@@ -107,12 +118,14 @@ const ListItem = forwardRef(
     <li>
       <NavigationMenu.Link asChild>
         <a
-          className={classNames("ListItemLink hover:bg-gray-100", className)}
+          className={classNames("ListItemLink  hover:bg-gray-100", className)}
           {...props}
           ref={forwardedRef}
         >
-          <div className="ListItemHeading ">{title}</div>
-          <p className="ListItemText text-xs">{children}</p>
+          <div className="ListItemHeading mb-1 text-xs font-bold leading-none ">
+            {title}
+          </div>
+          <div className="ListItemText text-xs">{children}</div>
         </a>
       </NavigationMenu.Link>
     </li>
@@ -227,7 +240,7 @@ const MobileNavItem = ({ title, submenu, link, closeMobileNav }: any) => {
             animate={
               isOpen ? mobileLinkAccordianOpen : mobileLinkAccordianClosed
             }
-            className="font-light"
+            className="pt-2 font-light"
           >
             {submenu?.map((item: any, idx: number) => {
               return (

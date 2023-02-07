@@ -1,0 +1,1 @@
+export { HomeBlockAbout } from "./HomeBlockAbout";

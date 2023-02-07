@@ -1,0 +1,13 @@
+.HomeBlockThreeContainer {
+    @apply bg-slate-100;
+    .imageContainer {
+        height: 180px;
+        @apply  relative flex items-center justify-center overflow-hidden;
+        .image {
+            object-fit: cover;
+            flex-shrink: 0;
+            min-width: 100%;
+            min-height: 100%
+        }
+    }
+}
