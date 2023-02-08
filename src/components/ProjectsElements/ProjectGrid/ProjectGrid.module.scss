@@ -1,0 +1,17 @@
+.ProjectGridContainer {
+    @apply mb-16;
+    .sectionActive { 
+        @apply text-cyan-600 underline decoration-2 underline-offset-4;
+    }
+    .imageContainer {
+        height: 180px;
+        @apply cursor-pointer relative flex items-center justify-center overflow-hidden;
+        .image {
+            object-fit: cover;
+            flex-shrink: 0;
+            min-width: 100%;
+            min-height: 100%;
+            @apply  transition-all duration-500;
+        }
+    }
+}

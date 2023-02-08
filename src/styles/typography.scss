@@ -19,13 +19,13 @@ h5 {
 }
 
 p {
-    @apply text-base
+    @apply text-base leading-7
 }
 
 p.small {
-    @apply text-sm
+    @apply text-sm leading-6
 }
 
 p.xsmall {
-    @apply text-xs
+    @apply text-xs leading-5
 }

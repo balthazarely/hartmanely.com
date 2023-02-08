@@ -19,12 +19,12 @@ export const navigationLinks = [
       },
       {
         name: "Eiber Village",
-        link: "/redevelopment/iber-village",
+        link: "/redevelopment/eiber-village",
         location: "Lakewood, CO",
-        photo: "/thumbnails/iber_village_thumbnail.jpg",
+        photo: "/thumbnails/eiber_village_thumbnail.jpg",
       },
       {
-        name: "Hanger 2",
+        name: "Hanger 2 Lowry",
         link: "/redevelopment/hanger-2-lowry",
         location: "Denver, CO",
         photo: "/thumbnails/hanger_2_thumbnail.jpg",

@@ -1,11 +1,15 @@
 import styles from "./HeroLarge.module.scss";
 import { motion } from "framer-motion";
+import Link from "next/link";
 
 export function HeroLarge() {
   return (
     <div>
       <div className={styles.heroLargeContainer}>
-        <img className={styles.HeroImage} src="images/fruitdale.jpg" />
+        <img
+          className={styles.HeroImage}
+          src="images/fruitdale/fruitdale-hero.jpg"
+        />
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
@@ -22,9 +26,11 @@ export function HeroLarge() {
             <h1 className="uppercase tracking-wider text-white">
               Creating Sustainable Communities
             </h1>
-            <button className="mt-4 rounded-md border-2 border-white bg-gray-800 bg-opacity-40 py-2 px-4 text-sm transition-colors duration-200 hover:bg-cyan-600">
-              See Our Work
-            </button>
+            <Link href="/all-projects">
+              <button className="mt-4 rounded-md border-2 border-white bg-gray-800 bg-opacity-40 py-2 px-4 text-sm transition-colors duration-200 hover:bg-cyan-600">
+                See Our Work
+              </button>
+            </Link>
           </motion.div>
         </div>
       </div>

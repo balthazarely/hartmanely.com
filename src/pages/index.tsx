@@ -3,6 +3,7 @@ import {
   HomeBlockTwo,
   HeroLarge,
   HomeBlockMission,
+  HomeBlockAbout,
   HomeBlockThree,
 } from "@/components/HomeElements";
 
@@ -13,6 +14,7 @@ export default function Home(): JSX.Element {
       <HomeBlockMission />
       <HomeBlockTwo />
       <HomeBlockThree />
+      <HomeBlockAbout />
       <Contact />
     </>
   );

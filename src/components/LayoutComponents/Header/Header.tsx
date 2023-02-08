@@ -17,12 +17,7 @@ import {
 import { useLockBodyScroll, useToggle } from "react-use";
 import { useRouter } from "next/router";
 import { HiOutlineBuildingLibrary, HiOutlineSun } from "react-icons/hi2";
-import {
-  FaArrowCircleUp,
-  FaArrowUp,
-  FaChevronDown,
-  FaHandsHelping,
-} from "react-icons/fa";
+import { FaChevronDown, FaHandsHelping } from "react-icons/fa";
 
 export function Header() {
   const scrollPosition = useScrollPosition();

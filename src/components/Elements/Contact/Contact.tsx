@@ -6,9 +6,9 @@ export function Contact() {
   const [state, handleSubmit] = useForm("mpzepwen");
 
   return (
-    <div className="bg-white">
+    <div className="bg-slate-100">
       <Container>
-        <div className="mx-auto flex flex-col items-center justify-center ">
+        <div className="mx-auto flex flex-col items-center justify-center  ">
           <h5 className="mt-4">Contact</h5>
           <h2 className="mt-2 mb-4">Get In Touch</h2>
           {state.succeeded ? (
@@ -22,9 +22,9 @@ export function Contact() {
               <p>We will be in touch as soon as possible.</p>
             </div>
           ) : (
-            <form onSubmit={handleSubmit} className="">
-              <div className="flex gap-2">
-                <div className="flex flex-col">
+            <form onSubmit={handleSubmit} className="w-full max-w-2xl">
+              <div className="flex w-full flex-col gap-2 sm:flex-row ">
+                <div className="flex w-full flex-col ">
                   <label htmlFor="name">
                     <p className="xsmall text-gray-500">Full Name</p>
                   </label>
@@ -41,7 +41,7 @@ export function Contact() {
                     errors={state.errors}
                   />
                 </div>
-                <div className="flex flex-col">
+                <div className="flex w-full flex-col ">
                   <label htmlFor="email">
                     <p className="xsmall text-gray-500">Email Address</p>
                   </label>
