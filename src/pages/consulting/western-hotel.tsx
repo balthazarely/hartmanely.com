@@ -1,5 +1,5 @@
-import { ProjectHero, ProjectDetails } from "@/components/PageElementrs";
-import { ProjectMedia } from "@/components/PageElementrs/ProjectMedia";
+import { ProjectHero, ProjectDetails } from "@/components/PageElements";
+import { ProjectMedia } from "@/components/PageElements/ProjectMedia";
 import React from "react";
 
 export default function WesternHotel() {

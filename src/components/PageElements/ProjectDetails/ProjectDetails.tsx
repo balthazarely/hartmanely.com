@@ -40,8 +40,12 @@ export function ProjectDetails({
       <div className="grid  grid-cols-1 gap-8  md:grid-cols-3">
         <div className="col-span-2 ">
           <h4 className="">{tagline}</h4>
-          {aboutText?.map((text: string) => {
-            return <p className="small mt-2">{text}</p>;
+          {aboutText?.map((text: string, idx: number) => {
+            return (
+              <p key={idx} className="small mt-2">
+                {text}
+              </p>
+            );
           })}
         </div>
         {showSidePanel && (

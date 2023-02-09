@@ -2,7 +2,7 @@ import {
   ProjectHero,
   ProjectDetails,
   ProjectImageGallery,
-} from "@/components/PageElementrs";
+} from "@/components/PageElements";
 import React from "react";
 
 export default function BoulderWastewaterTreamtmentPlant() {
@@ -25,7 +25,6 @@ export default function BoulderWastewaterTreamtmentPlant() {
 
   const aboutText = [
     "The solar energy system for the Boulder Wastewater Treatment Facility was the largest solar power system in Boulder County as of 2009. This 1 megawatt system is an important part of the City’s Climate Action Plan and provides approximately 20% of the facility’s power requirements. The system is financed using a Power Purchase Agreement (PPA) with the City of Boulder. Financing was achieved during the difficult economic times of late 2008 and early 2009. Entitlements,  final design and construction involved complex prairie dog relocation, wetland mitigation and construction phasing. Hartman Ely Investments provided investment capital and project management services for this solar development.",
-    ,
   ];
 
   return (

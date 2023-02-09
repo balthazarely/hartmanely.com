@@ -19,7 +19,7 @@ export function ProjectAwards({ awards }: ProjectDetailsProps) {
         <FaAward className="mr-1 text-xl" />
         <h3>Awards</h3>
       </div>
-      {awards!.map((award: any) => {
+      {awards!.map((award: ProjectAwardsProps) => {
         if (award.link) {
           return (
             <Link href={award.link}>

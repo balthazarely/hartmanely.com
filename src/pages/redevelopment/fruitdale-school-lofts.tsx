@@ -2,8 +2,8 @@ import {
   ProjectHero,
   ProjectDetails,
   ProjectImageGallery,
-} from "@/components/PageElementrs";
-import { ProjectAwards } from "@/components/PageElementrs/ProjectAwards";
+} from "@/components/PageElements";
+import { ProjectAwards } from "@/components/PageElements/ProjectAwards";
 import React from "react";
 
 export default function Fruitdale() {

@@ -2,7 +2,7 @@ import {
   ProjectHero,
   ProjectDetails,
   ProjectImageGallery,
-} from "@/components/PageElementrs";
+} from "@/components/PageElements";
 import React from "react";
 
 export default function SteamPlantRowHomes() {

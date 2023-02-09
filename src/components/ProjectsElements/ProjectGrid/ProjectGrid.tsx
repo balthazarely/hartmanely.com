@@ -3,6 +3,12 @@ import clsx from "clsx";
 import { useState } from "react";
 import styles from "./ProjectGrid.module.scss";
 
+interface ProjectProps {
+  name: string;
+  img: string;
+  type: string;
+}
+
 const projects = [
   {
     name: "Pancratia Hall Lofts",
@@ -34,7 +40,6 @@ const projects = [
     img: "/images/steam-plant-row-homes/steam-plant-row-homes-hero.jpg",
     type: "redevelopment",
   },
-  /////
   {
     name: "Boulder Wastewater Treatment Facility",
     img: "/images/boulder-wastewater-treatment-facility/boulder-wastewater-treatment-facility-hero.jpeg",
@@ -45,7 +50,6 @@ const projects = [
     img: "/images/community-solar/community-solar-hero.jpg",
     type: "renewable energy",
   },
-  /////
   {
     name: "Western Hotel",
     img: "/images/western-hotel/western-hotel-hero.jpg",
@@ -73,7 +77,7 @@ const projects = [
   },
 ];
 
-function ImageBlock({ img, name, type }: any) {
+function ImageBlock({ img, name, type }: ProjectProps) {
   return (
     <div className="w-full text-center">
       <div className={clsx(styles.imageContainer, "group")}>
@@ -94,7 +98,7 @@ function ImageBlock({ img, name, type }: any) {
 export function ProjectGrid() {
   const [selected, setSelected] = useState("all");
 
-  let projectData = projects.filter((project: any) => {
+  let projectData = projects.filter((project: ProjectProps) => {
     if (selected === "all" || selected === "") {
       return projects;
     }
@@ -103,7 +107,7 @@ export function ProjectGrid() {
     }
   });
 
-  function SelectSectionButton({ sectionName }: any) {
+  function SelectSectionButton({ sectionName }: { sectionName: string }) {
     return (
       <button
         onClick={() => setSelected(sectionName)}
@@ -129,6 +133,7 @@ export function ProjectGrid() {
         <div className="grid grid-cols-3 gap-4">
           {projectData?.map((project: any) => (
             <ImageBlock
+              key={project.name}
               name={project.name}
               img={project.img}
               type={project.type}
