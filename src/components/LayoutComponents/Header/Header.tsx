@@ -184,67 +184,67 @@ function MobileNavigation() {
         <Hamburger toggled={menuOpen} toggle={setMenuOpen} />
       </div>
       <motion.div
-        className={` fixed top-0 left-0 z-40   h-screen w-screen overflow-y-scroll bg-white opacity-0  `}
+        className={` fixed top-0 left-0 z-40 h-screen  w-screen overflow-y-scroll  bg-white opacity-0  `}
         animate={menuOpen ? "open" : "closed"}
         variants={menuOpenAnimationVariant}
       >
-        <div className="mt-24 ">
-          <motion.div
-            variants={menuItemAnimationVariant}
-            className="mb-4 flex w-full cursor-pointer flex-col p-1"
+        {/* <div className="mt-24  border-2 border-red-500 "> */}
+        <motion.div
+          variants={menuItemAnimationVariant}
+          className="mb-4 mt-24 flex w-full cursor-pointer flex-col p-1"
+        >
+          <button
+            onClick={(e) => navigateToMobileLink(e, "/")}
+            className="flex w-full items-center justify-center space-x-4 text-left"
           >
-            <button
-              onClick={(e) => navigateToMobileLink(e, "/")}
-              className="flex w-full items-center justify-center space-x-4 text-left"
-            >
-              <div className="text-2xl font-semibold">Home</div>
-            </button>
-          </motion.div>
+            <div className="text-2xl font-semibold">Home</div>
+          </button>
+        </motion.div>
 
-          <MobileItemAccordian
-            navigateToMobileLink={navigateToMobileLink}
-            animationVariant={menuItemAnimationVariant}
-            triggerOpen={setRedevelopmentOpen}
-            open={redevelopmentOpen}
-            name="Redevelopment"
-          />
-          <MobileItemAccordian
-            navigateToMobileLink={navigateToMobileLink}
-            animationVariant={menuItemAnimationVariant}
-            triggerOpen={setConsultingOpen}
-            open={consultingOpen}
-            name="Consulting"
-          />
-          <MobileItemAccordian
-            navigateToMobileLink={navigateToMobileLink}
-            animationVariant={menuItemAnimationVariant}
-            triggerOpen={setRenewableEnergyOpen}
-            open={renewableEnergyOpen}
-            name="Renewable Energy"
-          />
-          <motion.div
-            variants={menuItemAnimationVariant}
-            className="mb-4 flex w-full cursor-pointer flex-col p-1"
+        <MobileItemAccordian
+          navigateToMobileLink={navigateToMobileLink}
+          animationVariant={menuItemAnimationVariant}
+          triggerOpen={setRedevelopmentOpen}
+          open={redevelopmentOpen}
+          name="Redevelopment"
+        />
+        <MobileItemAccordian
+          navigateToMobileLink={navigateToMobileLink}
+          animationVariant={menuItemAnimationVariant}
+          triggerOpen={setConsultingOpen}
+          open={consultingOpen}
+          name="Consulting"
+        />
+        <MobileItemAccordian
+          navigateToMobileLink={navigateToMobileLink}
+          animationVariant={menuItemAnimationVariant}
+          triggerOpen={setRenewableEnergyOpen}
+          open={renewableEnergyOpen}
+          name="Renewable Energy"
+        />
+        <motion.div
+          variants={menuItemAnimationVariant}
+          className="mb-4 flex w-full cursor-pointer flex-col p-1"
+        >
+          <button
+            onClick={(e) => navigateToMobileLink(e, "/about")}
+            className="flex w-full items-center justify-center space-x-4 text-left"
           >
-            <button
-              onClick={(e) => navigateToMobileLink(e, "/about")}
-              className="flex w-full items-center justify-center space-x-4 text-left"
-            >
-              <div className="text-2xl font-semibold">About</div>
-            </button>
-          </motion.div>
-          <motion.div
-            variants={menuItemAnimationVariant}
-            className="mb-4 flex w-full cursor-pointer flex-col p-1"
+            <div className="text-2xl font-semibold">About</div>
+          </button>
+        </motion.div>
+        <motion.div
+          variants={menuItemAnimationVariant}
+          className="mb-4 flex w-full cursor-pointer flex-col p-1"
+        >
+          <button
+            onClick={(e) => navigateToMobileLink(e, "/contact")}
+            className="flex w-full items-center justify-center space-x-4 text-left"
           >
-            <button
-              onClick={(e) => navigateToMobileLink(e, "/contact")}
-              className="flex w-full items-center justify-center space-x-4 text-left"
-            >
-              <div className="text-2xl font-semibold">Contact</div>
-            </button>
-          </motion.div>
-        </div>
+            <div className="text-2xl font-semibold">Contact</div>
+          </button>
+        </motion.div>
+        {/* </div> */}
       </motion.div>
     </div>
   );
