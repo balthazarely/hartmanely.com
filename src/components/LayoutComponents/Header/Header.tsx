@@ -160,23 +160,23 @@ function MobileNavigation() {
     };
   }, [router.events]);
 
-  useEffect(() => {
-    if (menuOpen) {
-      toggleLocked(true);
-    }
-    if (!menuOpen) {
-      toggleLocked(false);
-      setRedevelopmentOpen(false);
-      setRenewableEnergyOpen(false);
-      setConsultingOpen(false);
-    }
-  }, [menuOpen]);
+  // useEffect(() => {
+  //   if (menuOpen) {
+  //     toggleLocked(true);
+  //   }
+  //   if (!menuOpen) {
+  //     toggleLocked(false);
+  //     setRedevelopmentOpen(false);
+  //     setRenewableEnergyOpen(false);
+  //     setConsultingOpen(false);
+  //   }
+  // }, [menuOpen]);
 
-  useEffect(() => {
-    if (width > 768) {
-      setMenuOpen(false);
-    }
-  }, [width, menuOpen]);
+  // useEffect(() => {
+  //   if (width > 768) {
+  //     setMenuOpen(false);
+  //   }
+  // }, [width, menuOpen]);
 
   return (
     <div>
@@ -184,7 +184,7 @@ function MobileNavigation() {
         <Hamburger toggled={menuOpen} toggle={setMenuOpen} />
       </div>
       <motion.div
-        className={` fixed top-0 left-0 z-40 h-full   w-screen overflow-y-scroll  bg-white opacity-0  `}
+        className={` fixed top-0 left-0 z-40 h-full w-screen overflow-y-scroll  bg-white opacity-0  `}
         animate={menuOpen ? "open" : "closed"}
         variants={menuOpenAnimationVariant}
       >
