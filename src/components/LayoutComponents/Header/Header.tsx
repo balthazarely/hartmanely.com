@@ -1,6 +1,6 @@
 import { forwardRef, useEffect, useState } from "react";
 import Link from "next/link";
-import Hamburger from "hamburger-react";
+import { Squash as Hamburger } from "hamburger-react";
 import { motion } from "framer-motion";
 import * as NavigationMenu from "@radix-ui/react-navigation-menu";
 import classNames from "classnames";
@@ -70,7 +70,11 @@ const DesktopNavigation = () => {
                       );
                     })}
                   </ul>
-                  <Link href={`/categories/${item.title.toLowerCase()}`}>
+                  <Link
+                    href={`/categories/${item.title
+                      .toLowerCase()
+                      .replace(/\s/g, "-")}`}
+                  >
                     <div className="font-md flex items-center justify-start p-3 text-xs font-bold hover:bg-gray-100 ">
                       {item.title === "Redevelopment" && (
                         <HiOutlineBuildingLibrary className=" mr-1 text-xl text-cyan-600" />
@@ -139,7 +143,7 @@ function MobileNavigation() {
   const [redevelopmentOpen, setRedevelopmentOpen] = useState(false);
   const [renewableEnergyOpen, setRenewableEnergyOpen] = useState(false);
   const [consultingOpen, setConsultingOpen] = useState(false);
-  const { width, height } = useWindowSize();
+  const { width } = useWindowSize();
 
   function navigateToMobileLink(e: any, link: any) {
     e.stopPropagation();
@@ -175,7 +179,7 @@ function MobileNavigation() {
   }, [width, menuOpen]);
 
   return (
-    <div className="">
+    <div>
       <div className="relative z-50 block md:hidden">
         <Hamburger toggled={menuOpen} toggle={setMenuOpen} />
       </div>

@@ -7,8 +7,9 @@ export function HomeBlockMission() {
       <Container>
         <div className="mx-auto flex flex-col items-center justify-center ">
           <h2 className="text-center">
-            Hartman Ely Investments is a Development and Investment Company that
-            specializes in Sustainable Redevelopment and Renewable Energy.
+            Our passion is helping communities create environmentally
+            responsible buildings, infrastructure and other features development
+            that areis sustainable, transit oriented and energy independent.
           </h2>
         </div>
       </Container>

@@ -25,15 +25,12 @@ p {
 
 .NavigationMenuTrigger,
 .NavigationMenuLink {
-  
+
   padding: 8px 12px;
   outline: none;
   user-select: none;
-  // font-weight: 500;
   line-height: 1;
   border-radius: 4px;
-  // font-size: 15px;
-  // color: var(--violet11);
 }
 .NavigationMenuTrigger:focus,
 .NavigationMenuLink:focus {
