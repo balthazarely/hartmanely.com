@@ -39,15 +39,15 @@ export function HomeBlockThree() {
             body="Hartman Ely Investments is a Development and InvestmentHartman"
           />
           <ImageBlock
-            image="/images/hanger2/hanger-2-gallery-3.jpg"
-            heading="Renewabled Energy"
-            link="/categories/renewable-energy"
+            image="/images/innovage-headquarters/innovage-headquarters-hero.jpg"
+            heading="Consulting"
+            link="/categories/consulting"
             body="Hartman Ely Investments is a Development and InvestmentHartman"
           />
           <ImageBlock
-            image="/images/pancratia/pancratia-gallery-11.jpg"
-            heading="Consulting"
-            link="/categories/consulting"
+            image="/images/hanger2/hanger-2-gallery-3.jpg"
+            heading="Renewable Energy"
+            link="/categories/renewable-energy"
             body="Hartman Ely Investments is a Development and InvestmentHartman"
           />
         </div>

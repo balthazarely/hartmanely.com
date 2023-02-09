@@ -32,7 +32,7 @@ export default function CommunitySolar() {
     <div>
       <ProjectHero heroImage="/images/community-solar/community-solar-hero.jpg" />
       <ProjectDetails
-        title="Solar Array at Boulder Wastewater Treatment Facility"
+        title="Community Solar"
         location="Windsor CO, Taos NM, Putney VT"
         tagline=" Community Solar Developments"
         aboutText={aboutText}

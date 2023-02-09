@@ -1,6 +1,7 @@
 import { Container } from "@/components/LayoutComponents";
 import { projects } from "@/lib/projects";
 import clsx from "clsx";
+import Link from "next/link";
 import { useEffect, useState } from "react";
 import styles from "./ProjectGrid.module.scss";
 
@@ -8,21 +9,26 @@ interface ProjectProps {
   name: string;
   img: string;
   type: string;
+  link: string;
 }
 
-function ImageBlock({ img, name, type }: ProjectProps) {
+function ImageBlock({ img, name, type, link }: ProjectProps) {
   return (
     <div className="w-full text-center">
       <div className={clsx(styles.imageContainer, "group")}>
-        <div className="absolute top-0 left-0 z-50 h-full w-full bg-cyan-600 opacity-0 transition-all duration-500 group-hover:opacity-30"></div>
-        <img
-          className={clsx(styles.image, "group-hover:scale-110")}
-          src={img}
-        />
+        <Link href={link}>
+          <div className="absolute top-0 left-0 z-50 h-full w-full bg-cyan-600 opacity-0 transition-all duration-500 group-hover:opacity-30"></div>
+          <img
+            className={clsx(styles.image, "group-hover:scale-110")}
+            src={img}
+          />
+        </Link>
       </div>
-      <h4 className=" mt-2 cursor-pointer text-left text-base leading-tight tracking-wide">
-        {name}
-      </h4>
+      <Link href={link}>
+        <h4 className=" mt-2 cursor-pointer text-left text-base leading-tight tracking-wide">
+          {name}
+        </h4>
+      </Link>
       <p className="xsmall mt-1 text-left capitalize ">{type}</p>
     </div>
   );
@@ -58,8 +64,6 @@ export function ProjectGrid({ category }: { category: string }) {
     );
   }
 
-  console.log(projectData.length);
-
   return (
     <Container noPadding={true}>
       <div className={styles.ProjectGridContainer}>
@@ -80,6 +84,7 @@ export function ProjectGrid({ category }: { category: string }) {
               name={project.name}
               img={project.img}
               type={project.type}
+              link={project.link}
             />
           ))}
         </div>

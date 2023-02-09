@@ -79,11 +79,11 @@ const DesktopNavigation = () => {
                       {item.title === "Redevelopment" && (
                         <HiOutlineBuildingLibrary className=" mr-1 text-xl text-cyan-600" />
                       )}
-                      {item.title === "Renewable Energy" && (
-                        <HiOutlineSun className=" mr-1 text-xl text-cyan-600" />
-                      )}
                       {item.title === "Consulting" && (
                         <FaHandsHelping className=" mr-1 text-xl text-cyan-600" />
+                      )}
+                      {item.title === "Renewable Energy" && (
+                        <HiOutlineSun className=" mr-1 text-xl text-cyan-600" />
                       )}
                       See All {item.title} projects
                     </div>
@@ -211,16 +211,16 @@ function MobileNavigation() {
           <MobileItemAccordian
             navigateToMobileLink={navigateToMobileLink}
             animationVariant={menuItemAnimationVariant}
-            triggerOpen={setRenewableEnergyOpen}
-            open={renewableEnergyOpen}
-            name="Renewable Energy"
+            triggerOpen={setConsultingOpen}
+            open={consultingOpen}
+            name="Consulting"
           />
           <MobileItemAccordian
             navigateToMobileLink={navigateToMobileLink}
             animationVariant={menuItemAnimationVariant}
-            triggerOpen={setConsultingOpen}
-            open={consultingOpen}
-            name="Consulting"
+            triggerOpen={setRenewableEnergyOpen}
+            open={renewableEnergyOpen}
+            name="Renewable Energy"
           />
           <motion.div
             variants={menuItemAnimationVariant}

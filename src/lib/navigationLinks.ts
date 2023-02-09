@@ -44,22 +44,6 @@ export const navigationLinks = [
     ],
   },
   {
-    title: "Renewable Energy",
-    icon: HiOutlineBuildingLibrary,
-    submenu: [
-      {
-        name: "Boulder Wastewater Treatment Facility",
-        link: "/renewable-energy/boulder-wastewater",
-        location: "Boulder, CO",
-      },
-      {
-        name: "Community Solar",
-        link: "/renewable-energy/community-solar",
-        location: "Colorado",
-      },
-    ],
-  },
-  {
     title: "Consulting",
     icon: HiOutlineBuildingLibrary,
     submenu: [
@@ -87,6 +71,22 @@ export const navigationLinks = [
         name: "The Bank Lofts",
         link: "/consulting/bank-lofts",
         location: "Denver, CO",
+      },
+    ],
+  },
+  {
+    title: "Renewable Energy",
+    icon: HiOutlineBuildingLibrary,
+    submenu: [
+      {
+        name: "Boulder Wastewater Treatment Facility",
+        link: "/renewable-energy/boulder-wastewater",
+        location: "Boulder, CO",
+      },
+      {
+        name: "Community Solar",
+        link: "/renewable-energy/community-solar",
+        location: "Colorado",
       },
     ],
   },
