@@ -179,7 +179,7 @@ function MobileNavigation() {
   }, [width, menuOpen]);
 
   return (
-    <div>
+    <>
       <div className="relative z-50 block md:hidden">
         <Hamburger toggled={menuOpen} toggle={setMenuOpen} />
       </div>
@@ -246,7 +246,7 @@ function MobileNavigation() {
         </motion.div>
         {/* </div> */}
       </motion.div>
-    </div>
+    </>
   );
 }
 
