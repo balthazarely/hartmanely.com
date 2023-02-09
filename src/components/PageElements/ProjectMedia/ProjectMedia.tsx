@@ -19,15 +19,17 @@ export function ProjectMedia({ media }: ProjectDetailsProps) {
         <BiMoviePlay className="mr-1 text-xl" />
         <h3>Media</h3>
       </div>
-      {media?.map((media: ProjectAwardsProps) => {
+      {media?.map((media: ProjectAwardsProps, idx: number) => {
         if (media.link) {
           return (
-            <Link href={media.link}>
+            <Link href={media.link} key={idx}>
               <p className="small font-bold italic">{media.mediaName}</p>
             </Link>
           );
         } else {
-          <p className="small font-bold italic">{media.mediaName}</p>;
+          <p key={idx} className="small font-bold italic">
+            {media.mediaName}
+          </p>;
         }
       })}
     </Container>

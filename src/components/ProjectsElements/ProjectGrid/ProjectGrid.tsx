@@ -131,7 +131,7 @@ export function ProjectGrid() {
           <SelectSectionButton sectionName="consulting" />
         </div>
         <div className="grid grid-cols-3 gap-4">
-          {projectData?.map((project: any) => (
+          {projectData?.map((project: ProjectProps) => (
             <ImageBlock
               key={project.name}
               name={project.name}
