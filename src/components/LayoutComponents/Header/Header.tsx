@@ -160,23 +160,23 @@ function MobileNavigation() {
     };
   }, [router.events]);
 
-  // useEffect(() => {
-  //   if (menuOpen) {
-  //     toggleLocked(true);
-  //   }
-  //   if (!menuOpen) {
-  //     toggleLocked(false);
-  //     setRedevelopmentOpen(false);
-  //     setRenewableEnergyOpen(false);
-  //     setConsultingOpen(false);
-  //   }
-  // }, [menuOpen]);
+  useEffect(() => {
+    // if (menuOpen) {
+    //   toggleLocked(true);
+    // }
+    if (!menuOpen) {
+      // toggleLocked(false);
+      setRedevelopmentOpen(false);
+      setRenewableEnergyOpen(false);
+      setConsultingOpen(false);
+    }
+  }, [menuOpen]);
 
-  // useEffect(() => {
-  //   if (width > 768) {
-  //     setMenuOpen(false);
-  //   }
-  // }, [width, menuOpen]);
+  useEffect(() => {
+    if (width > 768) {
+      setMenuOpen(false);
+    }
+  }, [width, menuOpen]);
 
   return (
     <div>
@@ -188,7 +188,7 @@ function MobileNavigation() {
         animate={menuOpen ? "open" : "closed"}
         variants={menuOpenAnimationVariant}
       >
-        <div className="mt-24 border-2 border-red-500 ">
+        <div className="mt-24 ">
           <motion.div
             variants={menuItemAnimationVariant}
             className="mb-4 flex w-full cursor-pointer flex-col p-1"
