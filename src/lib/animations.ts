@@ -1,8 +1,8 @@
-export const mobileNavWrapperAnimation = {
-  initial: { y: "15px", opacity: 0 },
-  animate: {
-    y: 0,
+export const menuOpenAnimationVariant = {
+  open: {
     opacity: 1,
+    // x: "0",
+    display: "block",
     transition: {
       staggerChildren: 0.05,
       ease: "easeInOut",
@@ -10,34 +10,32 @@ export const mobileNavWrapperAnimation = {
       stiffness: 100,
     },
   },
-};
-
-export const mobileLinkAccordianOpen = {
-  height: "auto",
-  opacity: 1,
-  display: "block",
-  transition: {
-    height: {
-      duration: 0,
-    },
-    opacity: {
-      duration: 0,
-    },
-  },
-};
-
-export const mobileLinkAccordianClosed = {
-  height: 0,
-  opacity: 0,
-  transition: {
-    height: {
-      duration: 0,
-    },
-    opacity: {
-      duration: 0,
-    },
-  },
-  transitionEnd: {
+  closed: {
+    opacity: 0,
     display: "none",
+    //  x: "100%"
+  },
+};
+
+export const menuItemAnimationVariant = {
+  open: {
+    y: 0,
+    opacity: 1,
+    transition: {
+      staggerChildren: 1,
+      ease: "easeInOut",
+      type: "spring",
+      stiffness: 100,
+    },
+  },
+  closed: {
+    y: 50,
+    opacity: 0,
+    transition: {
+      staggerChildren: 1,
+      ease: "easeInOut",
+      type: "spring",
+      stiffness: 100,
+    },
   },
 };
