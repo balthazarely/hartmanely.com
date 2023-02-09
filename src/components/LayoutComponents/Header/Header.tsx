@@ -1,7 +1,5 @@
-import { forwardRef, Fragment, useEffect, useRef, useState } from "react";
+import { forwardRef, useEffect, useState } from "react";
 import Link from "next/link";
-import { Popover, Transition } from "@headlessui/react";
-import { Container } from "@/components/LayoutComponents";
 import Hamburger from "hamburger-react";
 import { motion } from "framer-motion";
 import * as NavigationMenu from "@radix-ui/react-navigation-menu";
@@ -9,23 +7,22 @@ import classNames from "classnames";
 import { CaretDownIcon } from "@radix-ui/react-icons";
 import useScrollPosition from "../../../hooks/useScrollPosition";
 import { navigationLinks } from "@/lib/navigationLinks";
-import {
-  mobileLinkAccordianClosed,
-  mobileLinkAccordianOpen,
-  mobileNavWrapperAnimation,
-} from "@/lib/animations";
-import { useLocation, useLockBodyScroll, useToggle } from "react-use";
+import { useWindowSize } from "react-use";
+import { useLockBodyScroll, useToggle } from "react-use";
 import { useRouter } from "next/router";
 import { HiOutlineBuildingLibrary, HiOutlineSun } from "react-icons/hi2";
 import { FaChevronDown, FaHandsHelping } from "react-icons/fa";
-import { log } from "console";
+import {
+  menuItemAnimationVariant,
+  menuOpenAnimationVariant,
+} from "@/lib/animations";
 
 export function Header() {
   const scrollPosition = useScrollPosition();
   return (
     <>
       <header
-        className={` fixed flex h-24 w-full items-center bg-gray-100 transition-height duration-200 md:h-28 ${
+        className={`fixed flex h-24 w-full items-center bg-gray-100 transition-height duration-200 md:h-28 ${
           scrollPosition < 200 ? "h-20 md:h-28" : "h-20 md:h-20"
         }`}
       >
@@ -36,7 +33,7 @@ export function Header() {
                 <img className="w-48" src="/hei-logo.svg" alt="hei-logo" />
               </Link>
             </div>
-            <div className="flex items-center gap-x-5 md:gap-x-8">
+            <div className="flex items-center ">
               <DesktopNavigation />
               <MobileNavigation />
             </div>
@@ -136,152 +133,157 @@ ListItem.displayName = "MyComponentTest";
 
 function MobileNavigation() {
   const router = useRouter();
-  const buttonRef = useRef<HTMLButtonElement | any>(null);
-
   const [locked, toggleLocked] = useToggle(false);
   useLockBodyScroll(locked);
+  const [menuOpen, setMenuOpen] = useState(false);
+  const [redevelopmentOpen, setRedevelopmentOpen] = useState(false);
+  const [renewableEnergyOpen, setRenewableEnergyOpen] = useState(false);
+  const [consultingOpen, setConsultingOpen] = useState(false);
+  const { width, height } = useWindowSize();
 
-  function closeMobileNav() {
-    console.log(buttonRef);
-    buttonRef.current?.click();
+  function navigateToMobileLink(e: any, link: any) {
+    e.stopPropagation();
+    router.push(link);
   }
 
-  // const {pathname} = useLocation();
-  // useEffect(() => {
-  //   setOpen(false); // Close the navigation panel
-  // }, [ pathname ]);
+  useEffect(() => {
+    const handleRouteChange = () => {
+      setMenuOpen(false);
+    };
+    router.events.on("routeChangeComplete", handleRouteChange);
+    return () => {
+      router.events.off("routeChangeComplete", handleRouteChange);
+    };
+  }, [router.events]);
 
   useEffect(() => {
-    toggleLocked(false);
-  }, [router.asPath]);
+    if (menuOpen) {
+      toggleLocked(true);
+    }
+    if (!menuOpen) {
+      toggleLocked(false);
+      setRedevelopmentOpen(false);
+      setRenewableEnergyOpen(false);
+      setConsultingOpen(false);
+    }
+  }, [menuOpen]);
 
-  // useEffect(() => {
-  //   console.log(buttonRef.current.dataset.headlessuiState);
-  // }, [locked]);
+  useEffect(() => {
+    if (width > 768) {
+      setMenuOpen(false);
+    }
+  }, [width, menuOpen]);
 
   return (
-    <Popover className="block  md:hidden">
-      <Popover.Button
-        className="relative z-50 flex h-8 w-8 items-center justify-center outline-0  [&:not(:focus-visible)]:focus:outline-none"
-        aria-label="Toggle Navigation"
-        ref={buttonRef}
+    <div className="">
+      <div className="relative z-50 block md:hidden">
+        <Hamburger toggled={menuOpen} toggle={setMenuOpen} />
+      </div>
+      <motion.div
+        className={` fixed top-0 left-0 z-40   h-screen w-screen overflow-y-scroll bg-white opacity-0  `}
+        animate={menuOpen ? "open" : "closed"}
+        variants={menuOpenAnimationVariant}
       >
-        {({ open }) => (
-          <div>
-            <Hamburger toggled={open} onToggle={() => toggleLocked()} />
-          </div>
-        )}
-      </Popover.Button>
-      <Transition.Root>
-        <Transition.Child
-          as={Fragment}
-          enter="duration-150 ease-out"
-          enterFrom="opacity-0"
-          enterTo="opacity-100"
-          leave="duration-100 ease-in"
-          leaveFrom="opacity-100"
-          leaveTo="opacity-0"
-        >
-          <Popover.Panel
-            as="div"
-            className="fixed top-0 left-0 z-20 flex h-full w-full origin-top flex-col  items-center justify-start  bg-white p-4 pt-24 text-lg tracking-tight text-slate-900  shadow-xl ring-1 ring-slate-900/5"
+        <div className="mt-24 ">
+          <motion.div
+            variants={menuItemAnimationVariant}
+            className="mb-4 flex w-full cursor-pointer flex-col p-1"
           >
-            <motion.div
-              variants={mobileNavWrapperAnimation}
-              initial="initial"
-              animate="animate"
-              className="flex w-full flex-col gap-4 overflow-y-scroll "
+            <button
+              onClick={(e) => navigateToMobileLink(e, "/")}
+              className="flex w-full items-center justify-center space-x-4 text-left"
             >
-              <MobileNavItem
-                title="Home"
-                submenu=""
-                link="/"
-                closeMobileNav={closeMobileNav}
-              />
-              {navigationLinks.map((item: any, idx: number) => {
-                return (
-                  <MobileNavItem
-                    key={idx}
-                    title={item.title}
-                    submenu={item.submenu}
-                    link={item.link}
-                    closeMobileNav={closeMobileNav}
-                  />
-                );
-              })}
-            </motion.div>
-          </Popover.Panel>
-        </Transition.Child>
-      </Transition.Root>
-    </Popover>
+              <div className="text-2xl font-semibold">Home</div>
+            </button>
+          </motion.div>
+
+          <MobileItemAccordian
+            navigateToMobileLink={navigateToMobileLink}
+            animationVariant={menuItemAnimationVariant}
+            triggerOpen={setRedevelopmentOpen}
+            open={redevelopmentOpen}
+            name="Redevelopment"
+          />
+          <MobileItemAccordian
+            navigateToMobileLink={navigateToMobileLink}
+            animationVariant={menuItemAnimationVariant}
+            triggerOpen={setRenewableEnergyOpen}
+            open={renewableEnergyOpen}
+            name="Renewable Energy"
+          />
+          <MobileItemAccordian
+            navigateToMobileLink={navigateToMobileLink}
+            animationVariant={menuItemAnimationVariant}
+            triggerOpen={setConsultingOpen}
+            open={consultingOpen}
+            name="Consulting"
+          />
+          <motion.div
+            variants={menuItemAnimationVariant}
+            className="mb-4 flex w-full cursor-pointer flex-col p-1"
+          >
+            <button
+              onClick={(e) => navigateToMobileLink(e, "/about")}
+              className="flex w-full items-center justify-center space-x-4 text-left"
+            >
+              <div className="text-2xl font-semibold">About</div>
+            </button>
+          </motion.div>
+          <motion.div
+            variants={menuItemAnimationVariant}
+            className="mb-4 flex w-full cursor-pointer flex-col p-1"
+          >
+            <button
+              onClick={(e) => navigateToMobileLink(e, "/contact")}
+              className="flex w-full items-center justify-center space-x-4 text-left"
+            >
+              <div className="text-2xl font-semibold">Contact</div>
+            </button>
+          </motion.div>
+        </div>
+      </motion.div>
+    </div>
   );
 }
 
-const MobileNavItem = ({ title, submenu, link, closeMobileNav }: any) => {
-  const [isOpen, setIsOpen] = useState(false);
-
+function MobileItemAccordian({
+  animationVariant,
+  triggerOpen,
+  open,
+  name,
+  navigateToMobileLink,
+}: any) {
   return (
-    <>
-      {link ? (
-        <motion.div
-          variants={mobileNavWrapperAnimation}
-          className="flex w-full cursor-pointer flex-col  p-1"
-        >
-          <Link href={link}>
-            <button
-              onClick={() => closeMobileNav()}
-              aria-controls={title}
-              aria-expanded={isOpen}
-              className="flex w-full items-center justify-center space-x-4 text-left"
-            >
-              <div className="text-2xl font-semibold">{title}</div>
-            </button>
-          </Link>
-        </motion.div>
-      ) : (
-        <motion.div
-          variants={mobileNavWrapperAnimation}
-          className="flex w-full cursor-pointer flex-col  p-1"
-          onClick={() => setIsOpen((prev) => !prev)}
-        >
-          <button
-            aria-controls={title}
-            aria-expanded={isOpen}
-            className="flex w-full items-center justify-center  "
-          >
-            <div className="text-2xl font-semibold">{title}</div>
-            <div className="text-2xl font-semibold">
-              <FaChevronDown
-                className={`ml-1 text-base text-cyan-600 ${
-                  isOpen ? "rotate-180" : "rotate-0"
-                }`}
-              />
-            </div>
-          </button>
-          <motion.div
-            id={title}
-            initial={false}
-            animate={
-              isOpen ? mobileLinkAccordianOpen : mobileLinkAccordianClosed
-            }
-            className="pt-2 font-light"
-          >
-            {submenu?.map((item: any, idx: number) => {
-              return (
-                <Link
-                  href={item.link}
-                  key={idx}
-                  onClick={() => closeMobileNav()}
-                >
-                  <div key={item.name} className="mb-2 text-center">
-                    {item.name}
-                  </div>
-                </Link>
-              );
-            })}
-          </motion.div>
-        </motion.div>
-      )}
-    </>
+    <motion.div
+      variants={animationVariant}
+      className="mb-4 flex w-full cursor-pointer  flex-col p-1"
+      onClick={() => triggerOpen(!open)}
+    >
+      <button className="flex w-full items-center justify-center  ">
+        <div className="text-2xl font-semibold">{name}</div>
+        <div className="text-2xl font-semibold">
+          <FaChevronDown
+            className={`ml-1 text-base text-cyan-600 ${
+              open ? "rotate-180" : "rotate-0"
+            }`}
+          />
+        </div>
+      </button>
+      <div className={`mt-4 flex flex-col ${open ? "visible" : "hidden"}`}>
+        {navigationLinks
+          .filter((obj: any) => obj.title === name)[0]
+          .submenu?.map((item: any) => {
+            return (
+              <button
+                className="mb-2 text-center"
+                key={item.name}
+                onClick={(e) => navigateToMobileLink(e, item.link)}
+              >
+                {item.name}
+              </button>
+            );
+          })}
+      </div>
+    </motion.div>
   );
-};
+}
