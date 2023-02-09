@@ -44,17 +44,17 @@ export const navigationLinks = [
     ],
   },
   {
-    title: "Renewables",
+    title: "Renewable Energy",
     icon: HiOutlineBuildingLibrary,
     submenu: [
       {
         name: "Boulder Wastewater Treatment Facility",
-        link: "/renewables/boulder-wastewater",
+        link: "/renewable-energy/boulder-wastewater",
         location: "Boulder, CO",
       },
       {
         name: "Community Solar",
-        link: "/renewables/community-solar",
+        link: "/renewable-energy/community-solar",
         location: "Colorado",
       },
     ],
@@ -93,9 +93,5 @@ export const navigationLinks = [
   {
     title: "About",
     link: "/about",
-  },
-  {
-    title: "Contact",
-    link: "/contact",
   },
 ];

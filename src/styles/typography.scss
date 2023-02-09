@@ -1,7 +1,3 @@
-// <h2 className="text-3xl font-bold uppercase tracking-wider text-white md:text-4xl lg:text-5xl">
-
-
-
 h1 {
     @apply text-3xl font-bold md:text-4xl 
 }
@@ -28,4 +24,12 @@ p.small {
 
 p.xsmall {
     @apply text-xs leading-5
+}
+
+.link-small {
+    @apply text-sm font-bold leading-6 hover:text-cyan-600
+}
+
+.button-regular {
+    
 }

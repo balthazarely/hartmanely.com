@@ -1,6 +1,5 @@
 import { Container } from "@/components/LayoutComponents";
 import Link from "next/link";
-import React from "react";
 import { FaAward } from "react-icons/fa";
 
 interface ProjectDetailsProps {
@@ -23,12 +22,12 @@ export function ProjectAwards({ awards }: ProjectDetailsProps) {
         if (award.link) {
           return (
             <Link key={idx} href={award.link}>
-              <p className="small font-bold italic">{award.awardName}</p>
+              <p className="link-small">{award.awardName}</p>
             </Link>
           );
         } else {
           return (
-            <p key={idx} className="small font-base italic">
+            <p key={idx} className="small font-base ">
               {award.awardName}
             </p>
           );

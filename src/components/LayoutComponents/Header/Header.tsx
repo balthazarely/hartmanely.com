@@ -14,21 +14,22 @@ import {
   mobileLinkAccordianOpen,
   mobileNavWrapperAnimation,
 } from "@/lib/animations";
-import { useLockBodyScroll, useToggle } from "react-use";
+import { useLocation, useLockBodyScroll, useToggle } from "react-use";
 import { useRouter } from "next/router";
 import { HiOutlineBuildingLibrary, HiOutlineSun } from "react-icons/hi2";
 import { FaChevronDown, FaHandsHelping } from "react-icons/fa";
+import { log } from "console";
 
 export function Header() {
   const scrollPosition = useScrollPosition();
   return (
     <>
       <header
-        className={`fixed flex h-24 w-full items-center bg-gray-100 transition-height duration-200 md:h-28 ${
+        className={` fixed flex h-24 w-full items-center bg-gray-100 transition-height duration-200 md:h-28 ${
           scrollPosition < 200 ? "h-20 md:h-28" : "h-20 md:h-20"
         }`}
       >
-        <Container>
+        <div className="mx-auto w-full max-w-5xl px-4 sm:px-6 lg:px-8">
           <nav className="relative z-50 flex w-full justify-between  ">
             <div className="flex items-center md:gap-x-12">
               <Link href="/" aria-label="Home">
@@ -40,7 +41,7 @@ export function Header() {
               <MobileNavigation />
             </div>
           </nav>
-        </Container>
+        </div>
       </header>
     </>
   );
@@ -77,7 +78,7 @@ const DesktopNavigation = () => {
                       {item.title === "Redevelopment" && (
                         <HiOutlineBuildingLibrary className=" mr-1 text-xl text-cyan-600" />
                       )}
-                      {item.title === "Renewables" && (
+                      {item.title === "Renewable Energy" && (
                         <HiOutlineSun className=" mr-1 text-xl text-cyan-600" />
                       )}
                       {item.title === "Consulting" && (
@@ -141,12 +142,22 @@ function MobileNavigation() {
   useLockBodyScroll(locked);
 
   function closeMobileNav() {
+    console.log(buttonRef);
     buttonRef.current?.click();
   }
+
+  // const {pathname} = useLocation();
+  // useEffect(() => {
+  //   setOpen(false); // Close the navigation panel
+  // }, [ pathname ]);
 
   useEffect(() => {
     toggleLocked(false);
   }, [router.asPath]);
+
+  // useEffect(() => {
+  //   console.log(buttonRef.current.dataset.headlessuiState);
+  // }, [locked]);
 
   return (
     <Popover className="block  md:hidden">
@@ -181,6 +192,12 @@ function MobileNavigation() {
               animate="animate"
               className="flex w-full flex-col gap-4 overflow-y-scroll "
             >
+              <MobileNavItem
+                title="Home"
+                submenu=""
+                link="/"
+                closeMobileNav={closeMobileNav}
+              />
               {navigationLinks.map((item: any, idx: number) => {
                 return (
                   <MobileNavItem

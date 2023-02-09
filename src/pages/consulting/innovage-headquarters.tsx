@@ -2,9 +2,9 @@ import {
   ProjectHero,
   ProjectDetails,
   ProjectImageGallery,
-} from "@/components/PageElements";
-import { ProjectAwards } from "@/components/PageElements/ProjectAwards";
-import { ProjectMedia } from "@/components/PageElements/ProjectMedia";
+} from "@/components/SingleProjectElements";
+import { ProjectAwards } from "@/components/SingleProjectElements/ProjectAwards";
+import { ProjectMedia } from "@/components/SingleProjectElements/ProjectMedia";
 import React from "react";
 
 export default function InnvoageHeadquarters() {

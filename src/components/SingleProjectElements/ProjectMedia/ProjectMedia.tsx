@@ -1,6 +1,5 @@
 import { Container } from "@/components/LayoutComponents";
 import Link from "next/link";
-import React from "react";
 import { BiMoviePlay } from "react-icons/bi";
 
 interface ProjectDetailsProps {
@@ -23,11 +22,11 @@ export function ProjectMedia({ media }: ProjectDetailsProps) {
         if (media.link) {
           return (
             <Link href={media.link} key={idx}>
-              <p className="small font-bold italic">{media.mediaName}</p>
+              <p className="link-small">{media.mediaName}</p>
             </Link>
           );
         } else {
-          <p key={idx} className="small font-bold italic">
+          <p key={idx} className="small font-bold ">
             {media.mediaName}
           </p>;
         }

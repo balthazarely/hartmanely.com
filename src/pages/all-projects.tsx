@@ -4,8 +4,11 @@ import { ProjectGrid, ProjectHero } from "@/components/ProjectsElements";
 export default function AllProjects() {
   return (
     <>
-      <ProjectHero />
-      <ProjectGrid />
+      <ProjectHero
+        heading="Our Work"
+        heroImage="/images/fruitdale/fruitdale-hero.jpg"
+      />
+      <ProjectGrid category="all" />
       <Contact />
     </>
   );
