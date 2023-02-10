@@ -1,15 +1,9 @@
 .heroLargeContainer {
+    @apply contrast-125 relative flex items-center justify-center overflow-hidden;
     height: 400px;
     @media only screen and (min-width: 768px) {
         height: 600px;
       }
-    @apply  contrast-125 relative flex items-center justify-center overflow-hidden;
-    .HeroImage {
-        object-fit: cover;
-        flex-shrink: 0;
-        min-width: 100%;
-        min-height: 100%
-    }
     .heroTitleWrapper {
        @apply w-full absolute text-center  text-white  left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2
     }

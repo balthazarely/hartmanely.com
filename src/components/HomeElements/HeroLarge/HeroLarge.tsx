@@ -1,13 +1,14 @@
 import styles from "./HeroLarge.module.scss";
 import { motion } from "framer-motion";
 import Link from "next/link";
+import Image from "next/image";
 
 const container = {
   hidden: { opacity: 0 },
   show: {
     opacity: 1,
     transition: {
-      staggerChildren: 0.2,
+      staggerChildren: 0.1,
       ease: "easeInOut",
       duration: 1,
       delayChildren: 0.5,
@@ -38,13 +39,20 @@ export function HeroLarge() {
   return (
     <div>
       <div className={styles.heroLargeContainer}>
-        <motion.img
+        <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ ease: "easeOut", duration: 0.5 }}
-          className={styles.HeroImage}
-          src="images/fruitdale/fruitdale-hero.jpg"
-        />
+          className="min-h-full min-w-full"
+        >
+          <Image
+            fill
+            className=" object-cover"
+            src="/images/fruitdale/fruitdale-hero.jpg"
+            alt="hartman ely investments hero iamge"
+          />
+        </motion.div>
+
         <motion.div variants={container} initial="hidden" animate="show">
           <div className="absolute top-0 left-0 h-full w-full  bg-sky-900 opacity-40 "></div>
         </motion.div>
@@ -54,6 +62,11 @@ export function HeroLarge() {
           initial="hidden"
           animate="show"
         >
+          <motion.div variants={item}>
+            <h5 className="mb-2 uppercase tracking-widest text-white">
+              Hartman Ely Investments
+            </h5>
+          </motion.div>
           <motion.div variants={item}>
             <h1 className="uppercase tracking-wider text-white">
               Creating Sustainable Communities

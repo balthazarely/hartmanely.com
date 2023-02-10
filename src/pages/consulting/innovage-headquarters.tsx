@@ -54,7 +54,10 @@ export default function InnvoageHeadquarters() {
 
   return (
     <div>
-      <ProjectHero heroImage="/images/innovage-headquarters/innovage-headquarters-hero.jpg" />
+      <ProjectHero
+        heroImage="/images/innovage-headquarters/innovage-headquarters-hero.jpg"
+        alt="the boston lofts hero image"
+      />
       <ProjectDetails
         title="Innovage Headquarters"
         location="Denver, CO"

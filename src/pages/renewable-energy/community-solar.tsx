@@ -30,7 +30,10 @@ export default function CommunitySolar() {
 
   return (
     <div>
-      <ProjectHero heroImage="/images/community-solar/community-solar-hero.jpg" />
+      <ProjectHero
+        alt="community solar hero image"
+        heroImage="/images/community-solar/community-solar-hero.jpg"
+      />
       <ProjectDetails
         title="Community Solar"
         location="Windsor CO, Taos NM, Putney VT"

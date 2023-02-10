@@ -5,13 +5,9 @@
     }
     .imageContainer {
         height: 180px;
-        @apply cursor-pointer relative flex items-center justify-center overflow-hidden;
+        @apply  cursor-pointer relative flex items-center justify-center overflow-hidden;
         .image {
-            object-fit: cover;
-            flex-shrink: 0;
-            min-width: 100%;
-            min-height: 100%;
-            @apply  transition-all duration-500;
+            @apply transition-all duration-500 flex-shrink-0 object-cover min-w-full min-h-full ;
         }
     }
 }

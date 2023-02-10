@@ -52,7 +52,10 @@ export default function Hanger2Lowry() {
 
   return (
     <div>
-      <ProjectHero heroImage="/images/hanger2/hanger-2-hero.jpeg" />
+      <ProjectHero
+        alt="hanger 2 hero image"
+        heroImage="/images/hanger2/hanger-2-hero.jpeg"
+      />
       <ProjectDetails
         title="Hangar 2 Lowry"
         location="Denver, CO"

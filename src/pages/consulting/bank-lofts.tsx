@@ -9,6 +9,7 @@ export default function TheBankLofts() {
   const photos = [
     {
       src: "/images/the-bank-lofts/the-bank-lofts-gallery-3.jpg",
+      alt: "the bank lofts gallery image 1",
       width: 400,
       height: 300,
       title: "View from 16th Street Mall",
@@ -16,6 +17,7 @@ export default function TheBankLofts() {
     },
     {
       src: "/images/the-bank-lofts/the-bank-lofts-gallery-4.jpeg",
+      alt: "the bank lofts gallery image 2",
       width: 300,
       height: 217,
       title: "View from 16th Street Mall",
@@ -23,6 +25,7 @@ export default function TheBankLofts() {
     },
     {
       src: "/images/the-bank-lofts/the-bank-lofts-gallery-1.jpeg",
+      alt: "the bank lofts gallery image 3",
       width: 400,
       height: 300,
       title: "View from 16th Street Mall",
@@ -37,7 +40,10 @@ export default function TheBankLofts() {
 
   return (
     <div>
-      <ProjectHero heroImage="/images/the-bank-lofts/the-bank-lofts-hero.jpg" />
+      <ProjectHero
+        heroImage="/images/the-bank-lofts/the-bank-lofts-hero.jpg"
+        alt="the bank lofts hero image"
+      />
       <ProjectDetails
         title="The Bank Lofts "
         location="Denver, CO"

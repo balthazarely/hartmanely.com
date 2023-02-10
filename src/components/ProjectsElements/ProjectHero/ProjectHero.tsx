@@ -1,6 +1,8 @@
 import styles from "./ProjectHero.module.scss";
 import { motion } from "framer-motion";
 import Link from "next/link";
+import Image from "next/image";
+import clsx from "clsx";
 
 export function ProjectHero({
   heroImage,
@@ -13,15 +15,18 @@ export function ProjectHero({
     <div>
       <div className={styles.heroLargeContainer}>
         <img className={styles.HeroImage} src={heroImage} />
+        <Image
+          className={clsx("object-cover", styles.HeroImage)}
+          src={heroImage}
+          alt={heading}
+          fill
+        />
+
         <div className="absolute top-0 left-0 h-full w-full  bg-sky-900 opacity-40 "></div>
         <div className={styles.heroTitleWrapper}>
-          <motion.div
-          // initial={{ opacity: 0, y: "20px" }}
-          // animate={{ opacity: 1, y: "0px" }}
-          // transition={{ ease: "easeOut", duration: 0.5 }}
-          >
+          <div>
             <h1 className="uppercase tracking-wider text-white">{heading}</h1>
-          </motion.div>
+          </div>
         </div>
       </div>
     </div>

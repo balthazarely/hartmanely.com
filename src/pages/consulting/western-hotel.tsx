@@ -21,7 +21,10 @@ export default function WesternHotel() {
 
   return (
     <div>
-      <ProjectHero heroImage="/images/western-hotel/western-hotel-hero.jpg" />
+      <ProjectHero
+        heroImage="/images/western-hotel/western-hotel-hero.jpg"
+        alt="the western hotel hero image"
+      />
       <ProjectDetails
         title="Western Hotel"
         location="Ouray, CO"

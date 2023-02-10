@@ -118,7 +118,10 @@ export default function EiberVillage() {
 
   return (
     <div>
-      <ProjectHero heroImage="/images/eiber-village/eiber-village-hero.jpg" />
+      <ProjectHero
+        heroImage="/images/eiber-village/eiber-village-hero.jpg"
+        alt="eiber village hero image"
+      />
       <ProjectDetails
         title="Eiber Village at Garrison Station"
         location="Lakewood, CO"

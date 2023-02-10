@@ -23,7 +23,10 @@ export default function BostonLofts() {
 
   return (
     <div>
-      <ProjectHero heroImage="/images/boston-lofts/boston-lofts-hero.jpg" />
+      <ProjectHero
+        heroImage="/images/boston-lofts/boston-lofts-hero.jpg"
+        alt="the boston lofts hero image"
+      />
       <ProjectDetails
         title="Bostom Lofts "
         location="Denver, CO"

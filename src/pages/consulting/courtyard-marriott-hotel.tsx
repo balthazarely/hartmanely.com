@@ -37,7 +37,10 @@ export default function CourtyardMarriottHotel() {
 
   return (
     <div>
-      <ProjectHero heroImage="/images/courtyard-by-marriott-hotel/courtyard-by-marriott-hotel-hero.jpg" />
+      <ProjectHero
+        heroImage="/images/courtyard-by-marriott-hotel/courtyard-by-marriott-hotel-hero.jpg"
+        alt="the courtyard at marriott hero image"
+      />
       <ProjectDetails
         title="Courtyard by Marriott Hotel "
         location="Denver, CO"

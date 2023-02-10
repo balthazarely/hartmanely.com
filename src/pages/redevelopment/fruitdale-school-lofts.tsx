@@ -63,7 +63,10 @@ export default function Fruitdale() {
 
   return (
     <div>
-      <ProjectHero heroImage="/images/fruitdale/fruitdale-hero.jpg" />
+      <ProjectHero
+        heroImage="/images/fruitdale/fruitdale-hero.jpg"
+        alt="fruitdale school lofts hero image"
+      />
       <ProjectDetails
         title="Fruitdale School Lofts"
         location="Denver, CO"

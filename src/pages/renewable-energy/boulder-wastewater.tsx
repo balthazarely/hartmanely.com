@@ -29,7 +29,10 @@ export default function BoulderWastewaterTreamtmentPlant() {
 
   return (
     <div>
-      <ProjectHero heroImage="/images/boulder-wastewater-treatment-facility/boulder-wastewater-treatment-facility-hero.jpeg" />
+      <ProjectHero
+        alt="boulder wastewater hero image"
+        heroImage="/images/boulder-wastewater-treatment-facility/boulder-wastewater-treatment-facility-hero.jpeg"
+      />
       <ProjectDetails
         title="Solar Array at Boulder Wastewater Treatment Facility"
         location="Boulder, CO"

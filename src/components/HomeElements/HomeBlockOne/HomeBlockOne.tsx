@@ -1,10 +1,17 @@
 import { Container } from "@/components/LayoutComponents";
+import Image from "next/image";
 
 export function HomeBlockOne() {
   return (
     <Container>
       <div className=" grid grid-cols-1 gap-6 md:grid-cols-2">
         <img className="order-2 md:order-1" src="/images/fruitdale.jpg" />
+        <Image
+          fill
+          className="order-2 object-cover md:order-1"
+          src="/images/fruitdale.jpg"
+          alt="hartman ely investments pancratia hall"
+        />
         <div className="order-1 flex flex-col gap-4 md:order-2">
           <h1 className="font-OpenSans max-w-4xl text-center text-2xl font-bold md:text-left">
             About Us

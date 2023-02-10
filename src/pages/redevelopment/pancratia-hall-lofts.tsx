@@ -123,7 +123,10 @@ export default function PancratiaHall() {
 
   return (
     <div>
-      <ProjectHero heroImage="/images/pancratia/pancratia-hero.jpg" />
+      <ProjectHero
+        alt="pancratia hall hero image"
+        heroImage="/images/pancratia/pancratia-hero.jpg"
+      />
       <ProjectDetails
         title="Pancratia Hall Lofts"
         location="Denver, CO"

@@ -1,5 +1,6 @@
 import { Container } from "@/components/LayoutComponents";
 import clsx from "clsx";
+import Image from "next/image";
 import styles from "./HomeBlockAbout.module.scss";
 
 interface PersonProps {
@@ -37,7 +38,12 @@ export function HomeBlockAbout() {
                 className="flex flex-col items-center justify-start"
               >
                 <div className={clsx(styles.imageContainer)}>
-                  <img className={clsx(styles.image)} src={person.img} />
+                  <Image
+                    fill
+                    className={clsx(styles.image, "object-cover")}
+                    src={person.img}
+                    alt={person.name}
+                  />
                 </div>
                 <div>
                   <h4 className="cursor-pointertext-center mt-2 text-center">

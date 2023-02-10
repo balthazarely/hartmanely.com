@@ -1,4 +1,5 @@
 import { Container } from "@/components/LayoutComponents";
+import Link from "next/link";
 import React from "react";
 
 interface ProjectDetailsProps {
@@ -62,10 +63,19 @@ export function ProjectDetails({
               <h5>Size</h5>
               <p className="small mt-1 font-medium">{size}</p>
             </div>
-            <div className="mb-4">
-              <h5>Project Type</h5>
-              <p className="small mt-1 font-medium">{projectType}</p>
-            </div>
+            {projectType && (
+              <div className="mb-4">
+                <h5>Project Type</h5>
+
+                <Link
+                  href={`/categories/${projectType
+                    .toLowerCase()
+                    .replace(/\s/g, "-")}`}
+                >
+                  <p className="link-small mt-1 font-medium">{projectType}</p>
+                </Link>
+              </div>
+            )}
           </div>
         )}
       </div>

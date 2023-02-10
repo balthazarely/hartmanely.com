@@ -3,7 +3,6 @@ import Link from "next/link";
 import { Squash as Hamburger } from "hamburger-react";
 import { motion } from "framer-motion";
 import * as NavigationMenu from "@radix-ui/react-navigation-menu";
-import classNames from "classnames";
 import { CaretDownIcon } from "@radix-ui/react-icons";
 import useScrollPosition from "../../../hooks/useScrollPosition";
 import { navigationLinks } from "@/lib/navigationLinks";
@@ -12,10 +11,48 @@ import { useLockBodyScroll, useToggle } from "react-use";
 import { useRouter } from "next/router";
 import { HiOutlineBuildingLibrary, HiOutlineSun } from "react-icons/hi2";
 import { FaChevronDown, FaHandsHelping } from "react-icons/fa";
-import {
-  menuItemAnimationVariant,
-  menuOpenAnimationVariant,
-} from "@/lib/animations";
+
+import clsx from "clsx";
+
+const menuOpenAnimationVariant = {
+  open: {
+    opacity: 1,
+    display: "block",
+    transition: {
+      staggerChildren: 0.05,
+      ease: "easeInOut",
+      // type: "spring",
+      // stiffness: 50,
+    },
+  },
+  closed: {
+    opacity: 0,
+    display: "none",
+  },
+};
+
+const menuItemAnimationVariant = {
+  open: {
+    y: 0,
+    opacity: 1,
+    transition: {
+      staggerChildren: 1,
+      ease: "easeInOut",
+      type: "spring",
+      stiffness: 100,
+    },
+  },
+  closed: {
+    y: 30,
+    opacity: 0,
+    transition: {
+      staggerChildren: 1,
+      ease: "easeInOut",
+      type: "spring",
+      stiffness: 50,
+    },
+  },
+};
 
 export function Header() {
   const scrollPosition = useScrollPosition();
@@ -120,7 +157,7 @@ const ListItem = forwardRef(
     <li>
       <NavigationMenu.Link asChild>
         <a
-          className={classNames("ListItemLink  hover:bg-gray-100", className)}
+          className={clsx("ListItemLink  hover:bg-gray-100", className)}
           {...props}
           ref={forwardedRef}
         >

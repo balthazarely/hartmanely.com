@@ -10,7 +10,7 @@ export function HomeBlockTwo() {
         <div>
           <h5 className="mt-4 text-center md:text-left">About</h5>
 
-          <h3 className="mt-2 mb-4 text-center md:text-left">
+          <h3 className="mt-2 mb-4 max-w-none text-center md:max-w-sm md:text-left">
             We specialize in the redevelopment of historic buildings.
           </h3>
           <p className="text-center md:text-left">

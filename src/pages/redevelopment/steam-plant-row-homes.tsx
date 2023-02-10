@@ -45,7 +45,10 @@ export default function SteamPlantRowHomes() {
 
   return (
     <div>
-      <ProjectHero heroImage="/images/steam-plant-row-homes/steam-plant-row-homes-hero.jpg" />
+      <ProjectHero
+        alt="steam plant row hoems hero image"
+        heroImage="/images/steam-plant-row-homes/steam-plant-row-homes-hero.jpg"
+      />
       <ProjectDetails
         title="Steam Plant Row Homes"
         location="Denver, CO"
