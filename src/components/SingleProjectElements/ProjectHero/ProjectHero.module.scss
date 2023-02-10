@@ -1,5 +1,9 @@
 .heroLargeContainer {
-    height: 500px;
+    height: 250px;
+    @media only screen and (min-width: 768px) {
+        height: 400px;
+ 
+      }
     @apply max-w-7xl mx-auto contrast-125 relative flex items-center justify-center overflow-hidden;
     .HeroImage {
         object-fit: cover;

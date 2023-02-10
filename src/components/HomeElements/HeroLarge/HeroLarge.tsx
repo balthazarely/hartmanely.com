@@ -54,7 +54,7 @@ export function HeroLarge() {
         </motion.div>
 
         <motion.div variants={container} initial="hidden" animate="show">
-          <div className="absolute top-0 left-0 h-full w-full  bg-sky-900 opacity-40 "></div>
+          <div className="bg-sky-900 absolute top-0 left-0 h-full  w-full opacity-40 "></div>
         </motion.div>
         <motion.div
           className={styles.heroTitleWrapper}
@@ -63,18 +63,18 @@ export function HeroLarge() {
           animate="show"
         >
           <motion.div variants={item}>
-            <h5 className="mb-2 uppercase tracking-widest text-white">
+            <h5 className="text-white mb-2 uppercase tracking-widest">
               Hartman Ely Investments
             </h5>
           </motion.div>
           <motion.div variants={item}>
-            <h1 className="uppercase tracking-wider text-white">
+            <h1 className="text-white uppercase tracking-wider">
               Creating Sustainable Communities
             </h1>
           </motion.div>
           <motion.div variants={item}>
             <Link href="/all-projects">
-              <button className="mt-4 rounded-md border-2 border-white bg-gray-800 bg-opacity-40 py-2 px-4 text-sm transition-colors duration-200 hover:bg-cyan-600">
+              <button className="hover:bg-accent border-white bg-gray-800 mt-4 rounded-md border-2 bg-opacity-40 py-2 px-4 text-sm transition-colors duration-200 ">
                 See Our Work
               </button>
             </Link>

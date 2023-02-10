@@ -1,32 +1,41 @@
 h1 {
-    @apply text-3xl font-bold md:text-4xl 
+    @apply text-3xl font-bold md:text-4xl text-gray-800 
 }
 h2 {
-    @apply text-2xl font-bold md:text-3xl 
+    @apply text-2xl font-bold md:text-3xl text-gray-800 
 }
 h3 {
-    @apply text-xl font-bold
+    @apply text-xl font-bold text-gray-800 
 }
 h4 {
-    @apply text-lg font-bold
+    @apply text-lg font-bold text-gray-800 
 }
 h5 {
     @apply text-sm font-bold tracking-wider uppercase text-cyan-600
 }
 
 p {
-    @apply text-base leading-7
+    @apply text-base leading-7 text-gray-900;
+    &.inverse {
+        @apply text-white;
+     }
 }
 
 p.small {
-    @apply text-sm leading-6
+    @apply text-sm leading-6 text-gray-800;
+    &.inverse {
+        @apply text-white;
+     }
 }
 
 p.xsmall {
-    @apply text-xs leading-5
+    @apply text-xs leading-5 text-gray-800;
+    &.inverse {
+       @apply text-white;
+    }
 }
 
 .link-small {
-    @apply text-sm font-bold leading-6 hover:text-cyan-600
+    @apply text-sm font-bold leading-6 text-gray-800  hover:text-cyan-600
 }
 

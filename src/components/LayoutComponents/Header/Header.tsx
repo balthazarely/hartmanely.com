@@ -7,7 +7,6 @@ import { CaretDownIcon } from "@radix-ui/react-icons";
 import useScrollPosition from "../../../hooks/useScrollPosition";
 import { navigationLinks } from "@/lib/navigationLinks";
 import { useWindowSize } from "react-use";
-import { useLockBodyScroll, useToggle } from "react-use";
 import { useRouter } from "next/router";
 import { HiOutlineBuildingLibrary, HiOutlineSun } from "react-icons/hi2";
 import { FaChevronDown, FaHandsHelping } from "react-icons/fa";
@@ -21,8 +20,6 @@ const menuOpenAnimationVariant = {
     transition: {
       staggerChildren: 0.05,
       ease: "easeInOut",
-      // type: "spring",
-      // stiffness: 50,
     },
   },
   closed: {
@@ -174,8 +171,6 @@ ListItem.displayName = "MyComponentTest";
 
 function MobileNavigation() {
   const router = useRouter();
-  const [locked, toggleLocked] = useToggle(false);
-  useLockBodyScroll(locked);
   const [menuOpen, setMenuOpen] = useState(false);
   const [redevelopmentOpen, setRedevelopmentOpen] = useState(false);
   const [renewableEnergyOpen, setRenewableEnergyOpen] = useState(false);
@@ -198,11 +193,7 @@ function MobileNavigation() {
   }, [router.events]);
 
   useEffect(() => {
-    // if (menuOpen) {
-    //   toggleLocked(true);
-    // }
     if (!menuOpen) {
-      // toggleLocked(false);
       setRedevelopmentOpen(false);
       setRenewableEnergyOpen(false);
       setConsultingOpen(false);

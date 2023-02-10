@@ -9,12 +9,6 @@ module.exports = {
         height: "height",
       },
     },
-
-    fontFamily: {
-      // Poppins: ["Poppins", ...defaultTheme.fontFamily.sans],
-      // OpenSans: ["OpenSans", ...defaultTheme.fontFamily.sans],
-      // Merriweather: ["Merriweather", ...defaultTheme.fontFamily.sans],
-    },
   },
   plugins: [],
 };

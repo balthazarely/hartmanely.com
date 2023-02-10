@@ -22,9 +22,9 @@ export function ProjectMedia({ media }: ProjectDetailsProps) {
         {media?.map((media: ProjectAwardsProps, idx: number) => {
           if (media.link) {
             return (
-              <Link href={media.link} key={idx}>
+              <a href={media.link} target="_BLANK" key={idx}>
                 <p className="link-small inline-block">{media.mediaName}</p>
-              </Link>
+              </a>
             );
           } else {
             <p key={idx} className="small inline-block  font-bold ">
