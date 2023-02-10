@@ -3,6 +3,7 @@ import {
   ProjectDetails,
   ProjectImageGallery,
 } from "@/components/SingleProjectElements";
+import { NextSeo } from "next-seo";
 import React from "react";
 
 export default function CommunitySolar() {
@@ -29,7 +30,8 @@ export default function CommunitySolar() {
   ];
 
   return (
-    <div>
+    <>
+      <NextSeo title="Community Solar" description="" />
       <ProjectHero
         alt="community solar hero image"
         heroImage="/images/community-solar/community-solar-hero.jpg"
@@ -44,6 +46,6 @@ export default function CommunitySolar() {
         projectType="Renewable Energy"
       />
       <ProjectImageGallery photos={photos} />
-    </div>
+    </>
   );
 }

@@ -3,6 +3,7 @@ import {
   ProjectDetails,
   ProjectImageGallery,
 } from "@/components/SingleProjectElements";
+import { NextSeo } from "next-seo";
 import React from "react";
 
 export default function SteamPlantRowHomes() {
@@ -44,7 +45,8 @@ export default function SteamPlantRowHomes() {
   ];
 
   return (
-    <div>
+    <>
+      <NextSeo title="Steam Plant Row Homes" description="" />
       <ProjectHero
         alt="steam plant row hoems hero image"
         heroImage="/images/steam-plant-row-homes/steam-plant-row-homes-hero.jpg"
@@ -59,6 +61,6 @@ export default function SteamPlantRowHomes() {
         projectType="Redevelopment"
       />
       <ProjectImageGallery photos={photos} />
-    </div>
+    </>
   );
 }

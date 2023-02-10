@@ -4,6 +4,7 @@ import {
   ProjectImageGallery,
 } from "@/components/SingleProjectElements";
 import { ProjectAwards } from "@/components/SingleProjectElements/ProjectAwards";
+import { NextSeo } from "next-seo";
 import React from "react";
 
 export default function Fruitdale() {
@@ -62,7 +63,8 @@ export default function Fruitdale() {
   ];
 
   return (
-    <div>
+    <>
+      <NextSeo title="Fruitdale School Lofts" description="" />
       <ProjectHero
         heroImage="/images/fruitdale/fruitdale-hero.jpg"
         alt="fruitdale school lofts hero image"
@@ -79,6 +81,6 @@ export default function Fruitdale() {
       />
       <ProjectAwards awards={awards} />
       <ProjectImageGallery photos={photos} />
-    </div>
+    </>
   );
 }

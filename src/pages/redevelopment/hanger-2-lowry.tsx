@@ -4,6 +4,7 @@ import {
   ProjectImageGallery,
 } from "@/components/SingleProjectElements";
 import { ProjectAwards } from "@/components/SingleProjectElements/ProjectAwards";
+import { NextSeo } from "next-seo";
 import React from "react";
 
 export default function Hanger2Lowry() {
@@ -51,7 +52,8 @@ export default function Hanger2Lowry() {
   ];
 
   return (
-    <div>
+    <>
+      <NextSeo title="Hanger 2 Lowry" description="" />
       <ProjectHero
         alt="hanger 2 hero image"
         heroImage="/images/hanger2/hanger-2-hero.jpeg"
@@ -68,6 +70,6 @@ export default function Hanger2Lowry() {
       <ProjectAwards awards={awards} />
 
       <ProjectImageGallery photos={photos} />
-    </div>
+    </>
   );
 }

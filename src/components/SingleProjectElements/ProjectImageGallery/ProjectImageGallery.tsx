@@ -51,12 +51,14 @@ export function ProjectImageGallery({ photos }: PhotosProps) {
 
   return (
     <Container>
-      <PhotoAlbum
-        renderPhoto={NextJsImage}
-        layout="rows"
-        photos={photos}
-        onClick={({ index }) => setIndex(index)}
-      />
+      <div className="cursor-pointer">
+        <PhotoAlbum
+          renderPhoto={NextJsImage}
+          layout="rows"
+          photos={photos}
+          onClick={({ index }) => setIndex(index)}
+        />
+      </div>
       <Lightbox
         open={index >= 0}
         index={index}

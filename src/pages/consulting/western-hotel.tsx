@@ -3,6 +3,7 @@ import {
   ProjectDetails,
 } from "@/components/SingleProjectElements";
 import { ProjectMedia } from "@/components/SingleProjectElements/ProjectMedia";
+import { NextSeo } from "next-seo";
 import React from "react";
 
 export default function WesternHotel() {
@@ -20,7 +21,8 @@ export default function WesternHotel() {
   ];
 
   return (
-    <div>
+    <>
+      <NextSeo title="Western Hotel" description="" />
       <ProjectHero
         heroImage="/images/western-hotel/western-hotel-hero.jpg"
         alt="the western hotel hero image"
@@ -33,6 +35,6 @@ export default function WesternHotel() {
         showSidePanel={false}
       />
       <ProjectMedia media={media} />
-    </div>
+    </>
   );
 }

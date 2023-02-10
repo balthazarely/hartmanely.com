@@ -5,6 +5,7 @@ import {
 } from "@/components/SingleProjectElements";
 import { ProjectAwards } from "@/components/SingleProjectElements/ProjectAwards";
 import { ProjectMedia } from "@/components/SingleProjectElements/ProjectMedia";
+import { NextSeo } from "next-seo";
 import React from "react";
 
 export default function InnvoageHeadquarters() {
@@ -53,7 +54,8 @@ export default function InnvoageHeadquarters() {
   ];
 
   return (
-    <div>
+    <>
+      <NextSeo title="Innovage Headquarters" description="" />
       <ProjectHero
         heroImage="/images/innovage-headquarters/innovage-headquarters-hero.jpg"
         alt="the boston lofts hero image"
@@ -68,6 +70,6 @@ export default function InnvoageHeadquarters() {
       <ProjectAwards awards={awards} />
       <ProjectMedia media={media} />
       <ProjectImageGallery photos={photos} />
-    </div>
+    </>
   );
 }

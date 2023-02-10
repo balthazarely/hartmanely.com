@@ -5,6 +5,7 @@ import {
 } from "@/components/SingleProjectElements";
 import { ProjectAwards } from "@/components/SingleProjectElements/ProjectAwards";
 import { ProjectMedia } from "@/components/SingleProjectElements/ProjectMedia";
+import { NextSeo } from "next-seo";
 import React from "react";
 
 export default function PancratiaHall() {
@@ -122,7 +123,8 @@ export default function PancratiaHall() {
   ];
 
   return (
-    <div>
+    <>
+      <NextSeo title="Pancratia Hall Lofts" description="" />
       <ProjectHero
         alt="pancratia hall hero image"
         heroImage="/images/pancratia/pancratia-hero.jpg"
@@ -140,6 +142,6 @@ export default function PancratiaHall() {
       <ProjectAwards awards={awards} />
       <ProjectMedia media={media} />
       <ProjectImageGallery photos={photos} />
-    </div>
+    </>
   );
 }

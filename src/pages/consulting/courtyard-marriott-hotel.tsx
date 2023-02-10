@@ -3,6 +3,7 @@ import {
   ProjectDetails,
   ProjectImageGallery,
 } from "@/components/SingleProjectElements";
+import { NextSeo } from "next-seo";
 import React from "react";
 
 export default function CourtyardMarriottHotel() {
@@ -36,7 +37,8 @@ export default function CourtyardMarriottHotel() {
   ];
 
   return (
-    <div>
+    <>
+      <NextSeo title="The Courtyard at Marriott Hotel" description="" />
       <ProjectHero
         heroImage="/images/courtyard-by-marriott-hotel/courtyard-by-marriott-hotel-hero.jpg"
         alt="the courtyard at marriott hero image"
@@ -50,6 +52,6 @@ export default function CourtyardMarriottHotel() {
       />
 
       <ProjectImageGallery photos={photos} />
-    </div>
+    </>
   );
 }

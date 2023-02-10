@@ -5,6 +5,7 @@ import {
 } from "@/components/SingleProjectElements";
 import { ProjectAwards } from "@/components/SingleProjectElements/ProjectAwards";
 import { ProjectMedia } from "@/components/SingleProjectElements/ProjectMedia";
+import { NextSeo } from "next-seo";
 import React from "react";
 
 export default function EiberVillage() {
@@ -117,7 +118,8 @@ export default function EiberVillage() {
   ];
 
   return (
-    <div>
+    <>
+      <NextSeo title="Eiber Village" description="" />
       <ProjectHero
         heroImage="/images/eiber-village/eiber-village-hero.jpg"
         alt="eiber village hero image"
@@ -135,6 +137,6 @@ export default function EiberVillage() {
       <ProjectAwards awards={awards} />
       <ProjectMedia media={media} />
       <ProjectImageGallery photos={photos} />
-    </div>
+    </>
   );
 }

@@ -18,21 +18,23 @@ export function ProjectAwards({ awards }: ProjectDetailsProps) {
         <FaAward className="mr-1 text-xl" />
         <h3>Awards</h3>
       </div>
-      {awards!.map((award: ProjectAwardsProps, idx: number) => {
-        if (award.link) {
-          return (
-            <Link key={idx} href={award.link}>
-              <p className="link-small">{award.awardName}</p>
-            </Link>
-          );
-        } else {
-          return (
-            <p key={idx} className="small font-base ">
-              {award.awardName}
-            </p>
-          );
-        }
-      })}
+      <div className="flex flex-col">
+        {awards!.map((award: ProjectAwardsProps, idx: number) => {
+          if (award.link) {
+            return (
+              <Link key={idx} href={award.link}>
+                <p className="link-small inline-block">{award.awardName}</p>
+              </Link>
+            );
+          } else {
+            return (
+              <p key={idx} className="small font-base  inline-block ">
+                {award.awardName}
+              </p>
+            );
+          }
+        })}
+      </div>
     </Container>
   );
 }

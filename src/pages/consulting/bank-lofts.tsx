@@ -3,6 +3,7 @@ import {
   ProjectDetails,
   ProjectImageGallery,
 } from "@/components/SingleProjectElements";
+import { NextSeo } from "next-seo";
 import React from "react";
 
 export default function TheBankLofts() {
@@ -39,7 +40,8 @@ export default function TheBankLofts() {
   ];
 
   return (
-    <div>
+    <>
+      <NextSeo title="The Bank Lofts" description="" />
       <ProjectHero
         heroImage="/images/the-bank-lofts/the-bank-lofts-hero.jpg"
         alt="the bank lofts hero image"
@@ -53,6 +55,6 @@ export default function TheBankLofts() {
       />
 
       <ProjectImageGallery photos={photos} />
-    </div>
+    </>
   );
 }

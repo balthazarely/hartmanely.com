@@ -3,6 +3,7 @@ import {
   ProjectDetails,
   ProjectImageGallery,
 } from "@/components/SingleProjectElements";
+import { NextSeo } from "next-seo";
 import React from "react";
 
 export default function BoulderWastewaterTreamtmentPlant() {
@@ -28,7 +29,8 @@ export default function BoulderWastewaterTreamtmentPlant() {
   ];
 
   return (
-    <div>
+    <>
+      <NextSeo title="Boulder Wastewater" description="" />
       <ProjectHero
         alt="boulder wastewater hero image"
         heroImage="/images/boulder-wastewater-treatment-facility/boulder-wastewater-treatment-facility-hero.jpeg"
@@ -43,6 +45,6 @@ export default function BoulderWastewaterTreamtmentPlant() {
         projectType="Renewable Energy"
       />
       <ProjectImageGallery photos={photos} />
-    </div>
+    </>
   );
 }
