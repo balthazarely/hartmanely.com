@@ -16,7 +16,13 @@ export function ProjectHero({
       transition={{ ease: "easeOut", duration: 0.5 }}
     >
       <div className={styles.heroLargeContainer}>
-        <Image fill className="object-cover" src={heroImage} alt={alt} />
+        <Image
+          priority={true}
+          fill
+          className="object-cover"
+          src={heroImage}
+          alt={alt}
+        />
       </div>
     </motion.div>
   );

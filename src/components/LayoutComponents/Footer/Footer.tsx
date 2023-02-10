@@ -5,8 +5,6 @@ export function Footer() {
     return new Date().getFullYear();
   }
 
-  console.log(getYear);
-
   return (
     <div className="bg-gray-800 ">
       <Container noPadding={true}>
