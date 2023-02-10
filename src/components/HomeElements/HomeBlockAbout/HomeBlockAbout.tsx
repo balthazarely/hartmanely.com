@@ -9,20 +9,7 @@ interface PersonProps {
   bio: string;
 }
 
-const team = [
-  {
-    name: "James Hartman",
-    img: "/headshots/james-hartman.jpg",
-    bio: "Jim is one of Colorado's leading experts with historic building redevelopment, urban infill development and renewable energy.",
-  },
-  {
-    name: "Susan Ely",
-    img: "/headshots/susan-ely.jpg",
-    bio: "Susan is a trained architect and is HEI's Business Manager, is in charge of all administrative efforts of the company.",
-  },
-];
-
-export function HomeBlockAbout() {
+export function HomeBlockAbout({ teamMembers }: any) {
   return (
     <div className={styles.HomeBlockAboutContainer}>
       <Container>
@@ -30,8 +17,8 @@ export function HomeBlockAbout() {
           <h5 className="mt-4">About</h5>
           <h2 className="mt-2 mb-4">Our Team</h2>
         </div>
-        <div className="mx-auto grid max-w-lg grid-cols-2 gap-6">
-          {team.map((person: PersonProps, idx: number) => {
+        <div className="mx-auto grid max-w-xs grid-cols-1 gap-6 sm:max-w-lg sm:grid-cols-2">
+          {teamMembers.map((person: PersonProps, idx: number) => {
             return (
               <div
                 key={idx}

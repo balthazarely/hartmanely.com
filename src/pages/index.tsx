@@ -8,6 +8,19 @@ import {
 } from "@/components/HomeElements";
 import { NextSeo } from "next-seo";
 
+const team = [
+  {
+    name: "James Hartman",
+    img: "/headshots/james-hartman.jpg",
+    bio: "Jim is one of Colorado's leading experts with historic building redevelopment, urban infill development and renewable energy.",
+  },
+  {
+    name: "Susan Ely",
+    img: "/headshots/susan-ely.jpg",
+    bio: "Susan is a trained architect and is HEI's Business Manager, is in charge of all administrative efforts of the company.",
+  },
+];
+
 export default function Home(): JSX.Element {
   const seo = {
     title: "Hartman Ely Investments",
@@ -37,7 +50,7 @@ export default function Home(): JSX.Element {
       <HomeBlockMission />
       <HomeBlockTwo />
       <HomeBlockThree />
-      <HomeBlockAbout />
+      <HomeBlockAbout teamMembers={team} />
       <Contact />
     </>
   );

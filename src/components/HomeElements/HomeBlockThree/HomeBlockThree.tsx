@@ -9,7 +9,7 @@ function ImageBlock({ image, heading, body, link }: any) {
     <div className="w-full text-center">
       <Link href={link}>
         <div className={clsx(styles.imageContainer, "group")}>
-          <div className="absolute top-0 left-0 z-50 h-full w-full bg-cyan-600 opacity-0 transition-all duration-500 group-hover:opacity-30"></div>
+          <div className="absolute top-0 left-0 z-50  h-full w-full bg-cyan-600 opacity-0 transition-all duration-500 group-hover:opacity-30"></div>
           <Image
             fill
             className={clsx(styles.image, "object-cover group-hover:scale-110")}
@@ -34,7 +34,7 @@ export function HomeBlockThree() {
           <h5 className="mt-4">Portfolio</h5>
           <h2 className="mt-2 mb-4">Our Work</h2>
         </div>
-        <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
+        <div className="grid grid-cols-1 gap-6 sm:grid-cols-3">
           <ImageBlock
             image="/images/steam-plant/steam-plant-hero.jpg"
             heading="Redevelopment"

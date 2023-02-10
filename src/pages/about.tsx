@@ -86,7 +86,7 @@ export default function About() {
               Heitler Development, Harvard Communities, City of Wheat Ridge and
               Jefferson County.
             </p>
-            <p className="mb-8">
+            <p className="-mb-8">
               Additionally, our extensive experience and skill with conceptual
               design, budgeting and scheduling is a tremendous asset in the
               early stages of any development. We can quickly analyze several
@@ -94,32 +94,7 @@ export default function About() {
               program that allows a landowner or entity to select the best
               option with minimal cost in the early due diligence or RFP phase.
             </p>
-            <div className={styles.AboutContainer}>
-              <div className="mx-auto flex flex-col items-center justify-center ">
-                <h5 className="mt-4">About</h5>
-                <h2 className="mt-2 mb-4">Our Team</h2>
-              </div>
-              <div className="mx-auto grid max-w-lg grid-cols-2 gap-6">
-                {team.map((person: PersonProps, idx: number) => {
-                  return (
-                    <div
-                      key={idx}
-                      className="flex flex-col items-center justify-start"
-                    >
-                      <div className={clsx(styles.imageContainer)}>
-                        <img className={clsx(styles.image)} src={person.img} />
-                      </div>
-                      <div>
-                        <h4 className="cursor-pointertext-center mt-2 text-center">
-                          {person.name}
-                        </h4>
-                        <p className="small mt-2 text-center ">{person.bio}</p>
-                      </div>
-                    </div>
-                  );
-                })}
-              </div>
-            </div>
+            <HomeBlockAbout teamMembers={team} />
           </div>
         </div>
       </Container>
