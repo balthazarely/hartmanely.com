@@ -22,7 +22,7 @@ export function ProjectMedia({ media }: ProjectDetailsProps) {
         {media?.map((media: ProjectAwardsProps, idx: number) => {
           if (media.link) {
             return (
-              <a href={media.link} target="_BLANK" key={idx}>
+              <a href={media.link} target="_BLANK" rel="noreferrer" key={idx}>
                 <p className="link-small inline-block">{media.mediaName}</p>
               </a>
             );

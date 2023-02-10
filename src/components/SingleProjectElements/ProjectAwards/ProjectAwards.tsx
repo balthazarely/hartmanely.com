@@ -22,7 +22,7 @@ export function ProjectAwards({ awards }: ProjectDetailsProps) {
         {awards!.map((award: ProjectAwardsProps, idx: number) => {
           if (award.link) {
             return (
-              <a key={idx} target="_BLANK" href={award.link}>
+              <a key={idx} target="_BLANK" rel="noreferrer" href={award.link}>
                 <p className="link-small inline-block">{award.awardName}</p>
               </a>
             );

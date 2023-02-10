@@ -36,14 +36,14 @@ export default function Home(): JSX.Element {
         openGraph={{
           ...seo,
           url: "https://hartmanely.com/",
-          // images: [
-          //   {
-          //     url: "https://hellotonic.com/images/photos/retreat.jpg",
-          //     width: 1000,
-          //     height: 667,
-          //     alt: seo.title,
-          //   },
-          // ],
+          images: [
+            {
+              url: "https://hartmanely.com/images/fruitdale/fruitdale-hero.jpg",
+              width: 1000,
+              height: 667,
+              alt: seo.title,
+            },
+          ],
         }}
       />
       <HeroLarge />
