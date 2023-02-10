@@ -1,6 +1,6 @@
 .heroLargeContainer {
     height: 500px;
-    @apply contrast-125 relative flex items-center justify-center overflow-hidden;
+    @apply max-w-7xl mx-auto contrast-125 relative flex items-center justify-center overflow-hidden;
     .HeroImage {
         object-fit: cover;
         flex-shrink: 0;

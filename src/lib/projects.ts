@@ -1,7 +1,7 @@
 export const projects = [
   {
     name: "Pancratia Hall Lofts",
-    img: "/images/pancratia/pancratia-hero.jpg",
+    img: "/images/pancratia/pancratia-hero-cropped.jpg",
     type: "redevelopment",
     link: "/redevelopment/pancratia-hall-lofts",
   },

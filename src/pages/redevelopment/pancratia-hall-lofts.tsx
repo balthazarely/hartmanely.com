@@ -127,7 +127,7 @@ export default function PancratiaHall() {
       <NextSeo title="Pancratia Hall Lofts" description="" />
       <ProjectHero
         alt="pancratia hall hero image"
-        heroImage="/images/pancratia/pancratia-hero.jpg"
+        heroImage="/images/pancratia/pancratia-hero-cropped.jpg"
       />
       <ProjectDetails
         title="Pancratia Hall Lofts"

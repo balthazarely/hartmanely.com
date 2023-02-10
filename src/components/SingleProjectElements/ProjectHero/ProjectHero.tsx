@@ -1,5 +1,6 @@
 import styles from "./ProjectHero.module.scss";
 import { motion } from "framer-motion";
+import Image from "next/image";
 
 export function ProjectHero({
   heroImage,
@@ -15,7 +16,7 @@ export function ProjectHero({
       transition={{ ease: "easeOut", duration: 0.5 }}
     >
       <div className={styles.heroLargeContainer}>
-        <img className={styles.HeroImage} src={heroImage} alt={alt} />
+        <Image fill className="object-cover" src={heroImage} alt={alt} />
       </div>
     </motion.div>
   );
