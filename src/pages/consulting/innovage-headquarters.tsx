@@ -60,12 +60,13 @@ export default function InnvoageHeadquarters() {
           possible.
         </p>
         <p className="small mt-2">
-          The Office Facility has many 'green' features, including a 111 kW
-          solar energy system that has allowed the facility to achieve a
-          'platinum' LEED rating from the US Green Building Council. The Office
-          Facility uses only 28% of the energy that a typical similar facility
-          would use. It also has some atypical 'green' features such as a fruit
-          orchard in the parking lot and an interior herb/vegetable garden.
+          The Office Facility has many &apos;green&apos; features, including a
+          111 kW solar energy system that has allowed the facility to achieve a
+          &apos;platinum&apos; LEED rating from the US Green Building Council.
+          The Office Facility uses only 28% of the energy that a typical similar
+          facility would use. It also has some atypical &apos;green&apos;
+          features such as a fruit orchard in the parking lot and an interior
+          herb/vegetable garden.
         </p>
         <p className="small mt-2">
           Hartman Ely Investments was Development Manager and a Development

@@ -62,12 +62,13 @@ export default function SteamPlantLofts() {
         projectType="Redevelopment"
       >
         <p className="small mt-2">
-          Steam Plant Lofts is the creative conversion of the original 'Power
-          House' of the Lowry Air Force Base into 14 custom-designed loft-style
-          condominiums. The overall development also includes 9 single-family
-          Patio Homes that complement the historic Steam Plant building. Steam
-          Plant Lofts has six individual loft solar power systems restoring the
-          building's historic function as Lowry's Source of Energy.
+          Steam Plant Lofts is the creative conversion of the original
+          &apos;Power House&apos; of the Lowry Air Force Base into 14
+          custom-designed loft-style condominiums. The overall development also
+          includes 9 single-family Patio Homes that complement the historic
+          Steam Plant building. Steam Plant Lofts has six individual loft solar
+          power systems restoring the building&apos;s historic function as
+          Lowry&apos;s Source of Energy.
         </p>
         <p className="small mt-2">
           Hartman Ely Investments and Harvard Communities were ownership

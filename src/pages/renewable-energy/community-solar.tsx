@@ -43,7 +43,7 @@ export default function CommunitySolar() {
         <p className="small mt-2">
           Community-owned solar arrays are a unique concept that uses a large,
           centrally located solar power plant to serve many community members.
-          The array is connected to the community's electricity system and
+          The array is connected to the community&apos;s electricity system and
           indirectly provides energy for homes, offices, farms and other
           facilities. Any community member that wants to participate can
           purchase a part of the array and receive credit on their monthly
@@ -54,7 +54,7 @@ export default function CommunitySolar() {
         <p className="small mt-2">
           Hartman Ely Investments joined forces with the Clean Energy Collective
           to bring community-owned solar power to many states and was the Clean
-          Energy Collective's equity investor for the first community-owned
+          Energy Collective&apos;s equity investor for the first community-owned
           solar arrays in Vermont, New Mexico and Northern Colorado.
         </p>
       </ProjectDetails>

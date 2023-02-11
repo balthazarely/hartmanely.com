@@ -47,15 +47,15 @@ export default function CourtyardMarriottHotel() {
       >
         <p className="small mt-2">
           The Courtyard Hotel involved an extensive renovation and conversion of
-          the historic Joslins Department Store to become one of Denver's most
-          popular boutique hotels. The project included extensive exterior
-          renovation to remove 1960's metal panels, restore the historic masonry
-          and windows, integrate a 1960's blank wall into a historic facade and
-          add a setback sixth floor. The interior renovation included removal of
-          existing escalators and the insertion of a new atrium, stairs and
-          elevators to convert the department store floor plan to an efficient
-          hotel layout. The Rialto Cafe is a 250 seat restaurant and is the
-          project's main ground floor retail tenant.
+          the historic Joslins Department Store to become one of Denver&apos;s
+          most popular boutique hotels. The project included extensive exterior
+          renovation to remove 1960&apos;s metal panels, restore the historic
+          masonry and windows, integrate a 1960&apos;s blank wall into a
+          historic facade and add a setback sixth floor. The interior renovation
+          included removal of existing escalators and the insertion of a new
+          atrium, stairs and elevators to convert the department store floor
+          plan to an efficient hotel layout. The Rialto Cafe is a 250 seat
+          restaurant and is the project&apos;s main ground floor retail tenant.
         </p>
         <p className="small mt-2">
           Jim Hartman was the the Project Architect for Fentress Bradburn
