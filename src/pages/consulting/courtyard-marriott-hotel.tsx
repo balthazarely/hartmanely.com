@@ -31,15 +31,11 @@ export default function CourtyardMarriottHotel() {
     },
   ];
 
-  const aboutText = [
-    "The Courtyard Hotel involved an extensive renovation and conversion of the historic Joslins Department Store to become one of Denver's most popular boutique hotels. The project included extensive exterior renovation to  remove 1960's metal panels, restore the historic masonry and windows, integrate a 1960's blank wall into a historic facade and add a setback sixth floor. The interior renovation included removal of existing escalators and the insertion of a new atrium, stairs and elevators to convert the department store floor plan to an efficient hotel layout. The Rialto Cafe is a 250 seat restaurant and is the project's main ground floor retail tenant.",
-    "Jim Hartman was the the Project Architect for Fentress Bradburn Architects. Later in the project he became the Development Manager for National Properties. Hartman Ely Investments was an investor in the project via National Properties.",
-  ];
-
   return (
     <>
       <NextSeo title="The Courtyard at Marriott Hotel" description="" />
       <ProjectHero
+        heroImageHeightClasses="h-[250px] sm:h-[350px] md:h-[450px] lg:h-[650px]"
         heroImage="/images/courtyard-by-marriott-hotel/courtyard-by-marriott-hotel-hero.jpg"
         alt="the courtyard at marriott hero image"
       />
@@ -47,9 +43,27 @@ export default function CourtyardMarriottHotel() {
         title="Courtyard by Marriott Hotel "
         location="Denver, CO"
         tagline=""
-        aboutText={aboutText}
         showSidePanel={false}
-      />
+      >
+        <p className="small mt-2">
+          The Courtyard Hotel involved an extensive renovation and conversion of
+          the historic Joslins Department Store to become one of Denver's most
+          popular boutique hotels. The project included extensive exterior
+          renovation to remove 1960's metal panels, restore the historic masonry
+          and windows, integrate a 1960's blank wall into a historic facade and
+          add a setback sixth floor. The interior renovation included removal of
+          existing escalators and the insertion of a new atrium, stairs and
+          elevators to convert the department store floor plan to an efficient
+          hotel layout. The Rialto Cafe is a 250 seat restaurant and is the
+          project's main ground floor retail tenant.
+        </p>
+        <p className="small mt-2">
+          Jim Hartman was the the Project Architect for Fentress Bradburn
+          Architects. Later in the project he became the Development Manager for
+          National Properties. Hartman Ely Investments was an investor in the
+          project via National Properties.
+        </p>
+      </ProjectDetails>
 
       <ProjectImageGallery photos={photos} />
     </>

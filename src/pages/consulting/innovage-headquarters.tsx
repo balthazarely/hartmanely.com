@@ -12,7 +12,7 @@ export default function InnvoageHeadquarters() {
   const awards = [
     {
       awardName:
-        "1st Place Award Colorado Sustainable Design Awards: Commercial November 2011",
+        "2011 - 1st Place Award Colorado Sustainable Design Awards: Commercial November",
     },
   ];
   const photos = [
@@ -39,24 +39,11 @@ export default function InnvoageHeadquarters() {
     },
   ];
 
-  const aboutText = [
-    "InnovAge (previously called Total Longterm Care) is a non-profit, senior care program whose mission is to enable frail individuals to live  with dignity in their own homes and communities as long as possible.",
-
-    "The Office Facility has many 'green' features, including a 111 kW solar  energy system that has allowed the facility to achieve a 'platinum' LEED  rating from the US Green Building Council. The Office Facility uses only 28% of the energy that a typical similar facility would use. It also has some atypical 'green' features such as a fruit orchard in the parking lot and an interior herb/vegetable garden.",
-    "Hartman Ely Investments was Development Manager and a Development Partner with Heitler Development.",
-  ];
-
-  const media = [
-    {
-      mediaName: "Zeppelin Website",
-      link: "  https://www.zeppelindevelopment.com/",
-    },
-  ];
-
   return (
     <>
       <NextSeo title="Innovage Headquarters" description="" />
       <ProjectHero
+        heroImageHeightClasses="h-[250px] sm:h-[350px] md:h-[450px] lg:h-[650px]"
         heroImage="/images/innovage-headquarters/innovage-headquarters-hero.jpg"
         alt="the boston lofts hero image"
       />
@@ -64,11 +51,28 @@ export default function InnvoageHeadquarters() {
         title="Innovage Headquarters"
         location="Denver, CO"
         tagline="LEED Platinum Headquarters building"
-        aboutText={aboutText}
         showSidePanel={false}
-      />
+      >
+        <p className="small mt-2">
+          InnovAge (previously called Total Longterm Care) is a non-profit,
+          senior care program whose mission is to enable frail individuals to
+          live with dignity in their own homes and communities as long as
+          possible.
+        </p>
+        <p className="small mt-2">
+          The Office Facility has many 'green' features, including a 111 kW
+          solar energy system that has allowed the facility to achieve a
+          'platinum' LEED rating from the US Green Building Council. The Office
+          Facility uses only 28% of the energy that a typical similar facility
+          would use. It also has some atypical 'green' features such as a fruit
+          orchard in the parking lot and an interior herb/vegetable garden.
+        </p>
+        <p className="small mt-2">
+          Hartman Ely Investments was Development Manager and a Development
+          Partner with Heitler Development.
+        </p>
+      </ProjectDetails>
       <ProjectAwards awards={awards} />
-      <ProjectMedia media={media} />
       <ProjectImageGallery photos={photos} />
     </>
   );

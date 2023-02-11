@@ -13,13 +13,6 @@ export function Footer() {
             Copyright © {getYear()} Hartman Ely Investments. All rights
             reserved.
           </p>
-          <div className="text-center md:text-right">
-            <p className=" inverse xsmall text-white">
-              Hartman Ely Investments
-            </p>
-            <p className="inverse xsmall text-white">2120 Bluebell Ave</p>
-            <p className="inverse xsmall text-white">Boulder, CO 80302</p>
-          </div>
         </div>
       </Container>
     </div>

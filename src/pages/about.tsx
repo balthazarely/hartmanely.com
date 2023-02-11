@@ -4,8 +4,6 @@ import { Container } from "@/components/LayoutComponents";
 import { HomeBlockAbout } from "@/components/HomeElements";
 import { Contact } from "@/components/Elements";
 import { NextSeo } from "next-seo";
-import clsx from "clsx";
-import styles from "./About.module.scss";
 
 export default function About() {
   const seo = {
@@ -66,8 +64,7 @@ export default function About() {
             </h4>
             <p className="mb-2">
               We are a development and investment company that specializes in
-              redevelopment and renewable energy. Our related company, Hartman
-              Ely Architecture provides design services for our developments.
+              redevelopment and renewable energy.
             </p>
             <p className="mb-2">
               In addition, we have extensive experience with transit oriented

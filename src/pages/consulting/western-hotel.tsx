@@ -1,22 +1,32 @@
 import {
   ProjectHero,
   ProjectDetails,
+  ProjectImageGallery,
 } from "@/components/SingleProjectElements";
 import { ProjectMedia } from "@/components/SingleProjectElements/ProjectMedia";
 import { NextSeo } from "next-seo";
-import React from "react";
 
 export default function WesternHotel() {
-  const aboutText = [
-    "The historic Western Hotel in Ouray is being restored by Zeppelin, an innovative Denver based Developer. ",
-
-    "Hartman Ely Investments is the Historic Consultant for the project.",
-  ];
-
   const media = [
     {
       mediaName: "Zeppelin Website",
       link: "  https://www.zeppelindevelopment.com/",
+    },
+  ];
+  const photos = [
+    {
+      src: "/images/western-hotel/western-hotel-gallery-1.webp",
+      width: 1200,
+      height: 800,
+      title: "",
+      description: "",
+    },
+    {
+      src: "/images/western-hotel/western-hotel-gallery-2.webp",
+      width: 1034,
+      height: 668,
+      title: "",
+      description: "",
     },
   ];
 
@@ -24,6 +34,7 @@ export default function WesternHotel() {
     <>
       <NextSeo title="Western Hotel" description="" />
       <ProjectHero
+        heroImageHeightClasses="h-[250px] sm:h-[350px] md:h-[450px] lg:h-[650px]"
         heroImage="/images/western-hotel/western-hotel-hero.jpg"
         alt="the western hotel hero image"
       />
@@ -31,10 +42,26 @@ export default function WesternHotel() {
         title="Western Hotel"
         location="Ouray, CO"
         tagline=""
-        aboutText={aboutText}
         showSidePanel={false}
-      />
+      >
+        <p className="small mt-2">
+          The historic Western Hotel in Ouray, CO was built in 1891 and has been
+          transformed into a luxury hotel and spa with 16 guest suites, meeting
+          rooms and dining facilities. HEI provided historic preservation
+          consulting services to Denver-based Zeppelin Development.{" "}
+          <a
+            rel="noreferrer"
+            href="https://www.thewesternouray.com/"
+            target="_BLANK"
+            className="link-small"
+          >
+            Learn more about the Western Hotel
+          </a>
+          .
+        </p>
+      </ProjectDetails>
       <ProjectMedia media={media} />
+      <ProjectImageGallery photos={photos} />
     </>
   );
 }

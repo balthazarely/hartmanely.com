@@ -18,16 +18,22 @@ export function ProjectMedia({ media }: ProjectDetailsProps) {
         <BiMoviePlay className="mr-1 text-xl" />
         <h3>Media</h3>
       </div>
-      <div className="flex flex-col">
+      <div className="flex flex-col items-start">
         {media?.map((media: ProjectAwardsProps, idx: number) => {
           if (media.link) {
             return (
-              <a href={media.link} target="_BLANK" rel="noreferrer" key={idx}>
-                <p className="link-small inline-block">{media.mediaName}</p>
+              <a
+                className="block"
+                href={media.link}
+                target="_BLANK"
+                rel="noreferrer"
+                key={idx}
+              >
+                <p className="link-small ">{media.mediaName}</p>
               </a>
             );
           } else {
-            <p key={idx} className="small inline-block  font-bold ">
+            <p key={idx} className="small   font-bold ">
               {media.mediaName}
             </p>;
           }

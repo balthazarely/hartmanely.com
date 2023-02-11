@@ -39,19 +39,19 @@ export function HomeBlockThree() {
             image="/images/steam-plant/steam-plant-hero.jpg"
             heading="Redevelopment"
             link="/categories/redevelopment"
-            body="Hartman Ely Investments is a Development and InvestmentHartman"
+            body="Our redevelopments create strategic collaborations with partners and surrounding neighborhoods to form a uniquely qualified team for each development opportunity."
           />
           <ImageBlock
             image="/images/innovage-headquarters/innovage-headquarters-hero.jpg"
             heading="Consulting"
             link="/categories/consulting"
-            body="Hartman Ely Investments is a Development and InvestmentHartman"
+            body="We love to help communities or organizations realize their visions."
           />
           <ImageBlock
             image="/images/hanger2/hanger-2-gallery-3.jpg"
             heading="Renewable Energy"
             link="/categories/renewable-energy"
-            body="Hartman Ely Investments is a Development and InvestmentHartman"
+            body="Our renewable energy developments are solid financial investments that have a seamless aesthetic integration with each building and/or site."
           />
         </div>
       </Container>

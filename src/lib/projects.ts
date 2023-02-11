@@ -24,7 +24,7 @@ export const projects = [
     link: "/redevelopment/hanger-2-lowry",
   },
   {
-    name: "Steam Plant Lofts",
+    name: "Steam Plant Lofts & Patio Homes",
     img: "/images/steam-plant/steam-plant-hero.jpg",
     type: "redevelopment",
     link: "/redevelopment/steam-plant-lofts",
@@ -36,22 +36,22 @@ export const projects = [
     link: "/redevelopment/steam-plant-row-homes",
   },
   {
-    name: "Boulder Wastewater Treatment Facility",
-    img: "/images/boulder-wastewater-treatment-facility/boulder-wastewater-treatment-facility-hero.jpeg",
-    type: "renewable energy",
-    link: "/renewable-energy/boulder-wastewater",
-  },
-  {
-    name: "Community Solar",
-    img: "/images/community-solar/community-solar-hero.jpg",
-    type: "renewable energy",
-    link: "/renewable-energy/community-solar",
+    name: "Machbeuf Hall Community Center",
+    img: "/images/machebeuf/machebeuf-hero.jpg",
+    type: "consulting",
+    link: "/consulting/machbeuf-hall-community-center",
   },
   {
     name: "Western Hotel",
     img: "/images/western-hotel/western-hotel-hero.jpg",
     type: "consulting",
     link: "/consulting/western-hotel",
+  },
+  {
+    name: "Lowell School Redevelopment",
+    img: "/images/lowell/lowell-hero.jpg",
+    type: "consulting",
+    link: "/consulting/lowell-school-redevelopment",
   },
   {
     name: "Innovage Headquarters",
@@ -76,5 +76,17 @@ export const projects = [
     img: "/images/the-bank-lofts/the-bank-lofts-hero.jpg",
     type: "consulting",
     link: "/consulting/bank-lofts",
+  },
+  {
+    name: "Boulder Wastewater Treatment Facility",
+    img: "/images/boulder-wastewater-treatment-facility/boulder-wastewater-treatment-facility-hero.jpeg",
+    type: "renewable energy",
+    link: "/renewable-energy/boulder-wastewater",
+  },
+  {
+    name: "Community Solar",
+    img: "/images/community-solar/community-solar-hero.jpg",
+    type: "renewable energy",
+    link: "/renewable-energy/community-solar",
   },
 ];

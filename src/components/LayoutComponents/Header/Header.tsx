@@ -219,7 +219,7 @@ function MobileNavigation() {
         <div className="mt-24 ">
           <motion.div
             variants={menuItemAnimationVariant}
-            className="mb-4 flex w-full cursor-pointer flex-col p-1"
+            className="mb-4 flex w-full cursor-pointer flex-col p-1  text-gray-800  hover:text-cyan-600"
           >
             <button
               onClick={(e) => navigateToMobileLink(e, "/")}
@@ -256,7 +256,7 @@ function MobileNavigation() {
           >
             <button
               onClick={(e) => navigateToMobileLink(e, "/about")}
-              className="flex w-full items-center justify-center space-x-4 text-left"
+              className="flex w-full items-center justify-center space-x-4 text-left  text-gray-800  hover:text-cyan-600"
             >
               <div className="text-2xl font-semibold">About</div>
             </button>
@@ -267,7 +267,7 @@ function MobileNavigation() {
           >
             <button
               onClick={(e) => navigateToMobileLink(e, "/contact")}
-              className="flex w-full items-center justify-center space-x-4 text-left"
+              className="flex w-full items-center justify-center space-x-4 text-left  text-gray-800  hover:text-cyan-600"
             >
               <div className="text-2xl font-semibold">Contact</div>
             </button>
@@ -291,7 +291,7 @@ function MobileItemAccordian({
       className="mb-4 flex w-full cursor-pointer  flex-col p-1"
       onClick={() => triggerOpen(!open)}
     >
-      <button className="flex w-full items-center justify-center  ">
+      <button className="flex w-full items-center justify-center text-gray-800  hover:text-cyan-600  ">
         <div className="text-2xl font-semibold">{name}</div>
         <div className="text-2xl font-semibold">
           <FaChevronDown
@@ -307,7 +307,7 @@ function MobileItemAccordian({
           .submenu?.map((item: any) => {
             return (
               <button
-                className="mb-2 text-center"
+                className="mb-2 text-center text-gray-800  hover:text-cyan-600"
                 key={item.name}
                 onClick={(e) => navigateToMobileLink(e, item.link)}
               >
@@ -315,6 +315,17 @@ function MobileItemAccordian({
               </button>
             );
           })}
+        <button
+          className="mb-2 text-center text-gray-800  hover:text-cyan-600"
+          onClick={(e) =>
+            navigateToMobileLink(
+              e,
+              `/categories/${name.toLowerCase().replace(/\s/g, "-")}`
+            )
+          }
+        >
+          All {name} Projects
+        </button>
       </div>
     </motion.div>
   );

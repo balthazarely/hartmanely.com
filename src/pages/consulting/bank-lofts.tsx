@@ -34,15 +34,11 @@ export default function TheBankLofts() {
     },
   ];
 
-  const aboutText = [
-    "The Bank Lofts is a conversion of the 1921 United States National Bank Building to an affordable rental loft community of 126 units and other ground floor retail tenants, including the conversion of the original banking hall into a Restaurant. The project was financed with a $100,000 grant from the Colorado State Historical Fund, retail sales tax increment financing from the Denver Urban Renewal Authority, historic preservation tax credits, low income housing credits, a 40 year HUD mortgage and owner equity. ",
-    "Jim Hartman was Development Manager for National Properties. Hartman Ely Investments was an investor in the project via National Properties..",
-  ];
-
   return (
     <>
       <NextSeo title="The Bank Lofts" description="" />
       <ProjectHero
+        heroImageHeightClasses="h-[250px] sm:h-[350px] md:h-[450px] lg:h-[650px]"
         heroImage="/images/the-bank-lofts/the-bank-lofts-hero.jpg"
         alt="the bank lofts hero image"
       />
@@ -50,9 +46,24 @@ export default function TheBankLofts() {
         title="The Bank Lofts "
         location="Denver, CO"
         tagline=""
-        aboutText={aboutText}
         showSidePanel={false}
-      />
+      >
+        <p className="small mt-2">
+          The Bank Lofts is a conversion of the 1921 United States National Bank
+          Building to an affordable rental loft community of 126 units and other
+          ground floor retail tenants, including the conversion of the original
+          banking hall into a Restaurant. The project was financed with a
+          $100,000 grant from the Colorado State Historical Fund, retail sales
+          tax increment financing from the Denver Urban Renewal Authority,
+          historic preservation tax credits, low income housing credits, a 40
+          year HUD mortgage and owner equity.
+        </p>
+        <p className="small mt-2">
+          Jim Hartman was Development Manager for National Properties. Hartman
+          Ely Investments was an investor in the project via National
+          Properties.
+        </p>
+      </ProjectDetails>
 
       <ProjectImageGallery photos={photos} />
     </>

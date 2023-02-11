@@ -17,7 +17,7 @@ const team = [
   {
     name: "Susan Ely",
     img: "/headshots/susan-ely.jpg",
-    bio: "Susan is a trained architect and is HEI's Business Manager, is in charge of all administrative efforts of the company.",
+    bio: "Susan is HEI's Business Manager, is in charge of all administrative efforts of the company.",
   },
 ];
 

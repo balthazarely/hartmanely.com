@@ -6,24 +6,26 @@ interface ProjectDetailsProps {
   title: string;
   tagline: string;
   location: string;
-  aboutText: any;
   completedDate?: string;
   size?: string;
   projectType?: string;
   logo?: string;
   showSidePanel?: boolean;
+  children: any;
+  website?: string;
 }
 
 export function ProjectDetails({
   title,
   tagline,
   location,
-  aboutText,
   completedDate,
   size,
   projectType,
   logo,
   showSidePanel = true,
+  children,
+  website,
 }: ProjectDetailsProps) {
   return (
     <Container noPadding={true} className="pt-10">
@@ -41,13 +43,7 @@ export function ProjectDetails({
       <div className="grid  grid-cols-1 gap-8  md:grid-cols-3">
         <div className="col-span-2 ">
           <h4 className="">{tagline}</h4>
-          {aboutText?.map((text: string, idx: number) => {
-            return (
-              <p key={idx} className="small mt-2">
-                {text}
-              </p>
-            );
-          })}
+          {children}
         </div>
         {showSidePanel && (
           <div className="col-span-1 bg-slate-100 p-4">
@@ -56,7 +52,7 @@ export function ProjectDetails({
               <p className="small mt-1 font-medium">{location}</p>
             </div>
             <div className="mb-4">
-              <h5>Date Completed</h5>
+              <h5>Year Completed</h5>
               <p className="small mt-1 font-medium">{completedDate}</p>
             </div>
             <div className="mb-4">
@@ -74,6 +70,20 @@ export function ProjectDetails({
                 >
                   <p className="link-small mt-1 font-medium">{projectType}</p>
                 </Link>
+              </div>
+            )}
+            {website && (
+              <div className="mb-4">
+                <h5>Website</h5>
+                <a
+                  rel="noreferrer"
+                  href="https://hangar2lowry.com/"
+                  target="_BLANK"
+                >
+                  <p className="small link-small mt-1 font-medium">
+                    Hanger 2 at Lowry
+                  </p>
+                </a>{" "}
               </div>
             )}
           </div>

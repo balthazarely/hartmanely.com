@@ -28,7 +28,7 @@ export default function PancratiaHall() {
     },
     {
       mediaName:
-        "The Story of Pancratia Hall Lofts Documentary (30 minute version)",
+        "The Detailed Story of Pancratia Hall Lofts (30 minute version)",
       link: "https://spaces.hightail.com/receive/zT3S84UYl3/fi-93cf1ce8-1b1c-44c5-8d8e-d7c283f0b5a1/fv-92de2075-0c29-414a-8aa0-82a5b8e30ad3/Pancratia%2012-21%2015%20HD.mp4",
     },
   ];
@@ -115,30 +115,70 @@ export default function PancratiaHall() {
     },
   ];
 
-  const aboutText = [
-    "Pancratia Hall Lofts is an adaptive use conversion of a vacant classroom and dormitory building at the historic Loretto Heights college campus in southwest Denver. Pancratia Hall is named after Mother Pancratia Bonfils, one of the key founders of Loretto Heights in the late 1800s. It was designed by master architect Harry W. J. Edbrooke in 1927 and was completed in 1930. The transformation of this important historic building will create 74 affordable family apartments and an inviting courtyard. The building's location at the heart of the revitalized Loretto Heights community will provide great additional amenities for residents. Key features of the historic building will be integrated into the new lofts. Decorative terrazzo hallway flooring will be refurbished. The gym will be converted into two, dramatic multi-level apartments, each with its own basketball backboard and restored clerestory windows. The Chapel's stained glass windows, decorative plaster walls, wood timber ceiling and decorative light fixtures will be featured in a dramatic fourth floor apartment.",
-    ,
-    "The project will be a public/private partnership with the City and County of Denver, Denver Housing Authority, Colorado Housing and Finance Authority, Colorado Division of Housing, PNC Bank, ANB Bank and Commerce Bank. Pancratia Hall Lofts is scheduled to be completed in Winter 2021.",
-    "Pancratia Hall Lofts is a development partnership between Hartman Ely Investments and Proximity Green. Westside Investment Partners is the redeveloper for the entire Loretto Heights Community.",
-  ];
-
   return (
     <>
       <NextSeo title="Pancratia Hall Lofts" description="" />
       <ProjectHero
         alt="pancratia hall hero image"
-        heroImage="/images/pancratia/pancratia-hero-cropped.jpg"
+        heroImage="/images/pancratia/pancratia-hero-cropped-v2.jpg"
+        heroImageHeightClasses="h-[250px] sm:h-[350px] md:h-[450px] lg:h-[650px]"
       />
       <ProjectDetails
         title="Pancratia Hall Lofts"
         location="Denver, CO"
         tagline="Affordable Housing at Historic Loretto Heights campus"
-        aboutText={aboutText}
         logo="/images/pancratia/pancratia-logo.jpeg"
-        completedDate="1/10/23"
-        size="140,000 Sq.Ft."
+        completedDate="2021"
+        size="63,000 Sq. Ft."
         projectType="Redevelopment"
-      />
+      >
+        <p className="small mt-2">
+          Pancratia Hall Lofts is an adaptive use conversion of a vacant
+          classroom and dormitory building at the historic Loretto Heights
+          college campus in southwest Denver. Pancratia Hall is named after
+          Mother Pancratia Bonfils, one of the key founders of Loretto Heights
+          in the late 1800s. It was designed by master architect Harry W. J.
+          Edbrooke in 1927 and was completed in 1930. The transformation of this
+          important historic building will create 74 affordable family
+          apartments and an inviting courtyard. The building's location at the
+          heart of the revitalized Loretto Heights community will provide great
+          additional amenities for residents. Key features of the historic
+          building will be integrated into the new lofts. Decorative terrazzo
+          hallway flooring will be refurbished. The gym will be converted into
+          two, dramatic multi-level apartments, each with its own basketball
+          backboard and restored clerestory windows. The Chapel's stained glass
+          windows, decorative plaster walls, wood timber ceiling and decorative
+          light fixtures will be featured in a dramatic fourth floor apartment
+        </p>
+        <p className="small mt-2">
+          The project is a public/private partnership with the City and County
+          of Denver, Denver Housing Authority, Colorado Housing and Finance
+          Authority, Colorado Division of Housing, PNC Bank, ANB Bank and
+          Commerce Bank.
+        </p>
+        <p className="small mt-2">
+          Pancratia Hall Lofts is a development partnership between Hartman Ely
+          Investments and{" "}
+          <a
+            rel="noreferrer"
+            className="link-small"
+            href="https://proximitygreen.com/places/pancratia"
+            target="_BLANK"
+          >
+            Proximity Green
+          </a>
+          .{" "}
+          <a
+            rel="noreferrer"
+            href="https://www.westsideinv.com/loretto-heights"
+            target="_BLANK"
+            className="link-small"
+          >
+            Westside Investment Partners
+          </a>{" "}
+          is the redeveloper for the entire Loretto Heights Community
+        </p>
+      </ProjectDetails>
       <ProjectAwards awards={awards} />
       <ProjectMedia media={media} />
       <ProjectImageGallery photos={photos} />

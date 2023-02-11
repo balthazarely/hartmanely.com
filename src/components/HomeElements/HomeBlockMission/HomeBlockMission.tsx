@@ -8,8 +8,8 @@ export function HomeBlockMission() {
         <div className="mx-auto flex flex-col items-center justify-center ">
           <h2 className="text-center">
             Our passion is helping communities create environmentally
-            responsible buildings, infrastructure and other features development
-            that areis sustainable, transit oriented and energy independent.
+            responsible buildings, infrastructure and other features that are
+            sustainable, transit oriented and energy independent.
           </h2>
         </div>
       </Container>

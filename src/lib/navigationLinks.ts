@@ -30,7 +30,7 @@ export const navigationLinks = [
         photo: "/thumbnails/hanger_2_thumbnail.jpg",
       },
       {
-        name: "Steam Plant Lofts",
+        name: "Steam Plant Lofts & Patio Homes",
         link: "/redevelopment/steam-plant-lofts",
         location: "Denver, CO",
         photo: "/thumbnails/steam_plant_thumbnail.jpg",
@@ -48,9 +48,19 @@ export const navigationLinks = [
     icon: HiOutlineBuildingLibrary,
     submenu: [
       {
-        name: "Wester Hotel",
+        name: "Machbeuf Hall Community Center",
+        link: "/consulting/machbeuf-hall-community-center",
+        location: "Denver, CO",
+      },
+      {
+        name: "Western Hotel",
         link: "/consulting/western-hotel",
         location: "Ouray, CO",
+      },
+      {
+        name: "Lowell School Redevelopment",
+        link: "/consulting/lowell-school-redevelopment",
+        location: "Grand Junction, CO",
       },
       {
         name: "Innovage Headquarters",

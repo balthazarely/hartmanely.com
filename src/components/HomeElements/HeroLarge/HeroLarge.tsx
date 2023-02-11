@@ -55,7 +55,7 @@ export function HeroLarge() {
         </motion.div>
 
         <motion.div variants={container} initial="hidden" animate="show">
-          <div className="absolute top-0 left-0 h-full w-full  bg-sky-900 opacity-40 "></div>
+          <div className="absolute top-0 left-0 h-full w-full bg-cyan-700 opacity-40 "></div>
         </motion.div>
         <motion.div
           className={styles.heroTitleWrapper}

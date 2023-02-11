@@ -38,16 +38,11 @@ export default function SteamPlantRowHomes() {
     },
   ];
 
-  const aboutText = [
-    "Steam Plant Row Homes is a 10-unit townhome building that is the first live/work facility at Lowry. The live/work concept provides a flexible ground floor commercial space with a separate storefront entrance and living space above. The Row Home building is a key anchor of the overall  40-unit Steam Plant Community. Its design has industrial features and large windows that complement the historic Steam Plant building.",
-    ,
-    "Hartman Ely Investments was Development Manager and was an ownership partner with Harvard Communities. ",
-  ];
-
   return (
     <>
       <NextSeo title="Steam Plant Row Homes" description="" />
       <ProjectHero
+        heroImageHeightClasses="h-[250px] sm:h-[350px] md:h-[450px] lg:h-[650px]"
         alt="steam plant row hoems hero image"
         heroImage="/images/steam-plant-row-homes/steam-plant-row-homes-hero.jpg"
       />
@@ -55,11 +50,24 @@ export default function SteamPlantRowHomes() {
         title="Steam Plant Row Homes"
         location="Denver, CO"
         tagline="First Live-work facility at Lowry"
-        aboutText={aboutText}
-        completedDate="1/10/23"
-        size="140,000 Sq.Ft."
+        completedDate="2006"
+        size="39,000 Sq. Ft."
         projectType="Redevelopment"
-      />
+      >
+        <p className="small mt-2">
+          Steam Plant Row Homes is a 10-unit townhome building that is the first
+          live/work facility at Lowry. The live/work concept provides a flexible
+          ground floor commercial space with a separate storefront entrance and
+          living space above. The Row Home building is a key anchor of the
+          overall 40-unit Steam Plant Community. Its design has industrial
+          features and large windows that complement the historic Steam Plant
+          building.
+        </p>
+        <p className="small mt-2">
+          Hartman Ely Investments was Development Manager and was an ownership
+          partner with Harvard Communities.
+        </p>
+      </ProjectDetails>
       <ProjectImageGallery photos={photos} />
     </>
   );

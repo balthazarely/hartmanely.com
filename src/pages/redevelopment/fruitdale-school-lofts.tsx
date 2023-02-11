@@ -23,7 +23,7 @@ export default function Fruitdale() {
     },
     {
       awardName:
-        "2019 Stephen H. Hart Award for Historic Preservation by History",
+        "2019 Stephen H. Hart Award for Historic Preservation by History Colorado",
       link: "https://www.youtube.com/watch?v=Hp29SSsbFDg&list=PLl68fplNJM8BiezBVP4lQ7mo_zh9jjWwU&index=2",
     },
     {
@@ -56,29 +56,39 @@ export default function Fruitdale() {
     },
   ];
 
-  const aboutText = [
-    "A public/private partnership between Fruitdale School Partners, The City of Wheat Ridge and The Wheat Ridge Housing Authority created a unique residential community of 16 affordable rental apartments. Historic interior features such as huge operable windows, high ceilings,chalk boards and basketball hoops from the prior school are featured.",
-    ,
-    "The entire property is solar-powered and has numerous energy efficiency features to minimize operational costs as well as to provide community education on sustainable development. The site includes a fruit orchard, low-water-use edible landscaping and free electric vehicle charging.",
-  ];
-
   return (
     <>
       <NextSeo title="Fruitdale School Lofts" description="" />
       <ProjectHero
+        heroImageHeightClasses="h-[250px] sm:h-[350px] md:h-[450px] lg:h-[650px]"
         heroImage="/images/fruitdale/fruitdale-hero.jpg"
         alt="fruitdale school lofts hero image"
       />
       <ProjectDetails
         title="Fruitdale School Lofts"
-        location="Denver, CO"
+        location="Wheat Ridge, CO"
         tagline="Adaptive Use of National Register Historic Building"
-        aboutText={aboutText}
         logo="/images/fruitdale/fruitdale-logo.jpeg"
-        completedDate="1/10/23"
-        size="140,000 Sq.Ft."
+        completedDate="2017"
+        size="15,000 Sq. Ft."
         projectType="Redevelopment"
-      />
+      >
+        <p className="small mt-2">
+          A public/private partnership between Fruitdale School Partners, The
+          City of Wheat Ridge and The Wheat Ridge Housing Authority created a
+          unique residential community of 16 affordable rental apartments.
+          Historic interior features such as huge operable windows, high
+          ceilings, chalk boards and basketball hoops from the prior school are
+          featured.
+        </p>
+        <p className="small mt-2">
+          The entire property is solar-powered and has numerous energy
+          efficiency features to minimize operational costs as well as to
+          provide community education on sustainable development. The site
+          includes a fruit orchard, low-water-use edible landscaping and free
+          electric vehicle charging.
+        </p>
+      </ProjectDetails>
       <ProjectAwards awards={awards} />
       <ProjectImageGallery photos={photos} />
     </>
