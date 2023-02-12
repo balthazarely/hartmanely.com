@@ -140,13 +140,13 @@ export default function PancratiaHall() {
           in the late 1800s. It was designed by master architect Harry W. J.
           Edbrooke in 1927 and was completed in 1930. The transformation of this
           important historic building created 74 affordable family apartments
-          and an inviting courtyard. The building's location at the heart of the
-          revitalized Loretto Heights community provides great additional
+          and an inviting courtyard. The building&apos;s location at the heart
+          of the revitalized Loretto Heights community provides great additional
           amenities for residents. Key features of the historic building were
           integrated into the new lofts including refurbishing decorative
           terrazzo hallway flooring. The gym was converted into two, dramatic
           multi-level apartments, each with its own basketball backboard and
-          restored clerestory windows. The Chapel&aposs stained glass windows,
+          restored clerestory windows. The Chapel&apos;s stained glass windows,
           decorative plaster walls, wood timber ceiling and decorative light
           fixtures are featured in a dramatic fourth floor apartment.
         </p>
