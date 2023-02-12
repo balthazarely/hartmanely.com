@@ -12,6 +12,7 @@ import { HiOutlineBuildingLibrary, HiOutlineSun } from "react-icons/hi2";
 import { FaChevronDown, FaHandsHelping } from "react-icons/fa";
 
 import clsx from "clsx";
+import Image from "next/image";
 
 const menuOpenAnimationVariant = {
   open: {
@@ -64,7 +65,14 @@ export function Header() {
           <nav className="relative z-50 flex w-full justify-between  ">
             <div className="flex items-center md:gap-x-12">
               <Link href="/" aria-label="Home">
-                <img className="w-48" src="/hei-logo.svg" alt="hei-logo" />
+                <Image
+                  width={100}
+                  height={100}
+                  src="/hei-logo.svg"
+                  className="w-48"
+                  alt="hei-logo"
+                />
+                {/* <img className="w-48" src="/hei-logo.svg" alt="hei-logo" /> */}
               </Link>
             </div>
             <div className="flex items-center ">

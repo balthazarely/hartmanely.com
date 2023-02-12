@@ -42,7 +42,7 @@ export function ProjectGrid({ category }: { category: string }) {
 
   useEffect(() => {
     setSelected(category);
-  }, []);
+  }, [category]);
 
   let projectData = projects.filter((project: ProjectProps) => {
     if (selected === "all" || selected === "") {

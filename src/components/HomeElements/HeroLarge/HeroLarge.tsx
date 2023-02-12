@@ -48,7 +48,7 @@ export function HeroLarge() {
           <Image
             fill
             priority={true}
-            className=" object-cover"
+            className="object-cover"
             src="/images/fruitdale/fruitdale-hero.jpg"
             alt="hartman ely investments hero iamge"
           />

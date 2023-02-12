@@ -3,7 +3,6 @@ import {
   HomeBlockTwo,
   HeroLarge,
   HomeBlockMission,
-  HomeBlockAbout,
   HomeBlockThree,
 } from "@/components/HomeElements";
 import { NextSeo } from "next-seo";

@@ -14,7 +14,6 @@ export function ProjectHero({
   return (
     <div>
       <div className={styles.heroLargeContainer}>
-        <img className={styles.HeroImage} src={heroImage} />
         <Image
           className={clsx("object-cover", styles.HeroImage)}
           src={heroImage}

@@ -146,7 +146,7 @@ export default function PancratiaHall() {
           integrated into the new lofts including refurbishing decorative
           terrazzo hallway flooring. The gym was converted into two, dramatic
           multi-level apartments, each with its own basketball backboard and
-          restored clerestory windows. The Chapel's stained glass windows,
+          restored clerestory windows. The Chapel&aposs stained glass windows,
           decorative plaster walls, wood timber ceiling and decorative light
           fixtures are featured in a dramatic fourth floor apartment.
         </p>

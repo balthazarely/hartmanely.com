@@ -1,4 +1,5 @@
 import { Container } from "@/components/LayoutComponents";
+import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 
@@ -36,7 +37,15 @@ export function ProjectDetails({
         </div>
         <div className="col-span-1">
           <div className="flex justify-center">
-            {logo && <img src={logo} className="h-20 object-contain" />}
+            {logo && (
+              <Image
+                alt="logo"
+                src={logo}
+                width={200}
+                height={100}
+                className="h-20 object-contain"
+              />
+            )}
           </div>
         </div>
       </div>
