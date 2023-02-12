@@ -50,7 +50,7 @@ export default function Home(): JSX.Element {
       <HomeBlockMission />
       <HomeBlockTwo />
       <HomeBlockThree />
-      <HomeBlockAbout teamMembers={team} />
+      {/* <HomeBlockAbout teamMembers={team} /> */}
       <Contact />
     </>
   );

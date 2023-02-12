@@ -20,9 +20,10 @@ export default function About() {
 
   const team = [
     {
-      name: "James Hartman",
+      name: "Jim Hartman",
       img: "/headshots/james-hartman.jpg",
       bio: "Jim is one of Colorado’s leading experts with historic building redevelopment, urban infill development and renewable energy. He received his architectural degree from University of Virginia in 1980 and practiced in Colorado for many years. His passion is creating sustainable communities that respect their historical roots and enhance their neighborhoods.",
+      linkedInLink: "https://www.linkedin.com/in/jim-hartman/",
     },
     {
       name: "Susan Ely",

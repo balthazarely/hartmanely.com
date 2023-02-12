@@ -96,7 +96,7 @@ export const navigationLinks = [
       {
         name: "Community Solar",
         link: "/renewable-energy/community-solar",
-        location: "Colorado",
+        location: "CO, NM & VT",
       },
     ],
   },

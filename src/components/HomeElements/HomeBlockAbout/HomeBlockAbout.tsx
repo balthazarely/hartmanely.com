@@ -1,15 +1,22 @@
 import { Container } from "@/components/LayoutComponents";
 import clsx from "clsx";
 import Image from "next/image";
+import Link from "next/link";
+import { FaLinkedin } from "react-icons/fa";
 import styles from "./HomeBlockAbout.module.scss";
 
 interface PersonProps {
   name: string;
   img: string;
   bio: string;
+  linkedInLink?: string;
 }
 
-export function HomeBlockAbout({ teamMembers }: any) {
+export function HomeBlockAbout({
+  teamMembers,
+}: {
+  teamMembers: PersonProps[];
+}) {
   return (
     <div className={styles.HomeBlockAboutContainer}>
       <Container>
@@ -33,9 +40,20 @@ export function HomeBlockAbout({ teamMembers }: any) {
                   />
                 </div>
                 <div>
-                  <h4 className="cursor-pointertext-center mt-2 text-center">
-                    {person.name}
-                  </h4>
+                  <div className="mt-2 flex items-center justify-center gap-1 ">
+                    <h4 className="cursor-pointertext-center  text-center">
+                      {person.name}
+                    </h4>
+                    {person.linkedInLink && (
+                      <a
+                        target="_blank"
+                        rel="noreferrer"
+                        href={person.linkedInLink}
+                      >
+                        <FaLinkedin className="text-xl" />
+                      </a>
+                    )}
+                  </div>
                   <p className="small mt-2 text-center ">{person.bio}</p>
                 </div>
               </div>

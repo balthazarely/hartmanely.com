@@ -75,7 +75,7 @@ export function HeroLarge() {
           </motion.div>
           <motion.div variants={item}>
             <Link href="/all-projects">
-              <button className="hover:bg-accent mt-4 rounded-md border-2 border-white bg-gray-800 bg-opacity-40 py-2 px-4 text-sm transition-colors duration-200 ">
+              <button className="mt-4 rounded-md border-2 border-white bg-gray-800 bg-opacity-40 py-2 px-4 text-sm transition-colors duration-200 hover:bg-cyan-600 ">
                 See Our Work
               </button>
             </Link>

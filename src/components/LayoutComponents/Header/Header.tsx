@@ -261,17 +261,6 @@ function MobileNavigation() {
               <div className="text-2xl font-semibold">About</div>
             </button>
           </motion.div>
-          <motion.div
-            variants={menuItemAnimationVariant}
-            className="mb-4 flex w-full cursor-pointer flex-col p-1"
-          >
-            <button
-              onClick={(e) => navigateToMobileLink(e, "/contact")}
-              className="flex w-full items-center justify-center space-x-4 text-left  text-gray-800  hover:text-cyan-600"
-            >
-              <div className="text-2xl font-semibold">Contact</div>
-            </button>
-          </motion.div>
         </div>
       </motion.div>
     </div>
