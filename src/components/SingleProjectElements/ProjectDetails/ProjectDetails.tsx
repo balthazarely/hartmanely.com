@@ -29,7 +29,7 @@ export function ProjectDetails({
   website,
 }: ProjectDetailsProps) {
   return (
-    <Container noPadding={true} className="pt-10">
+    <Container noPadding={true} className="bg-white pt-10">
       <div className="mb-2 grid grid-cols-3 gap-8 pb-2 ">
         <div className="col-span-2">
           <h1 className="mt-2">{title}</h1>

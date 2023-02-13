@@ -54,7 +54,7 @@ export default function About() {
         heading="About"
         heroImage="/images/pancratia/pancratia-gallery-11.jpg"
       />
-      <Container noPadding={true} className="pt-10">
+      <Container noPadding={true} className="bg-white pt-10">
         <div className="mx-auto mb-2 grid  grid-cols-1 gap-8 pb-2">
           <div className="col-span-2">
             <h1 className="mt-2">Historic Buildings are our Passion</h1>
