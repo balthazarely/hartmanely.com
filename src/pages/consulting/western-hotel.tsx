@@ -28,6 +28,34 @@ export default function WesternHotel() {
       title: "",
       description: "",
     },
+    {
+      src: "/images/western-hotel/western-hotel-gallery-3.jpg",
+      width: 730,
+      height: 582,
+      title: "",
+      description: "",
+    },
+    {
+      src: "/images/western-hotel/western-hotel-gallery-4.jpg",
+      width: 800,
+      height: 1000,
+      title: "",
+      description: "",
+    },
+    {
+      src: "/images/western-hotel/western-hotel-gallery-5.jpg",
+      width: 800,
+      height: 1000,
+      title: "",
+      description: "",
+    },
+    {
+      src: "/images/western-hotel/western-hotel-gallery-6.jpg",
+      width: 800,
+      height: 1000,
+      title: "",
+      description: "",
+    },
   ];
 
   return (
