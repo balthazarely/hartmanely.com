@@ -15,9 +15,9 @@ export default function WesternHotel() {
   ];
   const photos = [
     {
-      src: "/images/western-hotel/western-hotel-gallery-1.webp",
-      width: 1200,
-      height: 800,
+      src: "/images/western-hotel/western-hotel-hero.jpg",
+      width: 1509,
+      height: 1027,
       title: "",
       description: "",
     },
@@ -63,7 +63,7 @@ export default function WesternHotel() {
       <NextSeo title="Western Hotel" description="" />
       <ProjectHero
         heroImageHeightClasses="h-[250px] sm:h-[350px] md:h-[450px] lg:h-[650px]"
-        heroImage="/images/western-hotel/western-hotel-hero.jpg"
+        heroImage="/images/western-hotel/western-hotel-gallery-1.webp"
         alt="the western hotel hero image"
       />
       <ProjectDetails
