@@ -18,6 +18,10 @@ export default function PancratiaHall() {
       awardName: "2022 Energize Denver Award",
       link: "https://www.denvergov.org/Government/Agencies-Departments-Offices/Agencies-Departments-Offices-Directory/Climate-Action-Sustainability-Resiliency/News-Events/News/2022/Energize-Denver-Awards-2022-Winners",
     },
+    {
+      awardName: "Colorado Real Estate Journal Article ",
+      link: "https://etypeproductionstorage1.blob.core.windows.net/$web/Production_Prod/Jobs/702/2022-12-22/319902/FlippingBook/Colorado-Real-Estate-Journal_319902/76/index.html",
+    },
   ];
 
   const media = [
