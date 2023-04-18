@@ -76,6 +76,8 @@ export function Contact() {
                 />
               </div>
               <button
+                aria-label="Submit"
+                role="button"
                 className="mt-2 flex w-full cursor-pointer justify-center rounded-md bg-cyan-600 py-2  text-white transition-colors duration-150 hover:bg-cyan-800"
                 type="submit"
                 disabled={state.submitting}

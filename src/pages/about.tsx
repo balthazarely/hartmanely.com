@@ -40,14 +40,6 @@ export default function About() {
         openGraph={{
           ...seo,
           url: "https://hartmanely.com/",
-          // images: [
-          //   {
-          //     url: "https://hellotonic.com/images/photos/retreat.jpg",
-          //     width: 1000,
-          //     height: 667,
-          //     alt: seo.title,
-          //   },
-          // ],
         }}
       />
       <ProjectHero

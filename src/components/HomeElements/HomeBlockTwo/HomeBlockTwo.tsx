@@ -4,12 +4,12 @@ import Image from "next/image";
 export function HomeBlockTwo() {
   return (
     <Container>
-      <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
+      <div className="grid grid-cols-1 relative gap-6 md:grid-cols-2">
         <div className="">
           <Image
-            width={1000}
-            height={1000}
-            className="order-2 object-cover md:order-1"
+            width={400}
+            height={400}
+            className="order-2 w-full h-full  object-cover md:order-1"
             src="/images/pancratia/pancratia-hero-cropped.jpg"
             alt="hartman ely investments pancratia hall"
           />

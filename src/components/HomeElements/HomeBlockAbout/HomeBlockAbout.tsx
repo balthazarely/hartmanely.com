@@ -1,7 +1,6 @@
 import { Container } from "@/components/LayoutComponents";
 import clsx from "clsx";
 import Image from "next/image";
-import Link from "next/link";
 import { FaLinkedin } from "react-icons/fa";
 import styles from "./HomeBlockAbout.module.scss";
 

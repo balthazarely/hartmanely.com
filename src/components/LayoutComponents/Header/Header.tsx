@@ -72,7 +72,6 @@ export function Header() {
                   className="w-48"
                   alt="hei-logo"
                 />
-                {/* <img className="w-48" src="/hei-logo.svg" alt="hei-logo" /> */}
               </Link>
             </div>
             <div className="flex items-center ">
@@ -230,6 +229,8 @@ function MobileNavigation() {
             className="mb-4 flex w-full cursor-pointer flex-col p-1  text-gray-800  hover:text-cyan-600"
           >
             <button
+              aria-label="got-to-link"
+              role="button"
               onClick={(e) => navigateToMobileLink(e, "/")}
               className="flex w-full items-center justify-center space-x-4 text-left"
             >
@@ -263,6 +264,8 @@ function MobileNavigation() {
             className="mb-4 flex w-full cursor-pointer flex-col p-1"
           >
             <button
+              aria-label="go-to-link"
+              role="button"
               onClick={(e) => navigateToMobileLink(e, "/about")}
               className="flex w-full items-center justify-center space-x-4 text-left  text-gray-800  hover:text-cyan-600"
             >
@@ -288,7 +291,11 @@ function MobileItemAccordian({
       className="mb-4 flex w-full cursor-pointer  flex-col p-1"
       onClick={() => triggerOpen(!open)}
     >
-      <button className="flex w-full items-center justify-center text-gray-800  hover:text-cyan-600  ">
+      <button
+        aria-label="open"
+        role="button"
+        className="flex w-full items-center justify-center text-gray-800  hover:text-cyan-600  "
+      >
         <div className="text-2xl font-semibold">{name}</div>
         <div className="text-2xl font-semibold">
           <FaChevronDown
@@ -304,6 +311,8 @@ function MobileItemAccordian({
           .submenu?.map((item: any) => {
             return (
               <button
+                aria-label="navigate"
+                role="button"
                 className="mb-2 text-center text-gray-800  hover:text-cyan-600"
                 key={item.name}
                 onClick={(e) => navigateToMobileLink(e, item.link)}
@@ -313,6 +322,8 @@ function MobileItemAccordian({
             );
           })}
         <button
+          aria-label="navigate"
+          role="button"
           className="mb-2 text-center text-gray-800  hover:text-cyan-600"
           onClick={(e) =>
             navigateToMobileLink(

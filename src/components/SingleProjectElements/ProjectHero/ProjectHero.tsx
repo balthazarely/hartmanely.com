@@ -20,9 +20,9 @@ export function ProjectHero({
     >
       <div className={clsx(styles.heroLargeContainer, heroImageHeightClasses)}>
         <Image
-          priority={true}
-          fill
-          className="object-cover"
+          height={700}
+          width={700}
+          className="object-cover w-full h-full"
           src={heroImage}
           alt={alt}
         />

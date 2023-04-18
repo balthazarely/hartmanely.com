@@ -11,7 +11,8 @@ function ImageBlock({ image, heading, body, link }: any) {
         <div className={clsx(styles.imageContainer, "group")}>
           <div className="absolute top-0 left-0 z-50  h-full w-full bg-cyan-600 opacity-0 transition-all duration-500 group-hover:opacity-30"></div>
           <Image
-            fill
+            height={400}
+            width={400}
             className={clsx(styles.image, "object-cover group-hover:scale-110")}
             src={image}
             alt="hartman ely investments pancratia hall"

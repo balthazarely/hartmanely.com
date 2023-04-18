@@ -1,5 +1,4 @@
 import { Container } from "@/components/LayoutComponents";
-import Link from "next/link";
 import { FaAward } from "react-icons/fa";
 
 interface ProjectDetailsProps {

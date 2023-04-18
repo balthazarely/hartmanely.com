@@ -1,5 +1,4 @@
 import { Container } from "@/components/LayoutComponents";
-import Link from "next/link";
 import { BiMoviePlay } from "react-icons/bi";
 
 interface ProjectDetailsProps {
