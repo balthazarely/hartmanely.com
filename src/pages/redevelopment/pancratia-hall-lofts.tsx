@@ -18,6 +18,14 @@ export default function PancratiaHall() {
       awardName: "2022 Energize Denver Award",
       link: "https://etypeproductionstorage1.blob.core.windows.net/$web/Production_Prod/Jobs/702/2022-12-22/319902/FlippingBook/Colorado-Real-Estate-Journal_319902/76/index.html",
     },
+    {
+      awardName:
+        "2023 History Colorado State Historic Preservation Officer Award",
+      link: "https://www.youtube.com/watch?v=0-t4eyTAPdE&feature=youtu.be",
+    },
+    {
+      awardName: "2023 NAOIP Colorado Community Impact Award",
+    },
   ];
 
   const media = [
