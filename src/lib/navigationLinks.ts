@@ -48,8 +48,8 @@ export const navigationLinks = [
     icon: HiOutlineBuildingLibrary,
     submenu: [
       {
-        name: "Machbeuf Hall Community Center",
-        link: "/consulting/machbeuf-hall-community-center",
+        name: "Loretto Heights Community Center",
+        link: "/consulting/loretto-heights-community-center",
         location: "Denver, CO",
       },
       {

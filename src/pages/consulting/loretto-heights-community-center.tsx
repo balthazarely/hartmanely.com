@@ -4,17 +4,17 @@ import {
 } from "@/components/SingleProjectElements";
 import { NextSeo } from "next-seo";
 
-export default function MachbeufHallCommunityCenter() {
+export default function LorettoHeightsCommunityCenter() {
   return (
     <>
-      <NextSeo title="Machbeuf Hall Community Center" description="" />
+      <NextSeo title="Loretto Heights Community Center" description="" />
       <ProjectHero
         heroImageHeightClasses="h-[250px] sm:h-[350px] md:h-[450px] lg:h-[650px]"
-        heroImage="/images/machebeuf/machebeuf-hero.jpg"
-        alt="the Machbeuf Hall Community Center hero image"
+        heroImage="/images/machebeuf/machebeuf-hero-2.jpg"
+        alt="Loretto Heights Community Center hero image"
       />
       <ProjectDetails
-        title="Machbeuf Hall Community Center"
+        title="Loretto Heights Community Center"
         location="Denver, CO"
         tagline=""
         showSidePanel={false}
@@ -31,7 +31,7 @@ export default function MachbeufHallCommunityCenter() {
             target="_BLANK"
             className="link-small"
           >
-            Learn more about the Machbeuf Hall Community Cente
+            Learn more about the Loretto Heights Community Center
           </a>
         </p>
       </ProjectDetails>

@@ -36,10 +36,10 @@ export const projects = [
     link: "/redevelopment/steam-plant-row-homes",
   },
   {
-    name: "Machbeuf Hall Community Center",
-    img: "/images/machebeuf/machebeuf-hero.jpg",
+    name: "Loretto Heights Community Center",
+    img: "/images/machebeuf/machebeuf-hero-2.jpg",
     type: "consulting",
-    link: "/consulting/machbeuf-hall-community-center",
+    link: "/consulting/loretto-heights-community-center",
   },
   {
     name: "Western Hotel",
