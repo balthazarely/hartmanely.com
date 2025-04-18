@@ -26,6 +26,10 @@ export default function PancratiaHall() {
     {
       awardName: "2023 NAOIP Colorado Community Impact Award",
     },
+    {
+      awardName: "2025 Denver Mayor's Design Award",
+      link: "https://www.denvergov.org/Government/Agencies-Departments-Offices/Agencies-Departments-Offices-Directory/Community-Planning-and-Development/Planning/Community-Engagement/Mayors-Design-Awards/2025-Mayors-Design-Awards-Nominated-Projects",
+    },
   ];
 
   const media = [
