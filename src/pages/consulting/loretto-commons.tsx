@@ -38,8 +38,8 @@ export default function LorettoCommons() {
           tower).
         </p>
         <p className="small mt-2">
-          Loretto Commons will also redevelop the historic Priest's House and
-          Steam Plant and will construct a new, complementary apartment
+          Loretto Commons will also redevelop the historic Priest&apos;s House
+          and Steam Plant and will construct a new, complementary apartment
           building, parking garage and transit plaza.
         </p>
         <p className="small mt-4">
