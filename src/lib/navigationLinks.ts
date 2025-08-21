@@ -53,6 +53,11 @@ export const navigationLinks = [
         location: "Denver, CO",
       },
       {
+        name: "Loretto Commons",
+        link: "/consulting/loretto-commons",
+        location: "Denver, CO",
+      },
+      {
         name: "Western Hotel",
         link: "/consulting/western-hotel",
         location: "Ouray, CO",
