@@ -25,7 +25,7 @@ export default function LorettoCommons() {
           design consulting services to Commun Denver for Loretto Commons. HEI
           has also provided investment capital for this important redevelopment
           of several historic buildings and a vacant land parcel at the core of
-          Denver's new Loretto Heights community.
+          Denver&apos;s new Loretto Heights community.
         </p>
         <p className="small mt-2">
           The iconic 1890 Administration Building shown in the historic photo
