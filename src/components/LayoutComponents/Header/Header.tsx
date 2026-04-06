@@ -52,14 +52,18 @@ const menuItemAnimationVariant = {
   },
 };
 
-export function Header({ navCategories, siteSettings }: { navCategories: NavCategory[], siteSettings: SiteSettings | null }) {
+export function Header({
+  navCategories,
+  siteSettings,
+}: {
+  navCategories: NavCategory[];
+  siteSettings: SiteSettings | null;
+}) {
   const scrollPosition = useScrollPosition();
-  const logoSrc = siteSettings?.logo?.url || "/hei-logo.svg";
+  // const logoSrc = siteSettings?.logo?.url || "/hei-logo.svg";
+  const logoSrc = "/hei-logo.svg";
 
-  const navLinks = [
-    ...navCategories,
-    { title: "About", link: "/about" },
-  ];
+  const navLinks = [...navCategories, { title: "About", link: "/about" }];
 
   return (
     <>
@@ -179,7 +183,7 @@ const ListItem = forwardRef(
         </a>
       </NavigationMenu.Link>
     </li>
-  )
+  ),
 );
 ListItem.displayName = "MyComponentTest";
 
@@ -251,7 +255,9 @@ function MobileNavigation({ navLinks }: { navLinks: any[] }) {
             triggerOpen={setRedevelopmentOpen}
             open={redevelopmentOpen}
             name="Redevelopment"
-            submenu={navLinks.find((n) => n.title === "Redevelopment")?.submenu ?? []}
+            submenu={
+              navLinks.find((n) => n.title === "Redevelopment")?.submenu ?? []
+            }
           />
           <MobileItemAccordian
             navigateToMobileLink={navigateToMobileLink}
@@ -259,7 +265,9 @@ function MobileNavigation({ navLinks }: { navLinks: any[] }) {
             triggerOpen={setConsultingOpen}
             open={consultingOpen}
             name="Consulting"
-            submenu={navLinks.find((n) => n.title === "Consulting")?.submenu ?? []}
+            submenu={
+              navLinks.find((n) => n.title === "Consulting")?.submenu ?? []
+            }
           />
           <MobileItemAccordian
             navigateToMobileLink={navigateToMobileLink}
@@ -267,7 +275,10 @@ function MobileNavigation({ navLinks }: { navLinks: any[] }) {
             triggerOpen={setRenewableEnergyOpen}
             open={renewableEnergyOpen}
             name="Renewable Energy"
-            submenu={navLinks.find((n) => n.title === "Renewable Energy")?.submenu ?? []}
+            submenu={
+              navLinks.find((n) => n.title === "Renewable Energy")?.submenu ??
+              []
+            }
           />
           <motion.div
             variants={menuItemAnimationVariant}
@@ -318,18 +329,18 @@ function MobileItemAccordian({
       </button>
       <div className={`mt-4 flex flex-col ${open ? "visible" : "hidden"}`}>
         {submenu.map((item: any) => {
-            return (
-              <button
-                aria-label="navigate"
-                role="button"
-                className="mb-2 text-center text-gray-800  hover:text-cyan-600"
-                key={item.name}
-                onClick={(e) => navigateToMobileLink(e, item.link)}
-              >
-                {item.name}
-              </button>
-            );
-          })}
+          return (
+            <button
+              aria-label="navigate"
+              role="button"
+              className="mb-2 text-center text-gray-800  hover:text-cyan-600"
+              key={item.name}
+              onClick={(e) => navigateToMobileLink(e, item.link)}
+            >
+              {item.name}
+            </button>
+          );
+        })}
         <button
           aria-label="navigate"
           role="button"
@@ -337,7 +348,7 @@ function MobileItemAccordian({
           onClick={(e) =>
             navigateToMobileLink(
               e,
-              `/categories/${name.toLowerCase().replace(/\s/g, "-")}`
+              `/categories/${name.toLowerCase().replace(/\s/g, "-")}`,
             )
           }
         >
