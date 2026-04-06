@@ -1,11 +1,23 @@
 import { Layout } from "@/components/LayoutComponents";
 import "@/styles/globals.scss";
-import type { AppProps } from "next/app";
+import { getNavProjects, NavCategory } from "@/lib/payload";
+import type { AppContext, AppProps } from "next/app";
+import App from "next/app";
 
-export default function App({ Component, pageProps }: AppProps) {
+interface Props extends AppProps {
+  navCategories: NavCategory[];
+}
+
+export default function MyApp({ Component, pageProps, navCategories }: Props) {
   return (
-    <Layout>
+    <Layout navCategories={navCategories}>
       <Component {...pageProps} />
     </Layout>
   );
 }
+
+MyApp.getInitialProps = async (appContext: AppContext) => {
+  const appProps = await App.getInitialProps(appContext);
+  const navCategories = await getNavProjects();
+  return { ...appProps, navCategories };
+};
