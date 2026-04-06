@@ -54,7 +54,11 @@ const menuItemAnimationVariant = {
 
 export function Header() {
   const scrollPosition = useScrollPosition();
-  const [navCategories, setNavCategories] = useState<NavCategory[]>([]);
+  const [navCategories, setNavCategories] = useState<NavCategory[]>([
+    { title: "Redevelopment", submenu: [] },
+    { title: "Consulting", submenu: [] },
+    { title: "Renewable Energy", submenu: [] },
+  ]);
 
   useEffect(() => {
     fetch("/api/nav-projects")
