@@ -133,6 +133,45 @@ export async function getCategoryPages(): Promise<CategoryPages | null> {
   return data
 }
 
+export interface NavSubmenuItem {
+  name: string
+  link: string
+  location: string
+}
+
+export interface NavCategory {
+  title: string
+  submenu: NavSubmenuItem[]
+}
+
+export async function getNavProjects(): Promise<NavCategory[]> {
+  const res = await fetch(
+    `${PAYLOAD_API_URL}/api/projects?depth=0&limit=100&sort=order`
+  )
+  if (!res.ok) return []
+  const data = await res.json()
+
+  const categories: Record<string, { title: string; items: NavSubmenuItem[] }> = {
+    redevelopment: { title: 'Redevelopment', items: [] },
+    consulting: { title: 'Consulting', items: [] },
+    'renewable-energy': { title: 'Renewable Energy', items: [] },
+  }
+
+  for (const p of data.docs) {
+    if (!categories[p.type]) continue
+    categories[p.type].items.push({
+      name: p.title,
+      link: `/${p.type}/${p.slug}`,
+      location: p.location || '',
+    })
+  }
+
+  return Object.values(categories).map(({ title, items }) => ({
+    title,
+    submenu: items,
+  }))
+}
+
 export interface ProjectGridItem {
   name: string
   thumbnail: string

@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 import * as NavigationMenu from "@radix-ui/react-navigation-menu";
 import { CaretDownIcon } from "@radix-ui/react-icons";
 import useScrollPosition from "../../../hooks/useScrollPosition";
-import { navigationLinks } from "@/lib/navigationLinks";
+import { NavCategory } from "@/lib/payload";
 import { useWindowSize } from "react-use";
 import { useRouter } from "next/router";
 import { HiOutlineBuildingLibrary, HiOutlineSun } from "react-icons/hi2";
@@ -54,6 +54,19 @@ const menuItemAnimationVariant = {
 
 export function Header() {
   const scrollPosition = useScrollPosition();
+  const [navCategories, setNavCategories] = useState<NavCategory[]>([]);
+
+  useEffect(() => {
+    fetch("/api/nav-projects")
+      .then((r) => r.json())
+      .then(setNavCategories);
+  }, []);
+
+  const navLinks = [
+    ...navCategories,
+    { title: "About", link: "/about" },
+  ];
+
   return (
     <>
       <header
@@ -75,8 +88,8 @@ export function Header() {
               </Link>
             </div>
             <div className="flex items-center ">
-              <DesktopNavigation />
-              <MobileNavigation />
+              <DesktopNavigation navLinks={navLinks} />
+              <MobileNavigation navLinks={navLinks} />
             </div>
           </nav>
         </div>
@@ -85,12 +98,12 @@ export function Header() {
   );
 }
 
-const DesktopNavigation = () => {
+const DesktopNavigation = ({ navLinks }: { navLinks: any[] }) => {
   return (
     <div className="hidden md:block">
       <NavigationMenu.Root className="NavigationMenuRoot">
         <NavigationMenu.List className="NavigationMenuList">
-          {navigationLinks.map((item: any, idx: number) => {
+          {navLinks.map((item: any, idx: number) => {
             return item.submenu ? (
               <NavigationMenu.Item key={idx}>
                 <NavigationMenu.Trigger className="NavigationMenuTrigger text-sm font-semibold">
@@ -176,7 +189,7 @@ const ListItem = forwardRef(
 );
 ListItem.displayName = "MyComponentTest";
 
-function MobileNavigation() {
+function MobileNavigation({ navLinks }: { navLinks: any[] }) {
   const router = useRouter();
   const [menuOpen, setMenuOpen] = useState(false);
   const [redevelopmentOpen, setRedevelopmentOpen] = useState(false);
@@ -244,6 +257,7 @@ function MobileNavigation() {
             triggerOpen={setRedevelopmentOpen}
             open={redevelopmentOpen}
             name="Redevelopment"
+            submenu={navLinks.find((n) => n.title === "Redevelopment")?.submenu ?? []}
           />
           <MobileItemAccordian
             navigateToMobileLink={navigateToMobileLink}
@@ -251,6 +265,7 @@ function MobileNavigation() {
             triggerOpen={setConsultingOpen}
             open={consultingOpen}
             name="Consulting"
+            submenu={navLinks.find((n) => n.title === "Consulting")?.submenu ?? []}
           />
           <MobileItemAccordian
             navigateToMobileLink={navigateToMobileLink}
@@ -258,6 +273,7 @@ function MobileNavigation() {
             triggerOpen={setRenewableEnergyOpen}
             open={renewableEnergyOpen}
             name="Renewable Energy"
+            submenu={navLinks.find((n) => n.title === "Renewable Energy")?.submenu ?? []}
           />
           <motion.div
             variants={menuItemAnimationVariant}
@@ -283,6 +299,7 @@ function MobileItemAccordian({
   triggerOpen,
   open,
   name,
+  submenu,
   navigateToMobileLink,
 }: any) {
   return (
@@ -306,9 +323,7 @@ function MobileItemAccordian({
         </div>
       </button>
       <div className={`mt-4 flex flex-col ${open ? "visible" : "hidden"}`}>
-        {navigationLinks
-          .filter((obj: any) => obj.title === name)[0]
-          .submenu?.map((item: any) => {
+        {submenu.map((item: any) => {
             return (
               <button
                 aria-label="navigate"
