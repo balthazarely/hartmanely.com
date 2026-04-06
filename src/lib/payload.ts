@@ -24,6 +24,7 @@ export interface Project {
   location?: string
   tagline?: string
   heroImage: PayloadImage
+  thumbnail?: PayloadImage
   logo?: PayloadImage
   completedDate?: string
   size?: string
@@ -114,6 +115,31 @@ export async function getAboutPage(): Promise<AboutPage | null> {
     member.photo.url = resolveImageUrl(member.photo.url)
   })
   return data
+}
+
+export interface ProjectGridItem {
+  name: string
+  thumbnail: string
+  type: string
+  link: string
+}
+
+export async function getProjectsForGrid(type?: string): Promise<ProjectGridItem[]> {
+  const typeFilter = type ? `&where[type][equals]=${type}` : ''
+  const res = await fetch(
+    `${PAYLOAD_API_URL}/api/projects?depth=1&limit=100${typeFilter}`
+  )
+  if (!res.ok) return []
+  const data = await res.json()
+  return data.docs.map((p: any) => {
+    const imgUrl = p.thumbnail?.url || p.heroImage?.url || ''
+    return {
+      name: p.title,
+      thumbnail: resolveImageUrl(imgUrl),
+      type: p.type,
+      link: `/${p.type}/${p.slug}`,
+    }
+  })
 }
 
 export async function getProjectSlugsByType(type: string): Promise<string[]> {
