@@ -117,6 +117,22 @@ export async function getAboutPage(): Promise<AboutPage | null> {
   return data
 }
 
+export interface CategoryPages {
+  redevelopment: { heroImage: PayloadImage }
+  consulting: { heroImage: PayloadImage }
+  renewableEnergy: { heroImage: PayloadImage }
+}
+
+export async function getCategoryPages(): Promise<CategoryPages | null> {
+  const res = await fetch(`${PAYLOAD_API_URL}/api/globals/category-pages?depth=2`)
+  if (!res.ok) return null
+  const data: CategoryPages = await res.json()
+  data.redevelopment.heroImage.url = resolveImageUrl(data.redevelopment.heroImage.url)
+  data.consulting.heroImage.url = resolveImageUrl(data.consulting.heroImage.url)
+  data.renewableEnergy.heroImage.url = resolveImageUrl(data.renewableEnergy.heroImage.url)
+  return data
+}
+
 export interface ProjectGridItem {
   name: string
   thumbnail: string

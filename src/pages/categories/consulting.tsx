@@ -2,20 +2,18 @@ import { Contact } from "@/components/Elements";
 import { ProjectHero, ProjectGrid } from "@/components/ProjectsElements";
 import { NextSeo } from "next-seo";
 import { GetStaticProps } from "next";
-import { getProjectsForGrid, ProjectGridItem } from "@/lib/payload";
+import { getCategoryPages, getProjectsForGrid, ProjectGridItem } from "@/lib/payload";
 
 interface Props {
+  heroImage: string;
   projects: ProjectGridItem[];
 }
 
-export default function Consulting({ projects }: Props) {
+export default function Consulting({ heroImage, projects }: Props) {
   return (
     <>
       <NextSeo title="Hartman Ely - Consulting" description="" />
-      <ProjectHero
-        heading="Consulting"
-        heroImage="/images/courtyard-by-marriott-hotel/courtyard-by-marriott-hotel-hero.jpg"
-      />
+      <ProjectHero heading="Consulting" heroImage={heroImage} />
       <ProjectGrid category="consulting" projects={projects} />
       <Contact />
     </>
@@ -23,6 +21,15 @@ export default function Consulting({ projects }: Props) {
 }
 
 export const getStaticProps: GetStaticProps<Props> = async () => {
-  const projects = await getProjectsForGrid("consulting");
-  return { props: { projects }, revalidate: 60 };
+  const [categoryPages, projects] = await Promise.all([
+    getCategoryPages(),
+    getProjectsForGrid("consulting"),
+  ]);
+  return {
+    props: {
+      heroImage: categoryPages?.consulting.heroImage.url ?? "",
+      projects,
+    },
+    revalidate: 60,
+  };
 };
