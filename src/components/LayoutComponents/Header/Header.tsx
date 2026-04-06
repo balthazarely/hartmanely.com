@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 import * as NavigationMenu from "@radix-ui/react-navigation-menu";
 import { CaretDownIcon } from "@radix-ui/react-icons";
 import useScrollPosition from "../../../hooks/useScrollPosition";
-import { NavCategory } from "@/lib/payload";
+import { NavCategory, SiteSettings } from "@/lib/payload";
 import { useWindowSize } from "react-use";
 import { useRouter } from "next/router";
 import { HiOutlineBuildingLibrary, HiOutlineSun } from "react-icons/hi2";
@@ -52,8 +52,9 @@ const menuItemAnimationVariant = {
   },
 };
 
-export function Header({ navCategories }: { navCategories: NavCategory[] }) {
+export function Header({ navCategories, siteSettings }: { navCategories: NavCategory[], siteSettings: SiteSettings | null }) {
   const scrollPosition = useScrollPosition();
+  const logoSrc = siteSettings?.logo?.url || "/hei-logo.svg";
 
   const navLinks = [
     ...navCategories,
@@ -74,7 +75,7 @@ export function Header({ navCategories }: { navCategories: NavCategory[] }) {
                 <Image
                   width={100}
                   height={100}
-                  src="/hei-logo.svg"
+                  src={logoSrc}
                   className="w-48"
                   alt="hei-logo"
                 />
