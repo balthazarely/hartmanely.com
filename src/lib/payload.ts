@@ -127,7 +127,7 @@ export interface ProjectGridItem {
 export async function getProjectsForGrid(type?: string): Promise<ProjectGridItem[]> {
   const typeFilter = type ? `&where[type][equals]=${type}` : ''
   const res = await fetch(
-    `${PAYLOAD_API_URL}/api/projects?depth=1&limit=100${typeFilter}`
+    `${PAYLOAD_API_URL}/api/projects?depth=1&limit=100&sort=order${typeFilter}`
   )
   if (!res.ok) return []
   const data = await res.json()
