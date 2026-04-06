@@ -4,18 +4,25 @@ import Image from "next/image";
 import Link from "next/link";
 import styles from "./TextBlockThree.module.scss";
 
-function ImageBlock({ image, heading, body, link }: any) {
+interface Category {
+  image: string;
+  heading: string;
+  body: string;
+  link: string;
+}
+
+function ImageBlock({ image, heading, body, link }: Category) {
   return (
     <div className="w-full text-center">
       <Link href={link}>
         <div className={clsx(styles.imageContainer, "group")}>
-          <div className="absolute top-0 left-0 z-50  h-full w-full bg-cyan-600 opacity-0 transition-all duration-500 group-hover:opacity-30"></div>
+          <div className="absolute top-0 left-0 z-50 h-full w-full bg-cyan-600 opacity-0 transition-all duration-500 group-hover:opacity-30"></div>
           <Image
             height={400}
             width={400}
             className={clsx(styles.image, "object-cover group-hover:scale-110")}
             src={image}
-            alt="hartman ely investments pancratia hall"
+            alt={heading}
           />
         </div>
       </Link>
@@ -27,7 +34,7 @@ function ImageBlock({ image, heading, body, link }: any) {
   );
 }
 
-export function HomeBlockThree() {
+export function HomeBlockThree({ categories }: { categories: Category[] }) {
   return (
     <div className={styles.HomeBlockThreeContainer}>
       <Container>
@@ -36,24 +43,9 @@ export function HomeBlockThree() {
           <h2 className="mt-2 mb-4">Our Work</h2>
         </div>
         <div className="grid grid-cols-1 gap-6 sm:grid-cols-3">
-          <ImageBlock
-            image="/images/steam-plant/steam-plant-hero.jpg"
-            heading="Redevelopment"
-            link="/categories/redevelopment"
-            body="Our redevelopments create strategic collaborations with partners and surrounding neighborhoods to form a uniquely qualified team for each development opportunity."
-          />
-          <ImageBlock
-            image="/images/innovage-headquarters/innovage-headquarters-hero.jpg"
-            heading="Consulting"
-            link="/categories/consulting"
-            body="We love to help communities or organizations realize their visions."
-          />
-          <ImageBlock
-            image="/images/hanger2/hanger-2-gallery-3.jpg"
-            heading="Renewable Energy"
-            link="/categories/renewable-energy"
-            body="Our renewable energy developments are solid financial investments that have a seamless aesthetic integration with each building and/or site."
-          />
+          {categories.map((cat, idx) => (
+            <ImageBlock key={idx} {...cat} />
+          ))}
         </div>
       </Container>
     </div>

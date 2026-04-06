@@ -4,87 +4,44 @@ import { Container } from "@/components/LayoutComponents";
 import { HomeBlockAbout } from "@/components/HomeElements";
 import { Contact } from "@/components/Elements";
 import { NextSeo } from "next-seo";
+import { getAboutPage, AboutPage } from "@/lib/payload";
+import { GetStaticProps } from "next";
+import { SerializedRichText } from "@/lib/serializeRichText";
 
-export default function About() {
-  const seo = {
-    title: "About Hartman Ely ",
-    description:
-      "Hartman Ely Investments is a Development and Investment Company that specializes in Sustainable Redevelopment and Renewable Energy. ",
-  };
+interface Props {
+  page: AboutPage;
+}
 
-  interface PersonProps {
-    name: string;
-    img: string;
-    bio: string;
-  }
-
-  const team = [
-    {
-      name: "Jim Hartman",
-      img: "/headshots/james-hartman.jpg",
-      bio: "Jim is one of Colorado’s leading experts with historic building redevelopment, urban infill development and renewable energy. He received his architectural degree from University of Virginia in 1980 and practiced in Colorado for many years. His passion is creating sustainable communities that respect their historical roots and enhance their neighborhoods.",
-      linkedInLink: "https://www.linkedin.com/in/jim-hartman/",
-    },
-    {
-      name: "Susan Ely",
-      img: "/headshots/susan-ely.jpg",
-      bio: "Susan Ely grew up in Australia and moved to Colorado in 1993. She received her architectural degree in 1986 from the University of Melbourne, Australia and practiced in Australia for several years. Susan is HEI's Business Manager and is in charge of all administrative efforts of the company.",
-    },
-  ];
+export default function About({ page }: Props) {
+  const team =
+    page.team?.map((member) => ({
+      name: member.name,
+      img: member.photo.url,
+      bio: member.bio,
+      linkedInLink: member.linkedInLink,
+    })) ?? [];
 
   return (
     <>
       <NextSeo
-        title={seo.title}
-        description={seo.description}
+        title={page.meta?.title || "About Hartman Ely"}
+        description={page.meta?.description || ""}
         openGraph={{
-          ...seo,
-          url: "https://hartmanely.com/",
+          title: page.meta?.title || "About Hartman Ely",
+          description: page.meta?.description || "",
+          url: "https://hartmanely.com/about",
         }}
       />
-      <ProjectHero
-        heading="About"
-        heroImage="/images/pancratia/pancratia-gallery-11.jpg"
-      />
+      <ProjectHero heading="About" heroImage={page.heroImage.url} />
       <Container noPadding={true} className="bg-white pt-10">
-        <div className="mx-auto mb-2 grid  grid-cols-1 gap-8 pb-2">
+        <div className="mx-auto mb-2 grid grid-cols-1 gap-8 pb-2">
           <div className="col-span-2">
-            <h1 className="mt-2">Historic Buildings are our Passion</h1>
-            <h4 className="mb-4 mt-4">
-              Founded in 2000 by Jim Hartman and Susan Ely, Hartman Ely
-              Investments is one of the most respected historic redevelopment
-              firms in Colorado.
-            </h4>
-            <p className="mb-2">
-              We are a development and investment company that specializes in
-              redevelopment and renewable energy.
-            </p>
-            <p className="mb-2">
-              In addition, we have extensive experience with transit oriented
-              and environmentally responsible, sustainable development. A major
-              force behind all our work is a passion to help mitigate global
-              climate change and to help communities become more energy
-              independent
-            </p>
-            <p className="mb-2">
-              A key part of our business philosophy is strategic partnerships
-              with other firms to form a uniquely qualified team for each
-              development opportunity. This partnership approach allows Jim and
-              Susan’s extensive involvement in each development, better quality
-              and lower cost services than most other development. Some examples
-              of our partners include City Street Investors, Larimer Associates,
-              Heitler Development, Harvard Communities, City of Wheat Ridge and
-              Jefferson County.
-            </p>
-            <p className="-mb-8">
-              Additionally, our extensive experience and skill with conceptual
-              design, budgeting and scheduling is a tremendous asset in the
-              early stages of any development. We can quickly analyze several
-              options and create designs, budgets and schedules for any site or
-              program that allows a landowner or entity to select the best
-              option with minimal cost in the early due diligence or RFP phase.
-            </p>
-            <HomeBlockAbout teamMembers={team} />
+            <h1 className="mt-2">{page.heading}</h1>
+            {page.subheading && (
+              <h4 className="mb-4 mt-4">{page.subheading}</h4>
+            )}
+            {page.body && <SerializedRichText content={page.body} />}
+            {team.length > 0 && <HomeBlockAbout teamMembers={team} />}
           </div>
         </div>
       </Container>
@@ -92,3 +49,9 @@ export default function About() {
     </>
   );
 }
+
+export const getStaticProps: GetStaticProps<Props> = async () => {
+  const page = await getAboutPage();
+  if (!page) return { notFound: true };
+  return { props: { page }, revalidate: 60 };
+};

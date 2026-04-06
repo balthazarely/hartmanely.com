@@ -52,6 +52,70 @@ export async function getProjectBySlug(slug: string): Promise<Project | null> {
   return project
 }
 
+export interface HomePage {
+  hero: {
+    image: PayloadImage
+    eyebrow?: string
+    heading: string
+    ctaLabel?: string
+    ctaLink?: string
+  }
+  mission: {
+    statement: string
+  }
+  about: {
+    image: PayloadImage
+    heading: string
+    body: string
+  }
+  portfolio: {
+    categories: {
+      image: PayloadImage
+      heading: string
+      body: string
+      link: string
+    }[]
+  }
+  meta?: { title?: string; description?: string }
+}
+
+export async function getHomePage(): Promise<HomePage | null> {
+  const res = await fetch(`${PAYLOAD_API_URL}/api/globals/home-page?depth=2`)
+  if (!res.ok) return null
+  const data: HomePage = await res.json()
+  data.hero.image.url = resolveImageUrl(data.hero.image.url)
+  data.about.image.url = resolveImageUrl(data.about.image.url)
+  data.portfolio.categories.forEach((cat) => {
+    cat.image.url = resolveImageUrl(cat.image.url)
+  })
+  return data
+}
+
+export interface AboutPage {
+  heroImage: PayloadImage
+  heading: string
+  subheading?: string
+  body?: any
+  team?: {
+    name: string
+    photo: PayloadImage
+    bio: string
+    linkedInLink?: string
+  }[]
+  meta?: { title?: string; description?: string }
+}
+
+export async function getAboutPage(): Promise<AboutPage | null> {
+  const res = await fetch(`${PAYLOAD_API_URL}/api/globals/about-page?depth=2`)
+  if (!res.ok) return null
+  const data: AboutPage = await res.json()
+  data.heroImage.url = resolveImageUrl(data.heroImage.url)
+  data.team?.forEach((member) => {
+    member.photo.url = resolveImageUrl(member.photo.url)
+  })
+  return data
+}
+
 export async function getProjectSlugsByType(type: string): Promise<string[]> {
   const res = await fetch(
     `${PAYLOAD_API_URL}/api/projects?where[type][equals]=${type}&depth=0&limit=100`

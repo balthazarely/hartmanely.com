@@ -6,38 +6,57 @@ import {
   HomeBlockThree,
 } from "@/components/HomeElements";
 import { NextSeo } from "next-seo";
+import { GetStaticProps } from "next";
+import { getHomePage, HomePage } from "@/lib/payload";
 
+interface Props {
+  page: HomePage;
+}
 
-export default function Home(): JSX.Element {
-  const seo = {
-    title: "Hartman Ely Investments",
-    description:
-      "Hartman Ely Investments is a Development and Investment Company that specializes in Sustainable Redevelopment and Renewable Energy. ",
-  };
-
+export default function Home({ page }: Props): JSX.Element {
   return (
     <>
       <NextSeo
-        title={seo.title}
-        description={seo.description}
+        title={page.meta?.title || "Hartman Ely Investments"}
+        description={page.meta?.description || ""}
         openGraph={{
-          ...seo,
+          title: page.meta?.title || "Hartman Ely Investments",
+          description: page.meta?.description || "",
           url: "https://hartmanely.com/",
           images: [
             {
-              url: "https://hartmanely.com/images/fruitdale/fruitdale-hero.jpg",
-              width: 1000,
-              height: 667,
-              alt: seo.title,
+              url: page.hero.image.url,
+              alt: page.hero.heading,
             },
           ],
         }}
       />
-      <HeroLarge />
-      <HomeBlockMission />
-      <HomeBlockTwo />
-      <HomeBlockThree />
+      <HeroLarge
+        image={page.hero.image.url}
+        eyebrow={page.hero.eyebrow}
+        heading={page.hero.heading}
+        ctaLabel={page.hero.ctaLabel}
+        ctaLink={page.hero.ctaLink}
+      />
+      <HomeBlockMission statement={page.mission.statement} />
+      <HomeBlockTwo
+        image={page.about.image.url}
+        heading={page.about.heading}
+        body={page.about.body}
+      />
+      <HomeBlockThree categories={page.portfolio.categories.map((cat) => ({
+        image: cat.image.url,
+        heading: cat.heading,
+        body: cat.body,
+        link: cat.link,
+      }))} />
       <Contact />
     </>
   );
 }
+
+export const getStaticProps: GetStaticProps<Props> = async () => {
+  const page = await getHomePage();
+  if (!page) return { notFound: true };
+  return { props: { page }, revalidate: 60 };
+};
