@@ -27,7 +27,7 @@ export const getStaticProps: GetStaticProps<Props> = async () => {
   ]);
   return {
     props: {
-      heroImage: categoryPages?.renewableEnergy.heroImage.url ?? "",
+      heroImage: categoryPages?.renewableEnergy?.heroImage?.url ?? "",
       projects,
     },
     revalidate: 60,
