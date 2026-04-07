@@ -135,17 +135,6 @@ export async function getCategoryPages(): Promise<CategoryPages | null> {
   return data
 }
 
-export interface SiteSettings {
-  logo?: PayloadImage
-}
-
-export async function getSiteSettings(): Promise<SiteSettings | null> {
-  const res = await fetch(`${PAYLOAD_API_URL}/api/globals/site-settings?depth=2`)
-  if (!res.ok) return null
-  const data: SiteSettings = await res.json()
-  if (data.logo?.url) data.logo.url = resolveImageUrl(data.logo.url)
-  return data
-}
 
 export interface NavSubmenuItem {
   name: string

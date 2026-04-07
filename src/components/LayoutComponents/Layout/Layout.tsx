@@ -1,17 +1,16 @@
 import { Header, Footer } from "@/components/LayoutComponents";
-import { NavCategory, SiteSettings } from "@/lib/payload";
+import { NavCategory } from "@/lib/payload";
 
 interface ILayoutProps {
   children: JSX.Element;
   navCategories: NavCategory[];
-  siteSettings: SiteSettings | null;
 }
 
-export function Layout({ children, navCategories, siteSettings }: ILayoutProps): JSX.Element {
+export function Layout({ children, navCategories }: ILayoutProps): JSX.Element {
   return (
     <div className="flex h-screen flex-col bg-white">
       <div className="z-50 ">
-        <Header navCategories={navCategories} siteSettings={siteSettings} />
+        <Header navCategories={navCategories} />
       </div>
       <div className="z-0 mt-20 flex-grow transition-all duration-200 md:mt-28">
         {children}
