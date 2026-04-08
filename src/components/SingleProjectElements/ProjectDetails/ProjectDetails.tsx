@@ -51,26 +51,32 @@ export function ProjectDetails({
       </div>
       <div className="grid  grid-cols-1 gap-8  md:grid-cols-3">
         <div className="col-span-2 ">
-          <h4 className="">{tagline}</h4>
+          <h2 className="text-lg">{tagline}</h2>
           {children}
         </div>
         {showSidePanel && (
           <div className="col-span-1 bg-slate-100 p-4">
             <div className="mb-4">
-              <h5>Location</h5>
+              <p className="text-sm font-bold uppercase tracking-wider">
+                Location
+              </p>
               <p className="small mt-1 font-medium">{location}</p>
             </div>
             <div className="mb-4">
-              <h5>Year Completed</h5>
+              <p className="text-sm font-bold uppercase tracking-wider">
+                Year Completed
+              </p>
               <p className="small mt-1 font-medium">{completedDate}</p>
             </div>
             <div className="mb-4">
-              <h5>Size</h5>
+              <p className="text-sm font-bold uppercase tracking-wider">Size</p>
               <p className="small mt-1 font-medium">{size}</p>
             </div>
             {projectType && (
               <div className="mb-4">
-                <h5>Project Type</h5>
+                <p className="text-sm font-bold uppercase tracking-wider">
+                  Project Type
+                </p>
 
                 <Link
                   href={`/categories/${projectType
@@ -83,7 +89,9 @@ export function ProjectDetails({
             )}
             {website && (
               <div className="mb-4">
-                <h5>Website</h5>
+                <p className="text-sm font-bold uppercase tracking-wider">
+                  Website
+                </p>
                 <a
                   rel="noreferrer"
                   href="https://hangar2lowry.com/"
