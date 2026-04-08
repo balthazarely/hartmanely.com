@@ -60,7 +60,6 @@ export function HeroLarge({ image, eyebrow, heading, ctaLabel, ctaLink }: HeroLa
             height={700}
             width={700}
             priority={true}
-            // eslint-disable-next-line @typescript-eslint/ban-ts-comment
             // @ts-ignore — fetchPriority not in types for Next.js 13.1.6 but is forwarded to <img>
             fetchPriority="high"
             className="absolute top-0 left-0 h-full w-full object-cover"
