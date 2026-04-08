@@ -20,8 +20,8 @@ export function HomeBlockAbout({
     <div className={styles.HomeBlockAboutContainer}>
       <Container>
         <div className="mx-auto flex flex-col items-center justify-center ">
-          <h5 className="mt-4">About</h5>
-          <h2 className="mt-2 mb-4">Our Team</h2>
+          <p className="mt-4 text-sm font-bold tracking-wider uppercase text-cyan-700">About</p>
+          <h3 className="mt-2 mb-4">Our Team</h3>
         </div>
         <div className="mx-auto grid max-w-xs grid-cols-1 gap-6 sm:max-w-lg sm:grid-cols-2">
           {teamMembers.map((person: PersonProps, idx: number) => {
@@ -40,7 +40,7 @@ export function HomeBlockAbout({
                 </div>
                 <div>
                   <div className="mt-2 flex items-center justify-center gap-1 ">
-                    <h4 className="cursor-pointertext-center  text-center">
+                    <h4 className="text-center">
                       {person.name}
                     </h4>
                     {person.linkedInLink && (
@@ -48,8 +48,9 @@ export function HomeBlockAbout({
                         target="_blank"
                         rel="noreferrer"
                         href={person.linkedInLink}
+                        aria-label={`${person.name} on LinkedIn`}
                       >
-                        <FaLinkedin className="text-xl" />
+                        <FaLinkedin className="text-xl" aria-hidden="true" />
                       </a>
                     )}
                   </div>

@@ -33,12 +33,12 @@ export default function About({ page }: Props) {
         }}
       />
       <ProjectHero heading="About" heroImage={page.heroImage.url} />
-      <Container noPadding={true} className="bg-white pt-10">
+      <Container noPadding={true} className=" pt-10">
         <div className="mx-auto mb-2 grid grid-cols-1 gap-8 pb-2">
           <div className="col-span-2">
             <h1 className="mt-2">{page.heading}</h1>
             {page.subheading && (
-              <h4 className="mb-4 mt-4">{page.subheading}</h4>
+              <h2 className="mb-4 mt-4 text-lg">{page.subheading}</h2>
             )}
             {page.body && <SerializedRichText content={page.body} />}
             {team.length > 0 && <HomeBlockAbout teamMembers={team} />}

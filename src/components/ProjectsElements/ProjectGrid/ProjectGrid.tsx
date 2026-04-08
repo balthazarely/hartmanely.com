@@ -10,9 +10,7 @@ function ImageBlock({ thumbnail, name, type, link }: ProjectGridItem) {
   return (
     <div className="w-full text-center">
       <div className={clsx(styles.imageContainer, "group")}>
-        <Link href={link}>
-          <div className="absolute top-0 left-0 z-50 h-full w-full bg-cyan-700 opacity-0 transition-all duration-500 group-hover:opacity-30"></div>
-        </Link>
+        <div aria-hidden="true" className="absolute top-0 left-0 z-50 h-full w-full bg-cyan-700 opacity-0 transition-all duration-500 group-hover:opacity-30"></div>
         <Image
           className={clsx(styles.image, "object-cover group-hover:scale-110")}
           src={thumbnail}
@@ -21,9 +19,9 @@ function ImageBlock({ thumbnail, name, type, link }: ProjectGridItem) {
         />
       </div>
       <Link href={link}>
-        <h4 className="mt-2 cursor-pointer text-left text-base leading-tight tracking-wide">
+        <h2 className="mt-2 cursor-pointer text-left text-base leading-tight tracking-wide">
           {name}
-        </h4>
+        </h2>
       </Link>
       <p className="xsmall mt-1 text-left capitalize">{type.replace("-", " ")}</p>
     </div>

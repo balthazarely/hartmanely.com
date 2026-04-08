@@ -74,6 +74,7 @@ export function Header({ navCategories }: { navCategories: NavCategory[] }) {
                   src="/hei-logo.svg"
                   className="w-48"
                   alt="hei-logo"
+                  priority
                 />
               </Link>
             </div>
@@ -219,7 +220,7 @@ function MobileNavigation({ navLinks }: { navLinks: any[] }) {
   return (
     <div>
       <div className="relative z-50 block md:hidden">
-        <Hamburger toggled={menuOpen} toggle={setMenuOpen} />
+        <Hamburger toggled={menuOpen} toggle={setMenuOpen} label={menuOpen ? "Close menu" : "Open menu"} />
       </div>
       <motion.div
         className={` fixed top-0 left-0 z-40 h-full w-screen overflow-y-scroll  bg-white opacity-0  `}
@@ -232,8 +233,7 @@ function MobileNavigation({ navLinks }: { navLinks: any[] }) {
             className="mb-4 flex w-full cursor-pointer flex-col p-1  text-gray-800  hover:text-cyan-700"
           >
             <button
-              aria-label="got-to-link"
-              role="button"
+              aria-label="Go to Home"
               onClick={(e) => navigateToMobileLink(e, "/")}
               className="flex w-full items-center justify-center space-x-4 text-left"
             >
@@ -277,8 +277,7 @@ function MobileNavigation({ navLinks }: { navLinks: any[] }) {
             className="mb-4 flex w-full cursor-pointer flex-col p-1"
           >
             <button
-              aria-label="go-to-link"
-              role="button"
+              aria-label="Go to About"
               onClick={(e) => navigateToMobileLink(e, "/about")}
               className="flex w-full items-center justify-center space-x-4 text-left  text-gray-800  hover:text-cyan-700"
             >
@@ -306,8 +305,7 @@ function MobileItemAccordian({
       onClick={() => triggerOpen(!open)}
     >
       <button
-        aria-label="open"
-        role="button"
+        aria-label={`${open ? "Close" : "Open"} ${name} menu`}
         className="flex w-full items-center justify-center text-gray-800  hover:text-cyan-700  "
       >
         <div className="text-2xl font-semibold">{name}</div>
@@ -323,8 +321,7 @@ function MobileItemAccordian({
         {submenu.map((item: any) => {
           return (
             <button
-              aria-label="navigate"
-              role="button"
+              aria-label={`Go to ${item.name}`}
               className="mb-2 text-center text-gray-800  hover:text-cyan-700"
               key={item.name}
               onClick={(e) => navigateToMobileLink(e, item.link)}
@@ -334,8 +331,7 @@ function MobileItemAccordian({
           );
         })}
         <button
-          aria-label="navigate"
-          role="button"
+          aria-label={`See all ${name} projects`}
           className="mb-2 text-center text-gray-800  hover:text-cyan-700"
           onClick={(e) =>
             navigateToMobileLink(
