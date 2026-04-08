@@ -121,13 +121,13 @@ const DesktopNavigation = ({ navLinks }: { navLinks: any[] }) => {
                   >
                     <div className="font-md flex items-center justify-start p-3 text-xs font-bold hover:bg-gray-100 ">
                       {item.title === "Redevelopment" && (
-                        <HiOutlineBuildingLibrary className=" mr-1 text-xl text-cyan-600" />
+                        <HiOutlineBuildingLibrary className=" mr-1 text-xl text-cyan-700" />
                       )}
                       {item.title === "Consulting" && (
-                        <FaHandsHelping className=" mr-1 text-xl text-cyan-600" />
+                        <FaHandsHelping className=" mr-1 text-xl text-cyan-700" />
                       )}
                       {item.title === "Renewable Energy" && (
-                        <HiOutlineSun className=" mr-1 text-xl text-cyan-600" />
+                        <HiOutlineSun className=" mr-1 text-xl text-cyan-700" />
                       )}
                       See All {item.title} projects
                     </div>
@@ -229,7 +229,7 @@ function MobileNavigation({ navLinks }: { navLinks: any[] }) {
         <div className="mt-24 ">
           <motion.div
             variants={menuItemAnimationVariant}
-            className="mb-4 flex w-full cursor-pointer flex-col p-1  text-gray-800  hover:text-cyan-600"
+            className="mb-4 flex w-full cursor-pointer flex-col p-1  text-gray-800  hover:text-cyan-700"
           >
             <button
               aria-label="got-to-link"
@@ -280,7 +280,7 @@ function MobileNavigation({ navLinks }: { navLinks: any[] }) {
               aria-label="go-to-link"
               role="button"
               onClick={(e) => navigateToMobileLink(e, "/about")}
-              className="flex w-full items-center justify-center space-x-4 text-left  text-gray-800  hover:text-cyan-600"
+              className="flex w-full items-center justify-center space-x-4 text-left  text-gray-800  hover:text-cyan-700"
             >
               <div className="text-2xl font-semibold">About</div>
             </button>
@@ -308,12 +308,12 @@ function MobileItemAccordian({
       <button
         aria-label="open"
         role="button"
-        className="flex w-full items-center justify-center text-gray-800  hover:text-cyan-600  "
+        className="flex w-full items-center justify-center text-gray-800  hover:text-cyan-700  "
       >
         <div className="text-2xl font-semibold">{name}</div>
         <div className="text-2xl font-semibold">
           <FaChevronDown
-            className={`ml-1 text-base text-cyan-600 ${
+            className={`ml-1 text-base text-cyan-700 ${
               open ? "rotate-180" : "rotate-0"
             }`}
           />
@@ -325,7 +325,7 @@ function MobileItemAccordian({
             <button
               aria-label="navigate"
               role="button"
-              className="mb-2 text-center text-gray-800  hover:text-cyan-600"
+              className="mb-2 text-center text-gray-800  hover:text-cyan-700"
               key={item.name}
               onClick={(e) => navigateToMobileLink(e, item.link)}
             >
@@ -336,7 +336,7 @@ function MobileItemAccordian({
         <button
           aria-label="navigate"
           role="button"
-          className="mb-2 text-center text-gray-800  hover:text-cyan-600"
+          className="mb-2 text-center text-gray-800  hover:text-cyan-700"
           onClick={(e) =>
             navigateToMobileLink(
               e,

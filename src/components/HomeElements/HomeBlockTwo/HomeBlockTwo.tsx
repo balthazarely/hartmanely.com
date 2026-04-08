@@ -21,7 +21,7 @@ export function HomeBlockTwo({ image, heading, body }: HomeBlockTwoProps) {
           />
         </div>
         <div>
-          <h5 className="mt-2 text-center md:mt-0 md:text-left">About</h5>
+          <p className="mt-2 text-center md:mt-0 md:text-left text-sm font-bold tracking-wider uppercase text-cyan-700">About</p>
           <h3 className="mt-2 mb-4 max-w-none text-center md:max-w-sm md:text-left">
             {heading}
           </h3>

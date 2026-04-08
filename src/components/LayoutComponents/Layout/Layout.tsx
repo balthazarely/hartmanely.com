@@ -12,9 +12,9 @@ export function Layout({ children, navCategories }: ILayoutProps): JSX.Element {
       <div className="z-50 ">
         <Header navCategories={navCategories} />
       </div>
-      <div className="z-0 mt-20 flex-grow transition-all duration-200 md:mt-28">
+      <main className="z-0 mt-20 flex-grow transition-all duration-200 md:mt-28">
         {children}
-      </div>
+      </main>
       <div className="flex flex-col gap-4"></div>
       <Footer />
     </div>

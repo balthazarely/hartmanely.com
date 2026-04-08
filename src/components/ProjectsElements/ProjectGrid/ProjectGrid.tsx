@@ -11,7 +11,7 @@ function ImageBlock({ thumbnail, name, type, link }: ProjectGridItem) {
     <div className="w-full text-center">
       <div className={clsx(styles.imageContainer, "group")}>
         <Link href={link}>
-          <div className="absolute top-0 left-0 z-50 h-full w-full bg-cyan-600 opacity-0 transition-all duration-500 group-hover:opacity-30"></div>
+          <div className="absolute top-0 left-0 z-50 h-full w-full bg-cyan-700 opacity-0 transition-all duration-500 group-hover:opacity-30"></div>
         </Link>
         <Image
           className={clsx(styles.image, "object-cover group-hover:scale-110")}

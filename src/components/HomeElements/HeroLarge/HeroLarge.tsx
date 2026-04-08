@@ -82,9 +82,9 @@ export function HeroLarge({ image, eyebrow, heading, ctaLabel, ctaLink }: HeroLa
         >
           {eyebrow && (
             <motion.div variants={item}>
-              <h5 className="mb-2 uppercase tracking-widest text-white">
+              <p className="mb-2 text-sm font-bold tracking-widest uppercase text-white">
                 {eyebrow}
-              </h5>
+              </p>
             </motion.div>
           )}
           <motion.div variants={item}>
@@ -94,9 +94,7 @@ export function HeroLarge({ image, eyebrow, heading, ctaLabel, ctaLink }: HeroLa
             <motion.div variants={item}>
               <Link href={ctaLink}>
                 <button
-                  aria-label="see-work"
-                  role="button"
-                  className="mt-4 rounded-md border-2 border-white bg-gray-800 bg-opacity-40 py-2 px-4 text-sm transition-colors duration-200 hover:bg-cyan-600"
+                  className="mt-4 rounded-md border-2 border-white bg-gray-800 bg-opacity-40 py-2 px-4 text-sm transition-colors duration-200 hover:bg-cyan-700"
                 >
                   {ctaLabel}
                 </button>
