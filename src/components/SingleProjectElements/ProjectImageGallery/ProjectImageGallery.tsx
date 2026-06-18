@@ -34,19 +34,20 @@ const NextJsImage: React.FC<RenderPhotoProps> = ({
   </div>
 );
 
-interface PhotosProps {
-  photos: PhotoProps[];
-}
-
 interface PhotoProps {
   src: string;
   width: number;
   height: number;
-  title: string;
-  description: string;
+  title?: string;
+  description?: string;
 }
 
-export function ProjectImageGallery({ photos }: PhotosProps) {
+interface PhotosProps {
+  photos: PhotoProps[];
+  projectSlug?: string;
+}
+
+export function ProjectImageGallery({ photos, projectSlug }: PhotosProps) {
   const [index, setIndex] = useState(-1);
 
   return (
@@ -67,7 +68,12 @@ export function ProjectImageGallery({ photos }: PhotosProps) {
         animation={{ fade: 300, swipe: 300 }}
         plugins={[Captions]}
       />
-      {/* <p className="small mt-1 italic">Photos my Beth Mcbethster</p> */}
+      {projectSlug === "loretto-commons" && (
+        <div className="mt-6">
+          <h3 className="text-xl font-bold mb-2">Commun Projects Master Plan</h3>
+          <p className="text-sm text-gray-600">Photo credit - Shears Adkins Rockmore Architects</p>
+        </div>
+      )}
     </Container>
   );
 }

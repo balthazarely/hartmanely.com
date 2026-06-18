@@ -1,6 +1,4 @@
 import styles from "./ProjectHero.module.scss";
-import { motion } from "framer-motion";
-import Link from "next/link";
 import Image from "next/image";
 import clsx from "clsx";
 

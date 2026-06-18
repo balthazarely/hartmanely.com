@@ -58,7 +58,7 @@ export default function ConsultingProject({ project }: Props) {
         <ProjectAwards awards={project.awards} />
       ) : null}
       {project.media?.length ? <ProjectMedia media={project.media} /> : null}
-      {photos.length ? <ProjectImageGallery photos={photos} /> : null}
+      {photos.length ? <ProjectImageGallery photos={photos} projectSlug={project.slug} /> : null}
     </>
   );
 }
