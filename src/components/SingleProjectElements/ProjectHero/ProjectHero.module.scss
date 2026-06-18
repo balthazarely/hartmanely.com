@@ -7,3 +7,9 @@
     margin: 0 auto;
     overflow: hidden;
 }
+
+.fullHeight {
+    max-height: none;
+    height: auto;
+    overflow: visible;
+}

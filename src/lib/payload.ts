@@ -30,6 +30,7 @@ export interface Project {
   size?: string
   projectType?: string
   showSidePanel?: boolean
+  fullHeroHeight?: boolean
   description?: any
   awards?: { awardName: string; link?: string }[]
   media?: { mediaName: string; link?: string }[]

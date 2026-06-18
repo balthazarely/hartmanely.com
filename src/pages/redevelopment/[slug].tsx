@@ -38,6 +38,9 @@ export default function RedevelopmentProject({ project }: Props) {
       <ProjectHero
         heroImage={project.heroImage.url}
         alt={`${project.title} hero image`}
+        fullHeroHeight={project.fullHeroHeight}
+        imageWidth={project.heroImage.width}
+        imageHeight={project.heroImage.height}
       />
       <ProjectDetails
         title={project.title}
